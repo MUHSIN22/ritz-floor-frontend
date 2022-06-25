@@ -1,0 +1,62 @@
+.UpComingCarousel-Carousel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.UpComingCarousel {
+  width: 100%;
+}
+.UpCarousel-Slide {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.UpCarousel-Slide span {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -15%;
+  left: 58%;
+  background-color: #e26739;
+  color: white;
+}
+.UpCarousel-Slide img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 10px;
+}
+.UpComingCarousel
+  .react-3d-carousel
+  .slider-container
+  .slider-content
+  .slider-single
+  .slider-single-content {
+  width: 100%;
+  box-shadow: none;
+  opacity: 1 !important;
+}
+.UpComingCarousel .react-3d-carousel .slider-container .slider-right div {
+  display: block;
+  border-top: 10px solid transparent;
+  border-left: 20px solid #e26739;
+  border-bottom: 10px solid transparent;
+  padding: 0%;
+}
+.UpComingCarousel .react-3d-carousel .slider-container .slider-right i {
+  color: white;
+  content: "\2192";
+}
+.UpComingCarousel .react-3d-carousel .slider-container .slider-left div {
+  display: block;
+  border-top: 10px solid transparent;
+  border-right: 20px solid #e26739;
+  border-bottom: 10px solid transparent;
+  padding: 0%;
+}

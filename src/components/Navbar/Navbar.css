@@ -1,0 +1,30 @@
+.Navbar-Container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #5b5756;
+  position: fixed;
+  z-index: 999;
+}
+.Nav-logo {
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Nav-logo img {
+  width: 50%;
+}
+.Nav-links {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.Nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+}

@@ -1,0 +1,88 @@
+.Testimonial3dCarousel-Container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Testimonial3dCarousel {
+  width: 100%;
+}
+.Testimonial3dCarousel-Slide {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 1.5rem;
+  gap: 1rem;
+}
+.Mark {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.Testimonial-Slide-Content {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.Testimonial-Slide-Profile-Row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+.Testimonials-Profile-Image {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 100%;
+}
+.Testimonials-Profile-Image img {
+  width: 100%;
+  border-radius: 100%;
+}
+.Testimonials-Profile-Content-Col {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+}
+.Testimonial3dCarousel
+  .react-3d-carousel
+  .slider-container
+  .slider-content
+  .slider-single
+  .slider-single-content {
+  width: 100%;
+  height: 100%;
+  box-shadow: none;
+  opacity: 1 !important;
+}
+.Testimonial3dCarousel .react-3d-carousel .slider-container .slider-right div {
+  display: block;
+  border-top: 10px solid transparent;
+  border-left: 20px solid #e26739;
+  border-bottom: 10px solid transparent;
+  padding: 0%;
+}
+.Testimonial3dCarousel .react-3d-carousel .slider-container .slider-right i {
+  color: white;
+  content: "\2192";
+}
+.Testimonial3dCarousel .react-3d-carousel .slider-container .slider-left div {
+  display: block;
+  border-top: 10px solid transparent;
+  border-right: 20px solid #e26739;
+  border-bottom: 10px solid transparent;
+  padding: 0%;
+}

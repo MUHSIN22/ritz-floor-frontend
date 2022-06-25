@@ -1,0 +1,125 @@
+.Footer-Container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #5b5756;
+  color: white;
+}
+.Footer-Row {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap:3rem;
+  margin-top: 2rem;
+}
+.Footer-Map {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 1rem;
+}
+.Footer-Map h2{
+  font-size: 45px;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 50px;
+}
+.Footer-Map iframe {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  height: 300px;
+}
+.Get-in-Touch {
+ 
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.Get-in-Touch h2{
+  margin: 0;
+  font-size: 45px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+.Get-in-touch-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+.Get-in-touch-row p {
+  width: 60%;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+.Get-in-touch-row a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.News-Letter {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 1rem;
+}
+.News-Letter h2{
+  margin: 0;
+  font-size: 45px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+.News-Letter h3{
+  font-size: 25px;
+  font-weight: 500;
+}
+.News-Letter input {
+  width: 80%;
+  padding: 0.8rem;
+  border-radius: 6px;
+  border: 1px solid white;
+  background-color: transparent;
+}
+.News-Letter::placeholder {
+  color: white;
+}
+.News-Letter a {
+  width: 30%;
+  padding: 0.5rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e26739;
+  color: white;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 500;
+}
+.Footer-Social-media {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  color: white;
+}
+.Footer-Social-media svg {
+  width: 2em;
+  height: 2em;
+  color: white;
+}

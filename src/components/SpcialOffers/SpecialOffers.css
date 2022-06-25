@@ -1,0 +1,114 @@
+.SpecialOffers-Container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.SpecialOffers-Banner {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.SpecialOffers-Banner img {
+  width: 100%;
+  height: 100vh;
+}
+.SpecialOffers-Banner-Contact-details {
+  width: 35%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  padding: 1rem;
+}
+.SpecialOffers-Banner-Contact-details h1 {
+  margin: 0%;
+  color: #e26739;
+  text-shadow: 0px 10px 20px rgba(247, 146, 30, 0.5);
+  font-size: 3rem;
+}
+.SpecialOffers-Banner-Contact-details h2 {
+  margin: 0%;
+  color: #ffffff;
+  text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+}
+.SpecialOffers-Banner-Contact-details h3 {
+  margin: 0%;
+  font-family: "Molle";
+  color: rgba(255, 255, 255, 0.7);
+}
+.SpecialOffers-Btn-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+.SpecialOffers-Btn-row span {
+  width: 10%;
+  background-color: #e26739;
+  color: white;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+.SpecialOffers-Btn-row a {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  background-color: #e26739;
+  padding: 0.6rem;
+  color: white;
+  border-radius: 10px;
+}
+.SpecialOffers-Banner-Contact-details-Email {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+.SpecialOffers-CariKature {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  top: 28%;
+  right: 0%;
+}
+.SpecialOffers-CariKature img {
+  width: 100%;
+  height: 100%;
+}
+.SpecialOffer-Carousel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.UC-Carousel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5rem;
+}
