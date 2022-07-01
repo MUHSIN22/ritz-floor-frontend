@@ -12,7 +12,7 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "3d-react-carousal": "^5.0.0",
-    "3d-react-carousel": "^1.0.0",
+  
     "jsweetman-react-spring-3d-carousel": "^1.1.6",
     "react": "^18.1.0",
     "react-3-carousel": "^1.0.6",
