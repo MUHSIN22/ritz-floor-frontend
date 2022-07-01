@@ -51,7 +51,7 @@ export default function Testimonials() {
 				<div className="Testimonials-Carousel02-Header">
 					<h1>Testimonial</h1>
 				</div>
-				<Testimonial3dCarousel />
+				{typeof window !== "undefined" && <Testimonial3dCarousel />}
 			</div>
 			<div className="VideoTestimonials-Carousel03">
 				<div className="VideoTestimonials-Carousel03-Header">
@@ -81,7 +81,7 @@ const VideoCrousel = () => {
 	return (
 		<div className="Testimonial3dCarousel-Container">
 			<div className="Testimonial3dCarousel">
-				<Carousel slides={slides} />
+				{typeof window !== "undefined" && <Carousel slides={slides} />}
 			</div>
 		</div>
 	);

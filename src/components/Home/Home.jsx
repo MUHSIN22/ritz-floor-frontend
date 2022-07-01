@@ -93,7 +93,10 @@ const CenterModee = () => {
 	);
 };
 const CustomSlider = () => {
-	return <div></div>;
+	
+	return <div className="new-card">
+
+	</div>;
 };
 
 const CenterMode = () => {
