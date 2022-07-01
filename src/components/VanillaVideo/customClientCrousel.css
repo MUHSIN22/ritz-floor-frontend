@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.crousel-container{
+    width: 95%;
+ 
+    
+
+    
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    
+}
+.crousel-slide{
+    display: flex;
+    width: 80%;
+    
+
+    padding: 10rem 2rem;
+   
+
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+   
+}
+.cardd{
+    min-width: 640px;
+    height: 606px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+
+    
+}
+.cardd h1{
+    margin-top: 0;
+    position: relative;
+    top:-7%;}
+.cardd1{
+  
+}
+.cardd2{
+  
+}
+.cardd3{
+ 
+}
+.button-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:15rem;
+    margin-top: 1rem;
+}
+
+button{
+    display: block;
+   
+}
+
+
+.profile-pic{
+    height: 200px;
+    width: 200px;
+    background: url('/public/images//livingroom.jpg');
+    background-size: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    
+   
+}
+.cardd p{
+    width: 85%;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.7;
+    text-align: center;
+    margin-top: 2rem;
+    text-align: start;
+    position: relative;
+    top:-5%;
+}
+.circle{
+   
+    border-radius: 50%;
+
+}
+.circle:first-child{
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.circle:last-child{
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.circle img{
+    width: 542px;
+    height: 542px;
+    transition: 0.4s ease;
+}
+.current{
+    position: relative;
+    top:-15%;
+  
+}

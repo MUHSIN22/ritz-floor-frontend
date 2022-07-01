@@ -38,10 +38,10 @@ export default function ProductCat(props) {
 				<div className="Product-Carousel">
 					<Carousel
 						responsive={responsive}
-						renderDotsOutside={true}
 						showDots={true}
 						autoPlay={true}
 						infinite={true}
+						renderDotsOutside={true}
 						dotListClass="custom-dot-list-style"
 					>
 						<div className="Product-Card">

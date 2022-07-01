@@ -1,8 +1,28 @@
 .App {
   font-family: "Inter", sans-serif;
-  overflow: hidden;
+  overflow: hidden !important;
+ 
 }
 .my-0 {
   margin-top: 0%;
   margin-bottom: 0%;
 }
+.slider-left,.slider-right{
+  margin-top: 7rem;
+}
+.slider-left{
+  position: relative;
+  left: 10%;
+}
+.react-3d-carousel .slider-container .slider-right {
+left: 88.5% !important;
+}
+input{
+  background: none !important;
+}
+
+
+
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
+

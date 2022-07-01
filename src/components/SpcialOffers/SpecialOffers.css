@@ -18,41 +18,56 @@
   height: 100vh;
 }
 .SpecialOffers-Banner-Contact-details {
-  width: 35%;
-  height: 50%;
+  width: 858px;
+  height: 547px;
+  
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 5%;
   gap: 1.5rem;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 10px;
-  padding: 1rem;
+  padding:1rem 0 0 2rem;
 }
 .SpecialOffers-Banner-Contact-details h1 {
   margin: 0%;
   color: #e26739;
   text-shadow: 0px 10px 20px rgba(247, 146, 30, 0.5);
-  font-size: 3rem;
+  font-size: 80px;
+  font-weight: 600;
+ 
+  position: relative;
 }
 .SpecialOffers-Banner-Contact-details h2 {
   margin: 0%;
-  color: #ffffff;
+  color: #000000;
   text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  font-size: 35px;
+  font-weight: 600;
+  width: 60%;
+  line-height: 1.6;
 }
 .SpecialOffers-Banner-Contact-details h3 {
   margin: 0%;
-  font-family: "Molle";
-  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Inter', sans-serif;
+  font-family: 'Molle', sans-serif !important;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 40px;
+  font-weight: 400;
 }
 .SpecialOffers-Btn-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -61,24 +76,32 @@
 }
 .SpecialOffers-Btn-row span {
   width: 10%;
+  height: 57px;
   background-color: #e26739;
   color: white;
-  padding: 0.5rem;
+  padding: 0.6rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   border-radius: 10px;
+  font-size: 25px;
+  font-weight: 600;
 }
 .SpecialOffers-Btn-row a {
-  width: 30%;
+  width: 287px;
+height: 57px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-decoration: none;
   background-color: #e26739;
-  padding: 0.6rem;
+  justify-content: center;
+  
   color: white;
   border-radius: 10px;
+  font-size: 25px;
+  font-weight: 600;
 }
 .SpecialOffers-Banner-Contact-details-Email {
   text-decoration: none;
@@ -92,23 +115,126 @@
   flex-direction: column;
   align-items: flex-end;
   position: absolute;
-  top: 28%;
-  right: 0%;
+  bottom: -4%;
+ right: -19%;
+  direction: ltr;
 }
 .SpecialOffers-CariKature img {
-  width: 100%;
-  height: 100%;
+  width: 1200px;
+  height: 820px;
+  position: relative;
+  bottom: 3%;
+  overflow: hidden !important;
+  clip: rect(110px, 160px, 170px, 60px);
 }
 .SpecialOffer-Carousel {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 .UC-Carousel {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 5rem;
+
 }
+
+
+.laminate-container{
+  width: 90vw;
+  position: relative;
+  display: flex;
+  
+
+  margin-top:40px;
+  margin-bottom: 60px;
+}
+.laminate-leftside{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+.laminate-leftside h1{
+  width: 70%;
+  font-size: 45px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 60px;
+  line-height: 1.3;
+}
+.laminate-leftside p{
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.7;
+ 
+ 
+  margin-bottom: 42px;
+}
+.laminate-leftside button{
+  padding:13px 60px;
+  background: #E26739;
+  border: none;
+  color:#ffffff;
+  font-size: 25px;
+  font-weight: 500;
+  border-radius: 10px;
+  width: 184px;
+height: 56px;
+position: relative;
+top:-2%
+
+}
+.laminate-rightside img{
+  width: 1016px;
+  height: 679px;
+  margin-left: 10rem;
+}
+.offer-h1{
+  font-size: 55px;
+  font-weight: 700;
+
+}
+.upcomming-offer-h1{
+  font-size: 55px;
+  font-weight: 700;
+  margin-bottom: 80px;
+}
+.laminate-div{
+ width: 32%;
+ display:flex;
+ justify-content: space-between;
+ margin-top: 60px;
+ 
+}
+.laminate-div span{
+  height: 25px;
+  width: 25px;
+  background: #D9D9D9;
+  border-radius: 50%;
+}
+
+.orange-dot{
+  background: #e26739 !important;
+  
+}
+.laminate-div-1{
+  width: 10%;
+  display:flex;
+  justify-content: space-between;
+  margin-bottom: 80px;
+ 
+ }
+ .laminate-div-1 span{
+   height: 25px;
+   width: 25px;
+   background: #D9D9D9;
+   border-radius: 50%;
+ }
+ .laminate-div-1 span:first-child{
+   background: #2C1911;
+ }

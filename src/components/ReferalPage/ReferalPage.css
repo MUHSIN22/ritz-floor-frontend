@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 120px;
 }
 .ReferalPage-Banner {
   width: 100%;
@@ -16,39 +17,49 @@
   height: 100vh;
 }
 .ReferalPage-Banner-Contact-details {
-  width: 35%;
-  height: 50%;
+  width: 858px;
+  height: 547px;
+  
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 5%;
   gap: 1.5rem;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 10px;
-  padding: 1rem;
+  padding:1rem 0 0 2rem;
 }
 .ReferalPage-Banner-Contact-details h1 {
   margin: 0%;
   color: #e26739;
   text-shadow: 0px 10px 20px rgba(247, 146, 30, 0.5);
-  font-size: 3rem;
+  font-size: 80px;
+  font-weight: 600;
+ 
+  position: relative;
 }
 .ReferalPage-Banner-Contact-details h2 {
   margin: 0%;
-  color: #ffffff;
+  color: #000000;
   text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  font-size: 35px;
+  font-weight: 600;
+  width: 60%;
+  line-height: 1.6;
 }
 .ReferalPage-Banner-Contact-details h3 {
   margin: 0%;
-  font-family: "Molle";
-  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Inter', sans-serif;
+  font-family: 'Molle', sans-serif !important;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 40px;
+  font-weight: 400;
 }
 .ReferalPage-Btn-row {
   width: 100%;
@@ -59,24 +70,32 @@
 }
 .ReferalPage-Btn-row span {
   width: 10%;
+  height: 57px;
   background-color: #e26739;
   color: white;
-  padding: 0.5rem;
+  padding: 0.6rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   border-radius: 10px;
+  font-size: 25px;
+  font-weight: 600;
 }
 .ReferalPage-Btn-row a {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  background-color: #e26739;
-  padding: 0.6rem;
-  color: white;
-  border-radius: 10px;
+  width: 287px;
+  height: 57px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    background-color: #e26739;
+    justify-content: center;
+    
+    color: white;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: 600;
 }
 .ReferalPage-Banner-Contact-details-Email {
   text-decoration: none;
@@ -90,20 +109,27 @@
   flex-direction: column;
   align-items: flex-end;
   position: absolute;
-  top: 28%;
-  right: 0%;
+  bottom: -4%;
+ right: -19%;
+  direction: ltr;
 }
 .ReferalPage-CariKature img {
-  width: 100%;
-  height: 100%;
+  width: 1200px;
+  height: 820px;
+  position: relative;
+  bottom: 3%;
+  overflow: hidden !important;
+  clip: rect(110px, 160px, 170px, 60px);
 }
 .RefralPage-row {
-  width: 90%;
+
   display: flex;
   flex-direction: row;
+  gap:4rem;
 }
 .Reffral-Row-img {
-  width: 40%;
+  width: 1140px;
+  height: 740px;
 }
 .Reffral-Row-img img {
   width: 100%;
@@ -116,12 +142,24 @@
   text-align: justify;
   gap: 1rem;
 }
+.Refer-Content-col h1{
+  font-size: 55px;
+  font-weight: 600;
+  margin: 40px 0;
+}
 .Refer-Content-col p {
   width: 80%;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.7;
+ 
 }
 .Refer-btn {
-  width: 30%;
-  padding: 0.8rem;
+  width: 100px;
+height: 84px;
+  padding: 26px 200px;
+  font-size: 40px;
+  font-weight: 500;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -130,6 +168,7 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  margin-top: 40px;
 }
 .Refer-Pop-Up {
   width: 100vw;
