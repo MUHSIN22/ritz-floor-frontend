@@ -14,7 +14,7 @@ import image2 from "../asset/videoslideimages/Rectangle 55 (1).svg";
 import image3 from "../asset/videoslideimages/Rectangle 56 (1).svg";
 import image4 from "../asset/Vector (8).svg";
 import CustomClientCrousel from "../VanillaVideo/customClientCrousel";
-import "3d-react-carousel/dist/index.css";
+
 import ReactPlayer from "react-player";
 export default function Testimonials() {
 	return (
