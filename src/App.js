@@ -32,7 +32,7 @@ function App() {
 					<Route path="/ReferalPage" element={<ReferalPage />} />
 					<Route path="/testimonials" element={<Testimonials />} />
 					<Route path="/cat" element={<Cat />} />
-					<Route path="/venyl-products" element={<VenylProducts />} />
+					<Route path="/vp/:id/" element={<VenylProducts />} />
 				</Routes>
 				<Footer />
 			</Router>

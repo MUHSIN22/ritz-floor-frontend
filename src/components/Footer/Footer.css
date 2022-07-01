@@ -17,6 +17,7 @@
 }
 .Footer-Map {
   width: 30%;
+  height: 70%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -32,7 +33,7 @@
   width: 90%;
   border: none;
   border-radius: 10px;
-  height: 220px;
+  height: 290px;
 }
 .Get-in-Touch {
  
@@ -140,6 +141,8 @@ input::-webkit-input-placeholder {
   justify-content: flex-start;
   gap: 2rem;
   color: white;
+  position: relative;
+  top:-10%;
 }
 .Footer-Social-media svg {
   width: 3em;

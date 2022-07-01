@@ -8,7 +8,9 @@ import carpet from "../asset/carpet-floor-m-380x254.jpg";
 import vinyl from "../VINYL/pexels-curtis-adams-4832510.jpg";
 import laminate from "../LAMINATE/pexels-pixabay-534172.jpg";
 import Hardwood from "../asset/hard-wood-floor-m-380x254.jpg";
+import { Navigate, useNavigate } from "react-router-dom";
 export default function ProductCat(props) {
+	const navigate = useNavigate();
 	const responsive = {
 		superLargeDesktop: {
 			// the naming can be any, depends on you.
@@ -28,6 +30,9 @@ export default function ProductCat(props) {
 			items: 1,
 		},
 	};
+	const changePage = (e, id) => {
+		navigate(`/vp/${id}`);
+	};
 
 	return (
 		<div className="ProductCat-Container">
@@ -44,7 +49,10 @@ export default function ProductCat(props) {
 						renderDotsOutside={true}
 						dotListClass="custom-dot-list-style"
 					>
-						<div className="Product-Card">
+						<div
+							className="Product-Card"
+							onClick={(e, id = 1) => changePage(e, id)}
+						>
 							<div className="Product-Image">
 								<img src={vinyl} alt="" />
 							</div>
@@ -52,7 +60,10 @@ export default function ProductCat(props) {
 								<h2>Vinyl</h2>
 							</div>
 						</div>
-						<div className="Product-Card">
+						<div
+							className="Product-Card"
+							onClick={(e, id = 2) => changePage(e, id)}
+						>
 							<div className="Product-Image">
 								<img src={tiles} alt="" />
 							</div>
@@ -60,7 +71,10 @@ export default function ProductCat(props) {
 								<h2>Tiles</h2>
 							</div>
 						</div>
-						<div className="Product-Card">
+						<div
+							className="Product-Card"
+							onClick={(e, id = 3) => changePage(e, id)}
+						>
 							<div className="Product-Image">
 								<img src={laminate} alt="" />
 							</div>
@@ -68,23 +82,11 @@ export default function ProductCat(props) {
 								<h2>Laminate</h2>
 							</div>
 						</div>
-						<div className="Product-Card">
-							<div className="Product-Image">
-								<img src={vinyl} alt="" />
-							</div>
-							<div className="Product-Name">
-								<h2>Vinyl</h2>
-							</div>
-						</div>
-						<div className="Product-Card">
-							<div className="Product-Image">
-								<img src={laminate} alt="" />
-							</div>
-							<div className="Product-Name">
-								<h2>Laminate</h2>
-							</div>
-						</div>
-						<div className="Product-Card">
+
+						<div
+							className="Product-Card"
+							onClick={(e, id = 4) => changePage(e, id)}
+						>
 							<div className="Product-Image">
 								<img src={Hardwood} alt="" />
 							</div>
@@ -92,7 +94,10 @@ export default function ProductCat(props) {
 								<h2>Hard Wood</h2>
 							</div>
 						</div>
-						<div className="Product-Card">
+						<div
+							className="Product-Card"
+							onClick={(e, id = 5) => changePage(e, id)}
+						>
 							<div className="Product-Image">
 								<img src={woodfloor} alt="" />
 							</div>
@@ -100,7 +105,10 @@ export default function ProductCat(props) {
 								<h2>Wood Floor</h2>
 							</div>
 						</div>
-						<div className="Product-Card">
+						<div
+							className="Product-Card"
+							onClick={(e, id = 6) => changePage(e, id)}
+						>
 							<div className="Product-Image">
 								<img src={carpet} alt="" />
 							</div>

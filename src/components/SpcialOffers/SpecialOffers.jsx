@@ -38,12 +38,6 @@ export default function SpecialOffers() {
 			<h1 className="offer-h1">Offers</h1>
 			<div className="SpecialOffer-Carousel">
 				<OffersCarousel />
-				<div className="laminate-div-1">
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
 			</div>
 			<h1 className="upcomming-offer-h1">Upcoming Offers</h1>
 			<div className="UC-Carousel">
