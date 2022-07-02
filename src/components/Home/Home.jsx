@@ -14,7 +14,7 @@ import CustomClientCrousel from "../VanillaVideo/customClientCrousel";
 export default function Home() {
 	return (
 		<div className="Home-Container">
-			<div className="Banner">
+			{/* <div className="Banner">
 				<img src={BannerImage} alt="" />
 				<div className="Banner-Contact-details">
 					<h1>Ritz Floor and Decor</h1>
@@ -33,7 +33,7 @@ export default function Home() {
 						Email : ritzfloor@gmail.com
 					</a>
 				</div>
-			</div>
+			</div> */}
 			<div className="Products">
 				<ProductCat />
 			</div>
@@ -53,9 +53,9 @@ export default function Home() {
 					<img src={laminate} alt="" />
 				</div>
 
-				<div className="Home-CariKature">
+				{/* <div className="Home-CariKature">
 					<img src={Vector} alt="" />
-				</div>
+				</div> */}
 			</div>
 			<h1 className="client-text-h1">What Client Says</h1>
 			<div className="Testimonial-Carousel">

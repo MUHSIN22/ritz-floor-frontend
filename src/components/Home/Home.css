@@ -13,9 +13,7 @@
   width: 100%;
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 72px;
+
 }
 .Banner img {
   width: 100%;
@@ -271,4 +269,76 @@ margin:34px 0 100px 0;
   margin-top: 104px;
 }
 
+@media only screen and (max-width: 768px) {
+  .Product-Name h2 {
+    font-size: 1rem;
+  }
+  .react-multi-carousel-dot button {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    opacity: 1;
+    box-shadow: none;
+    margin-right: 3px;
+    outline: 0;
+    cursor: pointer;
+  } 
+  .Why-choose-us-Image {
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: 0;
+  }
+  .Why-choose-us-Image img {
+    object-fit: cover;
+    margin-left: auto;
+  }
+  .Why-choose-us-content h4 {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    line-height: 1.4;
+    width: 100%;
+  }
+  .Why-choose-us {
+    gap: 1rem;
+  }
+  .Why-choose-us-content h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+  .Why-choose-us-content a {
+    width: max-content;
+    height: max-content;
+    padding: 1rem;
+    display: flex;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 0;
+  }
+  .client-text-h1 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+  .crousel-slide {
+    display: flex;
+    width: 100%;
+    padding: 1rem;
+  }
+  .cardd{
+    width: 100%;
+  }
+  .cardd h1 {
+    font-size: 1.8rem;
+  }
+  .current {
+    position: relative;
+    top: -15%;
+    margin: 1rem;
+    width: 8rem;
+  }
+}
 

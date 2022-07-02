@@ -7,7 +7,7 @@
   background-color: #5b5756;
   position: fixed;
   z-index: 999;
-  padding:10px 0;
+  padding: 10px 0;
 }
 .Nav-logo {
   width: 10%;
@@ -30,4 +30,79 @@
   font-weight: 600;
   color: #ffffff;
   text-decoration: none;
+}
+.hamburger{
+  display: none;
+}
+@media only screen and (max-width: 1440px) {
+  .Nav-links a {
+    font-size: 1.1rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .Navbar-Container {
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .Nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #5b5756f4;
+    flex-direction: column;
+    width: 100%;
+    z-index: 10000;
+    transform: translateX(100%);
+  }
+  .Nav-links a {
+    padding: 0.5rem 0;
+  }
+  .hamburger {
+    display: block;
+    width: 29px;
+    list-style: none;
+    padding: 0;
+  }
+
+  .hamburger .layer {
+    width: 100%;
+    height: 4px;
+    border-radius: 50px;
+    background: #fff;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+
+  .hamburger .layer:nth-child(2) {
+    margin: 4px 0;
+  }
+
+  .hamburger--active .layer:last-child {
+    transform: rotate(-45deg) translateY(-3px);
+    transform-origin: center;
+  }
+
+  .hamburger--active .layer:first-child {
+    transform: rotate(45deg) translateY(3px);
+    transform-origin: center;
+  }
+
+  .hamburger--active .layer:nth-child(2) {
+    display: none;
+  }
+  .nav-list--active{
+    transform: translateX(0);
+  }
+  
+}
+
+@media only screen and (max-width: 500px) {
+  .Nav-links a{
+    font-size: 0.9rem;
+  }
+  .Nav-logo img {
+    width: 3rem;
+  }
 }
