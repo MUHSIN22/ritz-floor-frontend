@@ -6,6 +6,11 @@
     width: 47vw;
     margin-left: 10rem;
    
+    color: white;
+    text-align: center;
+    vertical-align: center;
+    margin-top: auto;
+   
 }
 .cat-card{
     width:250px;
@@ -15,6 +20,13 @@
 min-height:230px;
 max-height: 300px;
 background: green;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 30px;
+font-weight: 500;
+cursor: pointer;
+
 
 }
 .card1{
@@ -52,3 +64,11 @@ background: green;
     background-position: fixed;
     background-repeat: no-repeat;
 }
+
+  .cat-card:hover{
+    -webkit-filter: grayscale(50%);
+transform: scale(1.1);
+transition: 0.1s ease-in-out;
+   
+  }
+ 

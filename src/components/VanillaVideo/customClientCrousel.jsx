@@ -46,6 +46,21 @@ export const CustomClientCrousel = () => {
 	console.log(currentMinus);
 	console.log(current);
 	console.log(currentPlus);
+	const addCurrent = () => {
+		let temp = current;
+
+		setCurrent(currentMinus);
+
+		setCurrentMinus(currentPlus);
+		setCurrentPlus(temp);
+	};
+	const subbCurrent = () => {
+		let temp = current;
+		setCurrent(currentPlus);
+		setCurrentPlus(currentMinus);
+
+		setCurrentMinus(temp);
+	};
 
 	return (
 		<div class="crousel-container">
@@ -63,10 +78,10 @@ export const CustomClientCrousel = () => {
 						efficient strategy.
 					</p>
 					<div class="button-group">
-						<a class="prev">
+						<a class="prev" onClick={() => subbCurrent()}>
 							<img src="images/Arrow 1.svg" />
 						</a>
-						<a class="next">
+						<a class="next" onClick={() => addCurrent()}>
 							<img src="images/Arrow 2.svg" />
 						</a>
 					</div>

@@ -18,7 +18,7 @@
 }
 .crousel-slide{
     display: flex;
-    width: 80%;
+    width: 100%;
     
 
     padding: 7rem 2rem 2rem 2rem;
@@ -31,8 +31,8 @@
    
 }
 .cardd{
-    min-width: 640px;
-    height: 606px;
+    width: 540px;
+    height: 506px;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -80,7 +80,7 @@ button{
 }
 .cardd p{
     width: 85%;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 500;
     line-height: 1.7;
     text-align: center;
@@ -113,4 +113,7 @@ button{
     position: relative;
     top:-15%;
   
+}
+.prev,.next{
+    cursor: pointer;
 }
