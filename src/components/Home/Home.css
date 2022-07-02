@@ -16,8 +16,8 @@
 
 }
 .Banner img {
-  width: 100%;
   height: 100vh;
+  width: 100vw;
 }
 .Banner-Contact-details {
   width: 858px;
@@ -60,10 +60,9 @@
 }
 .Banner-Contact-details h3 {
   margin: 0%;
-  font-family: 'Inter', sans-serif;
-  font-family: 'Molle', sans-serif !important;
+  font-family: 'Smooch', cursive;
   color: rgba(0, 0, 0, 0.7);
-  font-size: 40px;
+  font-size: 50px;
   font-weight: 400;
 }
 .Btn-row {
@@ -129,6 +128,7 @@ height: 57px;
   bottom: 3%;
   overflow: hidden !important;
   clip: rect(110px, 160px, 170px, 60px);
+  
 }
 .Products {
   width: 100%;

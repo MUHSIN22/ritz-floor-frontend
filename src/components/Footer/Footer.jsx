@@ -60,6 +60,16 @@ export default function Footer() {
 					<Link to="/">Submit</Link>
 				</div>
 			</div>
+			<div className="techjan-container">
+				<p>
+					Design and Developed By{" "}
+					<span>
+						<a href="https://techjain.com/">
+							<b>TechJain IT Solutions</b>
+						</a>
+					</span>
+				</p>
+			</div>
 		</div>
 	);
 }

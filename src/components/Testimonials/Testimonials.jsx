@@ -68,13 +68,25 @@ export default function Testimonials() {
 const VideoCrousel = () => {
 	let slides = [
 		<div>
-			<ReactPlayer url="https://www.youtube.com/watch?v=ysz5S6PUM-U" />
+			<ReactPlayer
+				url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
+				width="600px"
+				height="500px"
+			/>
 		</div>,
 		<div>
-			<ReactPlayer url="https://www.youtube.com/watch?v=ysz5S6PUM-U" />
+			<ReactPlayer
+				url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
+				width="600px"
+				height="500px"
+			/>
 		</div>,
 		<div>
-			<ReactPlayer url="https://www.youtube.com/watch?v=ysz5S6PUM-U" />
+			<ReactPlayer
+				url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
+				width="600px"
+				height="500px"
+			/>
 		</div>,
 	];
 	return (

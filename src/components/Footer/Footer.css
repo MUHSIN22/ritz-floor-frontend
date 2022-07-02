@@ -158,3 +158,18 @@ color: white !important;
 font-size: 20px;
 vertical-align: center;
 }
+.techjan-container a{
+font-size: 20px;
+
+color: white;
+
+}
+.techjan-container p{
+  font-size: 20px;
+margin: 20px 0;
+color: white;
+}
+.techjan-container span{
+  cursor: pointer;
+  text-decoration: underline;
+}
