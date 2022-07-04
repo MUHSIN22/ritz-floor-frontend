@@ -11,6 +11,7 @@ import Vector from "../asset/Kerikature.png";
 import { Component } from "react";
 import Slider from "react-slick";
 import CustomClientCrousel from "../VanillaVideo/customClientCrousel";
+import MainBanner from "../Banner/MainBanner";
 export default function Home() {
 	return (
 		<div className="Home-Container">
@@ -34,6 +35,7 @@ export default function Home() {
 					</a>
 				</div>
 			</div> */}
+			<MainBanner/>
 			<div className="Products">
 				<ProductCat />
 			</div>

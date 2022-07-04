@@ -6,8 +6,9 @@
   justify-content: space-evenly;
   background-color: #5b5756;
   position: fixed;
+  top: 0;
   z-index: 999;
-  padding: 10px 0;
+  height: 6rem;
 }
 .Nav-logo {
   width: 10%;
@@ -26,7 +27,7 @@
   justify-content: space-evenly;
 }
 .Nav-links a {
-  font-size: 25px;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #ffffff;
   text-decoration: none;
@@ -41,10 +42,11 @@
 }
 @media only screen and (max-width: 768px) {
   .Navbar-Container {
-    position: relative;
+    position: fixed;
     width: 100%;
     justify-content: space-between;
     padding: 1rem;
+    height: 4rem;
   }
   .Nav-links {
     position: absolute;

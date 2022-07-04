@@ -19,10 +19,9 @@
   height: 100vh;
   width: 100vw;
 }
-.Banner-Contact-details {
+/* .Banner-Contact-details {
   width: 858px;
   height: 547px;
-  
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -64,7 +63,7 @@
   color: rgba(0, 0, 0, 0.7);
   font-size: 50px;
   font-weight: 400;
-}
+} */
 .Btn-row {
   width: 100%;
   display: flex;
@@ -165,8 +164,6 @@ height: 57px;
   
 }
 .Why-choose-us-content a {
-  width: 220px;
-  height: 67px;
   background-color: #e26739;
   padding: 14px 40px;
   color: white;
@@ -175,13 +172,21 @@ height: 57px;
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  font-size: 26px;
+  font-size: 1.5rem;
   font-weight: 500;
   margin-top: 0;
 }
 .Why-choose-us-content p {
   width: 80%;
   text-align: justify;
+}
+.Why-choose-us-content h4 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 40px;
+  line-height: 1.4;
+  width: 90%;
 }
 .Why-choose-us-Image {
   width: 640px;
@@ -342,3 +347,56 @@ margin:34px 0 100px 0;
   }
 }
 
+@media only screen and (max-width: 500px) {
+  .Why-choose-us-Image{
+    display: none;
+  }
+  .Why-choose-us-content{
+    width: 100%;
+  }
+  .Why-choose-us-content h1 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+  .Why-choose-us-content h4 {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    width: 100%;
+  }
+  .Product-Catalogue-Header h1 {
+    margin: 1rem;
+    font-size: 1.6rem;
+  }
+  .Home-Container .Product-Name h2 {
+    font-size: 1rem;
+  }
+  .Home-Container .react-multi-carousel-dot button {
+    width: 5px;
+    height: 5px;
+  }
+  .Home-Container .react-multi-carousel-dot-list {
+    position: relative !important;
+    bottom: -1rem !important;
+  }
+  .Home-Container .Product-Catalogue {
+    padding-bottom: 3rem;
+  }
+  .Home-Container .ProductCat-Container {
+    margin-bottom: 0;
+  }
+  .Why-choose-us-content a {
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+  .client-text-h1 {
+    font-size: 1.6rem;
+  }
+  .Product-Catalogue-Header h1 {
+    margin: 1rem;
+    font-size: 1.6rem;
+  }
+}
