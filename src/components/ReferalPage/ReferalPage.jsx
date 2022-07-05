@@ -5,33 +5,13 @@ import BannerImage from "../asset/BannerImage06.png";
 import Vector from "../asset/Kerikature.png";
 import pref from "../asset/preferances.png";
 import ReferAndEarn from "../ReferAndEarnPopUp/ReferAndEarn";
+import MainBanner from "../Banner/MainBanner";
 export default function ReferalPage() {
 	const [ShowPopUp, setShowPopUp] = useState(false);
 	return (
 		<div className="ReferalPage-Container">
-			<div className="ReferalPage-Banner">
-				<img src={BannerImage} alt="" />
-				<div className="ReferalPage-Banner-Contact-details">
-					<h1>Ritz Floor and Decor</h1>
-					<h3>Give an exotic look to your home</h3>
-					<h2>45690 YALE RD, Chilliwack, BC, Canada V2P2N3</h2>
-					<div className="ReferalPage-Btn-row">
-						<span>
-							<LocalPhone />
-						</span>
-						<a href="tel:+ 604-702-2233">+ 604-702-2233</a>
-					</div>
-					<a
-						href="mailto:ritzfloor@gmail.com"
-						className="ReferalPage-Banner-Contact-details-Email"
-					>
-						Email : ritzfloor@gmail.com
-					</a>
-				</div>
-				<div className="ReferalPage-CariKature">
-					<img src={Vector} alt="" />
-				</div>
-			</div>
+			<MainBanner background={BannerImage} />
+			
 			<div className="RefralPage-row">
 				<div className="Reffral-Row-img">
 					<img src={pref} alt="" />

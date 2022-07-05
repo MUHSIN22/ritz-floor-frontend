@@ -1,41 +1,21 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
-import BannerImage from "../asset/BannerImage.png";
 import { LocalPhone } from "@mui/icons-material";
 import ProductCat from "../Product-Carousel/ProductCat";
 import { Link } from "react-router-dom";
 import laminate from "../asset/laminate-m-380x254.jpg";
 import akash from "../asset/Aks.png";
-import TestimonialCarousel from "../Home-Testimonial-Carousel/TestimonialCarousel";
 import Vector from "../asset/Kerikature.png";
 import { Component } from "react";
 import Slider from "react-slick";
-import CustomClientCrousel from "../VanillaVideo/customClientCrousel";
 import MainBanner from "../Banner/MainBanner";
+import HomeTestimonialCarousel from "../HomeTestimonialCarousel/HomeTestimonialCarousel";
+import BannerImage from '../asset/BannerImage.png'
+import BannerImageMobile from '../asset/BannerImageMobile.png'
 export default function Home() {
 	return (
 		<div className="Home-Container">
-			{/* <div className="Banner">
-				<img src={BannerImage} alt="" />
-				<div className="Banner-Contact-details">
-					<h1>Ritz Floor and Decor</h1>
-					<h3>Give an exotic look to your home</h3>
-					<h2>45690 YALE RD, Chilliwack, BC, Canada V2P2N3</h2>
-					<div className="Btn-row">
-						<span>
-							<LocalPhone />
-						</span>
-						<a href="tel:+ 604-702-2233">+ 604-702-2233</a>
-					</div>
-					<a
-						href="mailto:ritzfloor@gmail.com"
-						className="Banner-Contact-details-Email"
-					>
-						Email : ritzfloor@gmail.com
-					</a>
-				</div>
-			</div> */}
-			<MainBanner/>
+			<MainBanner background={BannerImage}/>
 			<div className="Products">
 				<ProductCat />
 			</div>
@@ -61,7 +41,7 @@ export default function Home() {
 			</div>
 			<h1 className="client-text-h1">What Client Says</h1>
 			<div className="Testimonial-Carousel">
-				<CustomClientCrousel />
+				<HomeTestimonialCarousel />
 			</div>
 		</div>
 	);

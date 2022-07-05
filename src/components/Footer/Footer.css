@@ -1,175 +1,123 @@
-.Footer-Container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.Footer-Container{
   background-color: #5b5756;
-  color: white;
-  margin-top: 5rem;
+  padding: 2rem 5%;
+  display: grid;
+  grid-template-columns: 3fr 2fr 2fr;
+  grid-gap: 3rem;
+  grid-template-areas: 'map touch newsletter''copy copy copy';
+  margin-top: 3rem;
 }
-.Footer-Row {
-  width: 90%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  gap:3rem;
-  margin-top: 2rem;
+.Footer-Container .footer-title{
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 2rem;
 }
-.Footer-Map {
-  width: 30%;
-  height: 70%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-top: 1rem;
+.Footer-Container .Footer-Map{
+  grid-area: map;
 }
-.Footer-Map h2{
-  font-size: 45px;
-  font-weight: 600;
-  margin: 0;
-  margin-bottom: 50px;
-}
-.Footer-Map iframe {
-  width: 90%;
-  border: none;
+.Footer-Container .Footer-Map iframe{
+  width: 100%;
+  height: 15rem;
   border-radius: 10px;
-  height: 290px;
 }
-.Get-in-Touch {
- 
-  width: 30%;
+.Footer-Container .Get-in-Touch{
+  grid-area: touch;
+}
+.Footer-Container .Get-in-touch-row{
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.Get-in-Touch h2{
-  margin: 0;
-  font-size: 45px;
-  font-weight: 600;
-  margin-bottom: 25px;
-}
-.Get-in-touch-row {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-
-  gap: 1rem;
-  margin-bottom: 20px;
-}
-.Get-in-touch-row div{
-  width: 1000px;
-}
-.Get-in-touch-row p {
-  width: 100%;
-  margin: 0;
-  font-size: 25px;
-  font-weight: 500;
-}
-.Get-in-touch-row a {
-  text-decoration: none;
-  color: white;
-  font-size: 25px;
-  font-weight: 500;
-  
-}
-.small-icons{
-  height: 30px;
-  width: 30px;
-}
-.News-Letter {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-top: 1rem;
-}
-.News-Letter h2{
-  margin: 0;
-  font-size: 45px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-.News-Letter h3{
-  font-size: 35px;
-  font-weight: 500;
-  margin: 1rem 0;
-}
-.News-Letter input {
-  width: 80%;
-  padding: 0.8rem;
-  border-radius: 6px;
-  border: 5px solid #FFFFFF;
-  background: #5B5756 !important;
-  color: #FFFFFF;
-
- 
-}
-input::-webkit-input-placeholder {
-  color: white; /*Change the placeholder color*/
-  opacity: 0.5; /*Change the opacity between 0 and 1*/
-  background: none;
-}
-
-.News-Letter::placeholder {
-  background: #5B5756 !important;
-}
-.News-Letter a {
-  width: 184px;
-  height: 56px;
- 
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-color: #e26739;
-  color: white;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+.Footer-Container .Get-in-touch-row svg{
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+.Footer-Container .Get-in-Touch a{
+  color: #fff;
+  text-decoration: none;
+}
+.Footer-Container .Footer-Social-media{
+  margin-top: 1rem;
+}
+.Footer-Container .Footer-Social-media svg{
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+.Footer-Container .News-Letter{
+  grid-area: newsletter;
+  display: flex;
+  flex-direction: column;
+}
+.Footer-Container .News-Letter h3{
+  color: #fff;
+  font-size: 1.3rem;
+}
+.Footer-Container .News-Letter input{
+  border: 4px solid #fff;
   border-radius: 8px;
-  margin-top: 20px;
-  padding: auto;
-  font-size: 25px;
-  font-weight: 500;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  color: #fff;
 }
-.Footer-Social-media {
+.Footer-Container .News-Letter input::placeholder{
+  color: #fff;
+}
+.Footer-Container .News-Letter a{
+  background: #E26739;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  width: max-content;
+  margin-top: 1rem;
+}
+.Footer-Container .techjain-container{
+  grid-area: copy;
+  text-align: center;
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 2rem;
-  color: white;
-  position: relative;
-  top:-10%;
+  color: #fff;
 }
-.Footer-Social-media svg {
-  width: 3em;
-  height: 3em;
-  color: white;
-  margin-top: 2rem;
+.Footer-Container .techjain-container a{
+  color: #fff;
+  text-decoration: none;
 }
-input::placeholder
-{
-background: #5b5756 !important;
-border: none;
-color: white !important;
-font-size: 20px;
-vertical-align: center;
-}
-.techjan-container a{
-font-size: 20px;
 
-color: white;
-
+@media only screen and (max-width: 768px) {
+  .Footer-Container {
+    background-color: #5b5756;
+    padding: 2rem 5%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 3rem;
+    grid-template-areas: 'map' 'touch' 'newsletter''copy';
+    margin-top: 3rem;
+  }
 }
-.techjan-container p{
-  font-size: 20px;
-margin: 20px 0;
-color: white;
-}
-.techjan-container span{
-  cursor: pointer;
-  text-decoration: underline;
+@media only screen and (max-width: 500px) {
+  .Footer-Container .footer-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .Footer-Container .Get-in-touch-row svg {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+  }
+  .Footer-Container .Get-in-Touch a,
+  .Footer-Container .Get-in-Touch p {
+    color: #fff;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+  .Footer-Container .Footer-Social-media {
+    margin-top: 2rem;
+  }
+  .Footer-Container .News-Letter h3 {
+    font-size: 1rem;
+  }
+  .Footer-Container .techjain-container a,
+  .Footer-Container .techjain-container p {
+    font-size: 0.8rem;
+  }
 }

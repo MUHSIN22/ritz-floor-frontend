@@ -4,39 +4,22 @@ import BannerImage from "../asset/BannerImage041.png";
 import { LocalPhone, CheckCircle } from "@mui/icons-material";
 import Vector from "../asset/Kerikature.png";
 import Laminate from "../asset/laminate-m-380x254.jpg";
-import LivingRoom from "../asset/livingroom.jpg";
-import bedroom from "../asset/bedroom.jpg";
-import dineroom from "../asset/dineroom.jpg";
-import officeroom from "../asset/officeroom.jpg";
-import balcony from "../asset/balcony.jpg";
 import Cat from "../imageCat/Cat";
+import MainBanner from "../Banner/MainBanner";
+import work1 from '../asset/our works/w1.png'
+import work2 from '../asset/our works/w2.png'
+import work3 from '../asset/our works/w3.png'
+import work4 from '../asset/our works/w4.png'
+import work5 from '../asset/our works/w5.png'
+import work6 from '../asset/our works/w6.png'
+import work7 from '../asset/our works/w7.png'
+import work8 from '../asset/our works/w8.png'
+
 export default function WhyChooseUs() {
 	return (
 		<>
 			<div className="WhyChooseUs-Container">
-				<div className="WhyChooseUs-Banner">
-					<img src={BannerImage} alt="" />
-					<div className="WhyChooseUs-Banner-Contact-details">
-						<h1>Ritz Floor and Decor</h1>
-						<h3>Give an exotic look to your home</h3>
-						<h2>45690 YALE RD, Chilliwack, BC, Canada V2P2N3</h2>
-						<div className="WhyChooseUs-Btn-row">
-							<span>
-								<LocalPhone />
-							</span>
-							<a href="tel:+ 604-702-2233">+ 604-702-2233</a>
-						</div>
-						<a
-							href="mailto:ritzfloor@gmail.com"
-							className="WhyChooseUs-Banner-Contact-details-Email"
-						>
-							Email : ritzfloor@gmail.com
-						</a>
-					</div>
-					<div className="WhyChooseUs-CariKature">
-						<img src={Vector} alt="" />
-					</div>
-				</div>
+				<MainBanner background={BannerImage} />
 				<div className="AboutUs-Row">
 					<div className="AboutUs-Content-Col">
 						<div className="AboutUs-Header">
@@ -104,37 +87,21 @@ const OurWorks = () => {
 				</p>
 			</div>
 			<div className="work-rightside">
-				<ImagePyramid1 />
-				<ImagePyramid2 />
+				<div className="rombus-row">
+					<div className="rombus" style={{backgroundImage: `url(${work1})`}}></div>
+					<div className="rombus" style={{backgroundImage: `url(${work2})`}}></div>
+					<div className="rombus" style={{backgroundImage: `url(${work3})`}}></div>
+				</div>
+				<div className="rombus-row">
+					<div className="rombus" style={{backgroundImage: `url(${work4})`}}></div>
+					<div className="rombus" style={{backgroundImage: `url(${work5})`}}></div>
+				</div>
+				<div className="rombus-row">
+					<div className="rombus" style={{backgroundImage: `url(${work6})`}}></div>
+					<div className="rombus" style={{backgroundImage: `url(${work7})`}}></div>
+					<div className="rombus" style={{backgroundImage: `url(${work8})`}}></div>
+				</div>
 			</div>
-		</div>
-	);
-};
-const ImagePyramid1 = () => {
-	return (
-		<div className="pyramid-container">
-			<div className="item1"></div>
-			<div className="item2"></div>
-			<div className="item3"></div>
-			<div className="item4"></div>
-			<div className="item5"></div>
-			<div className="item6"></div>
-			<div className="item7"></div>
-			<div className="item8"></div>
-		</div>
-	);
-};
-const ImagePyramid2 = () => {
-	return (
-		<div className="pyramid-container2">
-			<div className="item11"></div>
-			<div className="item22"></div>
-			<div className="item33"></div>
-			<div className="item44"></div>
-			<div className="item55"></div>
-			<div className="item66"></div>
-			<div className="item77"></div>
-			<div className="item88"></div>
 		</div>
 	);
 };

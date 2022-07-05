@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./customClientCrousel.css";
-import img1 from "../asset/Ellipse 6.svg";
-import img2 from "../asset/Ellipse 7.svg";
+import img1 from "../asset/profile3.svg";
+import img2 from "../asset/profile2.svg";
 import img3 from "../asset/Aks.png";
 
 export const CustomClientCrousel = () => {

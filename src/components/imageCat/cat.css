@@ -13,21 +13,17 @@
    
 }
 .cat-card{
-    width:250px;
-    height: 230px;
-
-
-min-height:230px;
-max-height: 300px;
-background: green;
-display: flex;
-justify-content: center;
-align-items: center;
-font-size: 30px;
-font-weight: 500;
-cursor: pointer;
-
-
+    width:calc(100vw / 8);
+    height: calc(100vw / 8);
+    min-height:230px;
+    max-height: 300px;
+    background: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 500;
+    cursor: pointer;
 }
 .card1{
     background: url('../asset/livingroom.jpg');
@@ -66,9 +62,73 @@ cursor: pointer;
 }
 
   .cat-card:hover{
-    -webkit-filter: grayscale(50%);
-transform: scale(1.1);
-transition: 0.1s ease-in-out;
+    box-shadow: inset 10000px 0 10px rgba(0,0,0,0.5);
+    transform: scale(1.1);
+    transition: 0.1s ease-in-out;
    
   }
  
+@media only screen and (max-width: 1200px) {
+    .AboutUs-Features-Container {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+        margin-top: 3rem;
+    }
+    .Features-Content {
+        width: 50%;
+    }
+    .cat-card {
+        width: 48%;
+        height: 10rem;
+        min-height: 10rem;
+        font-size: 1.5rem;
+      }
+      .catalog-images-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        width: 50%;
+        margin-left: 0;
+      }
+}
+@media only screen and (max-width: 768px) {
+    .AboutUs-Features-Container {
+        width: 100%;
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .Features-Content {
+        width: 100%;
+    }
+    .catalog-images-container {
+        width: 100%;
+    }
+    .Features-Content h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 26px;
+        margin-bottom: 0;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .catalog-images-container {
+        gap: 0;
+    }
+    .cat-card {
+        width: calc(50% - 1rem);
+        margin: 0.5rem;
+        font-size: 1.3rem;
+        box-shadow: inset 1000px 0px 10px rgba(0,0,0,0.4);
+    }
+    .Features-Content h1 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 26px;
+        margin-bottom: 0;
+    }
+}

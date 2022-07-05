@@ -16,37 +16,17 @@ import image4 from "../asset/Vector (8).svg";
 import CustomClientCrousel from "../VanillaVideo/customClientCrousel";
 
 import ReactPlayer from "react-player";
+import MainBanner from "../Banner/MainBanner";
+import HomeTestimonialCarousel from "../HomeTestimonialCarousel/HomeTestimonialCarousel";
 export default function Testimonials() {
 	return (
 		<div className="Testimonials-Container">
-			<div className="Testimonials-Banner">
-				<img src={BannerImage} alt="" />
-				<div className="Testimonials-Banner-Contact-details">
-					<h1>Ritz Floor and Decor</h1>
-					<h3>Give an exotic look to your home</h3>
-					<h2>45690 YALE RD, Chilliwack, BC, Canada V2P2N3</h2>
-					<div className="Testimonials-Btn-row">
-						<span>
-							<LocalPhone />
-						</span>
-						<a href="tel:+ 604-702-2233">+ 604-702-2233</a>
-					</div>
-					<a
-						href="mailto:ritzfloor@gmail.com"
-						className="Testimonials-Banner-Contact-details-Email"
-					>
-						Email : ritzfloor@gmail.com
-					</a>
-				</div>
-				<div className="Testimonials-CariKature">
-					<img src={Vector} alt="" />
-				</div>
-			</div>
+			<MainBanner background={BannerImage}/>
 			<div className="Spring3d">
 				<div className="Spring3d-He">
 					<h1>What Client Says</h1>
 				</div>
-				<CustomClientCrousel />
+				<HomeTestimonialCarousel />
 			</div>
 
 			<div className="Testimonials-Carousel02">
@@ -70,22 +50,19 @@ const VideoCrousel = () => {
 		<div>
 			<ReactPlayer
 				url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
-				width="600px"
-				height="500px"
+				className="react-player"
 			/>
 		</div>,
 		<div>
 			<ReactPlayer
 				url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
-				width="600px"
-				height="500px"
+				className="react-player"
 			/>
 		</div>,
 		<div>
 			<ReactPlayer
 				url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
-				width="600px"
-				height="500px"
+				className="react-player"
 			/>
 		</div>,
 	];

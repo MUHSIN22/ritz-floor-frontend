@@ -1,19 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import './MainBanner.css'
-import BannerImage from '../asset/BannerImage.png'
 import { LocalPhone } from '@mui/icons-material'
 import BannerMan from '../asset/bannerMan.png'
-import BannerImageMobile from '../asset/BannerImageMobile.png'
 
-export default function MainBanner() {
-    const [bg,setBg] = useState(BannerImage)
-    useEffect(() => {
-        if(window.innerWidth < 500){
-            setBg(BannerImageMobile)
-        }
-    },[])
+
+export default function MainBanner({background}) {
+
     return (
-        <div className="main-banner-container" style={{ backgroundImage: `url(${bg})` }}>
+        <div className="main-banner-container" style={{ backgroundImage: `url(${background})` }}>
             <div className="content-section">
                 <div className="banner-content-card">
                     <h1>Ritz Floor and Decore</h1>

@@ -11,6 +11,11 @@ export default function Navbar() {
     navListRef.current.classList.toggle("nav-list--active")
   }
 
+  const optionClickHandler = (event) => {
+    hamRef.current.classList.remove("hamburger--active")
+    navListRef.current.classList.remove("nav-list--active")
+  }
+
   return (
     <div className="Navbar-Container">
       <div className="Nav-logo">
@@ -19,12 +24,12 @@ export default function Navbar() {
         </Link>
       </div>
       <div className="Nav-links" ref={navListRef}>
-        <Link to="/">Home</Link>
-        <Link to="/whychooseus">Why Choose Us</Link>
-        <Link to="/specialOffers">Special Offers</Link>
-        <Link to="/testimonials">Testimonials</Link>
-        <Link to="/ReferalPage">Refer and Earn</Link>
-        <Link to="/ContactUs">Contact Us</Link>
+        <Link to="/" onClick={optionClickHandler}>Home</Link>
+        <Link to="/whychooseus" onClick={optionClickHandler}>Why Choose Us</Link>
+        <Link to="/specialOffers" onClick={optionClickHandler}>Special Offers</Link>
+        <Link to="/testimonials" onClick={optionClickHandler}>Testimonials</Link>
+        <Link to="/ReferalPage" onClick={optionClickHandler}>Refer and Earn</Link>
+        <Link to="/ContactUs" onClick={optionClickHandler}>Contact Us</Link>
       </div>
       <ul className="hamburger" ref={hamRef} onClick={hamburgerClickHandler}>
         <li className="layer"></li>

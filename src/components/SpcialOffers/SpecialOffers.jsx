@@ -7,33 +7,12 @@ import OffersCarousel from "../OffersCarousel/OffersCarousel";
 import UpComingCarousel from "../UpComingCarousel/UpComingCarousel";
 import laminateImage from "../asset/image 11.svg";
 import Slider from "react-slick";
+import MainBanner from "../Banner/MainBanner";
 export default function SpecialOffers() {
 	return (
 		<div className="SpecialOffers-Container">
 			{" "}
-			<div className="SpecialOffers-Banner">
-				<img src={BannerImage} alt="" />
-				<div className="SpecialOffers-Banner-Contact-details">
-					<h1>Ritz Floor and Decor</h1>
-					<h3>Give an exotic look to your home</h3>
-					<h2>45690 YALE RD, Chilliwack, BC, Canada V2P2N3</h2>
-					<div className="SpecialOffers-Btn-row">
-						<span>
-							<LocalPhone />
-						</span>
-						<a href="tel:+ 604-702-2233">+ 604-702-2233</a>
-					</div>
-					<a
-						href="mailto:ritzfloor@gmail.com"
-						className="SpecialOffers-Banner-Contact-details-Email"
-					>
-						Email : ritzfloor@gmail.com
-					</a>
-				</div>
-				<div className="SpecialOffers-CariKature">
-					<img src={Vector} alt="" />
-				</div>
-			</div>
+			<MainBanner background={BannerImage}/>
 			<Laminate />
 			<h1 className="offer-h1">Offers</h1>
 			<div className="SpecialOffer-Carousel">
@@ -99,7 +78,6 @@ const Laminate = () => {
 				<div className="laminate-div">
 					<>
 						<span className={current == 0 ? "orange-dot" : ""}></span>
-
 						<span className={current == 1 ? "orange-dot" : ""}></span>
 						<span className={current == 2 ? "orange-dot" : ""}></span>
 					</>

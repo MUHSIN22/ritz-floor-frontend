@@ -87,3 +87,10 @@
 .react-multi-carousel-dot--active button{
 background: #E26739 !important;
 }
+
+@media only screen and (max-width: 500px) {
+  .Product-Catalogue-Header h1 {
+    margin: 1rem;
+    font-size: 1.6rem;
+  }
+}

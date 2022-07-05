@@ -38,7 +38,6 @@ export default function OffersCarousel() {
 					<div className="Offer-Card">
 						<img src={vinyl03} alt="" />
 						<span>20% off</span>
-
 						<div className="Offer-Card-description">
 							<h5>Wood logo</h5>
 						</div>

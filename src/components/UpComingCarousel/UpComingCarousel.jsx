@@ -11,15 +11,15 @@ export default function UpComingCarousel() {
   let slides = [
     <div className="UpCarousel-Slide">
       <img src={woodfloor} alt="" />
-      <span>22%0ff</span>
+      <span>22% 0ff</span>
     </div>,
     <div className="UpCarousel-Slide">
       <img src={tiles} alt="" />
-      <span>22%0ff</span>
+      <span>22% 0ff</span>
     </div>,
     <div className="UpCarousel-Slide">
       <img src={vinyl} alt="" />
-      <span>22%0ff</span>
+      <span>22% 0ff</span>
     </div>,
   ];
   return (

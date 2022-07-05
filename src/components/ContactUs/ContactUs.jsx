@@ -6,32 +6,11 @@ import ContactUsImage from "../asset/ContactUs-image.jpg";
 import { FmdGood } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import Vector from "../asset/Kerikature.png";
+import MainBanner from "../Banner/MainBanner";
 export default function ContactUs() {
 	return (
 		<div className="ContactUs-Container">
-			<div className="ContactUs-Banner">
-				<img src={BannerImage03} alt="" />
-				<div className="ContactUs-Banner-Contact-details">
-					<h1>Ritz Floor and Decor</h1>
-					<h3>Give an exotic look to your home</h3>
-					<h2>45690 YALE RD, Chilliwack, BC, Canada V2P2N3</h2>
-					<div className="ContactUs-Btn-row">
-						<span>
-							<LocalPhone />
-						</span>
-						<a href="tel:+ 604-702-2233">+ 604-702-2233</a>
-					</div>
-					<a
-						href="mailto:ritzfloor@gmail.com"
-						className="ContactUs-Banner-Contact-details-Email"
-					>
-						Email : ritzfloor@gmail.com
-					</a>
-				</div>
-				<div className="ContactUs-CariKature">
-					<img src={Vector} alt="" />
-				</div>
-			</div>
+			<MainBanner background={BannerImage03}/>
 			<div className="ContactUs-Block">
 				<div className="Map-Div">
 					<div className="Map-row">
