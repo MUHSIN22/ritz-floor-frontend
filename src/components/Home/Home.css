@@ -1,5 +1,6 @@
 @import "~slick-carousel/slick/slick.css"; 
 @import "~slick-carousel/slick/slick-theme.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&family=Unna:wght@400;700&display=swap');
 
 .Home-Container {
   width: 100%;
@@ -98,13 +99,13 @@ height: 57px;
   gap:200px;
 }
 .Why-choose-us-content {
-  width: 50%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 .Why-choose-us-content h1{
-  font-size: 40px;
+  font-size: 2.1rem;
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 50px;
@@ -115,7 +116,7 @@ height: 57px;
   margin-top: 0;
   margin-bottom: 40px;
   line-height: 1.4;
-  width: 90%;
+  width: 100%;
   
 }
 .Why-choose-us-content a {
@@ -127,7 +128,7 @@ height: 57px;
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 500;
   margin-top: 0;
 }
@@ -136,16 +137,16 @@ height: 57px;
   text-align: justify;
 }
 .Why-choose-us-content h4 {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   font-weight: 400;
   margin-top: 0;
   margin-bottom: 40px;
   line-height: 1.4;
-  width: 90%;
+  width: 100%;
 }
 .Why-choose-us-Image {
-  width: 640px;
-height: 552px;
+  width: 40%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -154,7 +155,8 @@ height: 552px;
 }
 .Why-choose-us-Image img {
   width: 100%;
-  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1/1;
 }
 .slick-crousel-container div{
 
@@ -224,10 +226,12 @@ text-align: center;
 margin:34px 0 100px 0;
 }
 .client-text-h1{
-  font-size: 40px;
+  font-size: 2.1rem;
   text-align: center;
-  margin-top: 104px;
+  margin-top: 2rem;
 }
+
+
 
 @media only screen and (max-width: 768px) {
   .Product-Name h2 {
@@ -349,6 +353,18 @@ margin:34px 0 100px 0;
   }
   .client-text-h1 {
     font-size: 1.6rem;
+  }
+  .Btn-row a {
+    width: max-content;
+    height: max-content;
+    border-radius: 7px;
+    font-size: 1rem;
+  }
+  .Btn-row{
+    gap: 0;
+  }
+  .Btn-row span{
+    height: max-content;
   }
   
 }

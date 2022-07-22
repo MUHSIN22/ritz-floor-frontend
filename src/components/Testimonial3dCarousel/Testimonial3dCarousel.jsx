@@ -23,9 +23,7 @@ export default function Testimonial3dCarousel() {
 
 			<div className="Testimonial-Slide-Content">
 				<p>
-					The Ritz floor is the leader of floor installation and repair in the
-					country sed diam nonumy eirmod tempor invidunt ut labore and efficient
-					strategy.
+					One of the best one stop shop for all your tiles and decor needs. Be it office, house, or penthouse. The staff is professional, well aware of the trends and is pretty helpful with exactly what you need. 
 				</p>
 				<div className="Testimonial-Slide-Profile-Row">
 					<div className="Testimonials-Profile-Image">
@@ -46,9 +44,7 @@ export default function Testimonial3dCarousel() {
 			</div>
 			<div className="Testimonial-Slide-Content">
 				<p>
-					The Ritz floor is the leader of floor installation and repair in the
-					country sed diam nonumy eirmod tempor invidunt ut labore and efficient
-					strategy.
+					Ritz Floor and Decor helps you with the exact flooring and decor needs. They have a wide range of tiles and is budget friendly. Their staff is amazing and well versed with different decor styles, plus the quality of the material is high-grade. 
 				</p>
 				<div className="Testimonial-Slide-Profile-Row">
 					<div className="Testimonials-Profile-Image">
@@ -69,9 +65,7 @@ export default function Testimonial3dCarousel() {
 			</div>
 			<div className="Testimonial-Slide-Content">
 				<p>
-					The Ritz floor is the leader of floor installation and repair in the
-					country sed diam nonumy eirmod tempor invidunt ut labore and efficient
-					strategy.
+					I came here looking for flooring for my garage, I was so taken aback by the material and the amazing quality, I ended up buying new flooring for my living room.
 				</p>
 				<div className="Testimonial-Slide-Profile-Row">
 					<div className="Testimonials-Profile-Image">

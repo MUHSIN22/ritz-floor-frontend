@@ -1,5 +1,5 @@
-import React from "react";
-import BannerImage from "../asset/BannerImage03.png";
+import React, { useEffect, useState } from "react";
+import BannerImage from "../asset/BannerImage08.png";
 import { LocalPhone } from "@mui/icons-material";
 import Vector from "../asset/Kerikature.png";
 import SpringCarousel from "../SpringCarousel/SpringCarousel";
@@ -18,7 +18,20 @@ import CustomClientCrousel from "../VanillaVideo/customClientCrousel";
 import ReactPlayer from "react-player";
 import MainBanner from "../Banner/MainBanner";
 import HomeTestimonialCarousel from "../HomeTestimonialCarousel/HomeTestimonialCarousel";
+import TestimonialSlider from "../Utils/TestimonialSlider/TestimonialSlider";
+import axiosInstance from "../../Axios/axiosInstance";
+import { toast } from "react-toastify";
 export default function Testimonials() {
+	const [textTestimonials,setTextTestimonials] = useState([])
+	useEffect(() => {
+		window.scrollTo(0,0);
+		axiosInstance.get('/crousels/get-content/testimonials/section-2')
+            .then(res => {
+                setTextTestimonials(res.data.item)
+            }).catch(err => {
+                toast.error("Please refresh the page!")
+            })
+	},[])
 	return (
 		<div className="Testimonials-Container">
 			<MainBanner background={BannerImage}/>
@@ -29,12 +42,19 @@ export default function Testimonials() {
 				<HomeTestimonialCarousel />
 			</div>
 
-			<div className="Testimonials-Carousel02">
+			<div className="testimonial-second-section">
+				<h1>Testimonial</h1>
+				<div className="testimonial-slider-holder">
+					<TestimonialSlider slideItems={textTestimonials}/>
+				</div>
+			</div>
+
+			{/* <div className="Testimonials-Carousel02">
 				<div className="Testimonials-Carousel02-Header">
 					<h1>Testimonial</h1>
 				</div>
 				{typeof window !== "undefined" && <Testimonial3dCarousel />}
-			</div>
+			</div> */}
 			<div className="VideoTestimonials-Carousel03">
 				<div className="VideoTestimonials-Carousel03-Header">
 					<h1>Video Testimonials</h1>

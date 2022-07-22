@@ -121,13 +121,15 @@
     width: 90%;
     height: 20rem;
   }
-  .react-3d-carousel {
+  .UpComingCarousel .react-3d-carousel {
     width: 100vw !important;
     height: 344px !important;
+    overflow: visible;
   }
   .upcomming-offer-h1 {
     font-size: 1.8rem;
     text-align: center;
+    margin-bottom: 1rem;
   }
   .UpCarousel-Slide span {
     width: 3rem;

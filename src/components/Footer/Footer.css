@@ -2,10 +2,11 @@
   background-color: #5b5756;
   padding: 2rem 5%;
   display: grid;
-  grid-template-columns: 3fr 2fr 2fr;
+  grid-template-columns: 2fr 2fr 2fr 2fr;
   grid-gap: 3rem;
-  grid-template-areas: 'map touch newsletter''copy copy copy';
+  grid-template-areas: 'map touch quicklinks newsletter''copy copy copy copy';
   margin-top: 3rem;
+  position: relative;
 }
 .Footer-Container .footer-title{
   font-size: 2rem;
@@ -38,11 +39,28 @@
   text-decoration: none;
 }
 .Footer-Container .Footer-Social-media{
-  margin-top: 1rem;
+  margin-top: 3rem;
+  width: 50%;
+  display: flex;
+  justify-content: center;
 }
 .Footer-Container .Footer-Social-media svg{
-  font-size: 2rem;
+  font-size: 3rem;
   margin-right: 1rem;
+}
+.Footer-Container .quick-links{
+  grid-area: quicklinks;
+}
+.Footer-Container .quick-links ul{
+  list-style: none;
+}
+.Footer-Container .quick-links li{
+  margin: 0.5rem 0;
+}
+.Footer-Container .quick-links a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
 }
 .Footer-Container .News-Letter{
   grid-area: newsletter;
@@ -63,15 +81,37 @@
 .Footer-Container .News-Letter input::placeholder{
   color: #fff;
 }
-.Footer-Container .News-Letter a{
+.Footer-Container .News-Letter a,
+.Footer-Container .News-Letter button{
   background: #E26739;
   padding: 0.8rem 1.5rem;
+  border: none;
+  cursor: pointer;
   border-radius: 8px;
   color: #fff;
   font-weight: 600;
   text-decoration: none;
   width: max-content;
+  display: block;
   margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.Footer-Container .News-Letter a:last-child{
+  margin-top: 2rem;
+  margin-left: auto;
+  position: absolute;
+  bottom: 2rem;
+  z-index: 1000;
+  right: 2rem;
+  border: 2px solid #fff;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+.Footer-Container .News-Letter a:last-child:hover{
+  background: #fff;
+  color: #E26739;
 }
 .Footer-Container .techjain-container{
   grid-area: copy;
@@ -83,6 +123,11 @@
   color: #fff;
   text-decoration: none;
 }
+.Footer-Container .techjain-container hr{
+  width: 80%;
+  margin: auto;
+  margin-bottom: 2rem;
+}
 
 @media only screen and (max-width: 768px) {
   .Footer-Container {
@@ -91,7 +136,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 3rem;
-    grid-template-areas: 'map' 'touch' 'newsletter''copy';
+    grid-template-areas: 'map' 'touch' 'quicklinks' 'newsletter''copy';
     margin-top: 3rem;
   }
 }
@@ -119,5 +164,21 @@
   .Footer-Container .techjain-container a,
   .Footer-Container .techjain-container p {
     font-size: 0.8rem;
+  }
+  .Footer-Container .News-Letter a{
+    width: 100%;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+  .Footer-Container .News-Letter a:last-child{
+    position: initial;
+    height: max-content;
+    margin-top: 1rem;
+  }
+  .Footer-Container .news-btn-wrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-end;
   }
 }

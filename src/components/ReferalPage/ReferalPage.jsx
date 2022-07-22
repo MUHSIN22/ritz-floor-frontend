@@ -1,13 +1,18 @@
 import { Close, LocalPhone } from "@mui/icons-material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ReferalPage.css";
 import BannerImage from "../asset/BannerImage06.png";
 import Vector from "../asset/Kerikature.png";
 import pref from "../asset/preferances.png";
 import ReferAndEarn from "../ReferAndEarnPopUp/ReferAndEarn";
 import MainBanner from "../Banner/MainBanner";
+import ReferSuccessPopup from "../ReferSuccessPopup/ReferSuccessPopup";
 export default function ReferalPage() {
-	const [ShowPopUp, setShowPopUp] = useState(false);
+	const [ShowPopUp, setShowPopUp] = useState(true);
+	const [showSuccess,setShowSuccess] = useState(false)
+	useEffect(() => {
+		window.scrollTo(0,0)
+	})
 	return (
 		<div className="ReferalPage-Container">
 			<MainBanner background={BannerImage} />
@@ -19,18 +24,10 @@ export default function ReferalPage() {
 				<div className="Refer-Content-col">
 					<h1>Refer and Earn</h1>
 					<p>
-						Leader’s in Floor & Decor, You can make some extra money by
-						referring others to the service. To earn money, you don't have to do
-						much more than recommend the apps to your friends and relatives.
-						It's possible that the other person is a close friend, an
-						acquaintance, or even a coworker.
+						Leader’s in Floor & Decor, You can make some extra money by referring others to the service. To earn money, you don't have to do much more than recommend the apps to your friends and relatives. It's possible that the other person is a close friend, an acquaintance, or even a coworker.
+						<br /><br />
+						One of the most effective ways to sell a product is through word-of-mouth referrals, and some companies use the referral system to get their products in front of a larger audience.
 					</p>
-					<p>
-						One of the most effective ways to sell a product is through
-						word-of-mouth referrals, and some companies use the referral system
-						to get their products in front of a larger audience.
-					</p>
-
 					<button className="Refer-btn" onClick={() => setShowPopUp(true)}>
 						Refer
 					</button>
@@ -38,9 +35,13 @@ export default function ReferalPage() {
 			</div>
 			{ShowPopUp && (
 				<div className="Refer-Pop-Up">
-					<ReferAndEarn />
+					<ReferAndEarn setShowPopUp={setShowPopUp} setShowSuccess={setShowSuccess}/>
 				</div>
 			)}
+			{
+				showSuccess&&
+				<ReferSuccessPopup />
+			}
 		</div>
 	);
 }

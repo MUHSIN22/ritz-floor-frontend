@@ -23,6 +23,8 @@
     width: 10rem;
     height: 10rem;
     margin-top: -6rem;
+    border-radius: 50%;
+    object-fit: cover;
 }
 .testimonial-card h4{
     font-size: 1.5rem;
@@ -45,6 +47,8 @@
 .testimonial-carousel-container .static-avatar{
     width: 10rem;
     height: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 @media only screen and (max-width: 768px) {

@@ -8,6 +8,15 @@
   padding-bottom: 2rem;
   margin-top: 3rem;
   padding-top: 2rem;
+  position: relative;
+}
+.ReferAndEarn-Container .close-icon{
+  color: #fff;
+  font-size: 2rem;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  cursor: pointer;
 }
 .ReferAndEarn-Header {
   width: 100%;
@@ -26,12 +35,19 @@
 .ReferAndEarn-Banner img {
   width: 100%;
 }
+.refer-content{
+  display: flex;
+  justify-content: space-around;
+}
 .Refer-Form {
   width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items:center
+}
+.Refer-Form label{
+  margin-top: 1rem;
 }
 .Refer-Form-COl {
   width: 80%;
@@ -48,6 +64,15 @@
   border-radius: 8px;
   background-color: transparent;
 }
+.Refer-Form-COl textarea{
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid white;
+  border-radius: 8px;
+  background-color: transparent;
+  resize: none;
+  height: 7rem;
+}
 .Refer-Submit {
   width: 50%;
   display: flex;
@@ -62,4 +87,51 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  margin-top: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .ReferAndEarn-Banner {
+    display: none;
+  }
+  .Refer-Form {
+    width: 100%;
+  }
+  .refer-content {
+    width: 100%;
+  }
+  .ReferAndEarn-Header h1{
+    font-size: 1.5rem;
+  }
+  .Refer-Form-COl input {
+    width: 100%;
+    padding: 0.5rem;
+    color: #fff;
+    border-radius: 8px;
+  }
+  .Refer-Form label {
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .Refer-Form label {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  .ReferAndEarn-Container {
+    width: 95%;
+    gap: 0;
+  }
+  .ReferAndEarn-Container .close-icon{
+    font-size: 1.7rem;
+    top: 1rem;
+    right: 1rem;
+  }
+  .ReferAndEarn-Header h1 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+  }
+  .Refer-Form-COl textarea{
+    height: 5rem;
+  }
 }

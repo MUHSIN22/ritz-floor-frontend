@@ -40,6 +40,8 @@
 
 .Offer-Card img {
   width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 
 .Offer-Card-description {
@@ -50,7 +52,7 @@
   background: #FFFFFF;
   box-shadow: 10px 4px 20px rgba(0, 0, 0, 0.25);
   position: relative;
-  bottom: 100px;
+  bottom: 50px;
 
 
 
@@ -66,7 +68,7 @@
   display: flex;
   justify-content: center;
 }
-.react-multi-carousel-track {
+.Offers .react-multi-carousel-track {
   padding-top: 5rem;
 }
 
@@ -97,6 +99,6 @@
   }
   .Offer-Card-description {
     width: 100%;
-    bottom: 4rem;
+    bottom: 2rem;
   } 
 }

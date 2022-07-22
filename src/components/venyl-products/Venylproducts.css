@@ -1,212 +1,247 @@
-
-.banner-container{
-    width: 100%;
+.banner-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
 }
-.vinyl-Banner{
-    height: 100%;
-    width: 100vw;
-    display: flex;
+.vinyl-Banner {
+  height: 100%;
+  width: 100vw;
+  display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 72px;
 }
 .vinyl-Banner-Contact-details {
-    width: 858px;
-    height: 547px;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: absolute;
-    top: 22%;
-    left: 5%;
-    gap: 1.5rem;
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    padding:1rem 0 0 2rem;
-  
-  }
-  .vinyl-Banner-Contact-details h1 {
-    margin: 0%;
-    color: #e26739;
-    text-shadow: 0px 10px 20px rgba(247, 146, 30, 0.5);
-    font-size: 80px;
-    font-weight: 600;
-   
-    position: relative;
-  
-  }
-  .vinyl-Banner-Contact-details h2 {
-    margin: 0%;
-    color: #000000;
-    text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-    font-size: 35px;
-    font-weight: 600;
-    width: 60%;
-    line-height: 1.6;
-  }
-  .vinyl-Banner-Contact-details h3 {
-    margin: 0%;
-    font-family: 'Smooch', cursive;
-    color: rgba(0, 0, 0, 0.7);
-    font-size: 50px;
-    font-weight: 400;
-  }
-  .vinyl-Btn-row {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
-  }
-  .vinyl-Btn-row span {
-    width: 10%;
-    height: 57px;
-    background-color: #e26739;
-    color: white;
-    padding: 0.6rem 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    font-size: 25px;
-    font-weight: 600;
-  }
-  .vinyl-Btn-row a {
-    width: 287px;
-  height: 57px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    background-color: #e26739;
-    justify-content: center;
-    
-    color: white;
-    border-radius: 10px;
-    font-size: 25px;
-    font-weight: 600;
-  }
-  .vinyl-Banner-Contact-details-Email {
-    text-decoration: none;
-    color: #000000;
-    font-weight: 600;
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    margin-top: 12px;
-  }
-  .vinyl-Home-CariKature {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    position: absolute;
-    bottom: -4%;
-   right: -19%;
-    direction: ltr;
-    
-   
-  }
-  .vinyl-Home-CariKature img {
-    width: 1200px;
-    height: 820px;
-    position: relative;
-    bottom: 3%;
-    overflow: hidden !important;
-    clip: rect(110px, 160px, 170px, 60px);
-   
-  }
+  width: 858px;
+  height: 547px;
 
-
-.venyl-h1{
-    font-size: 45px;
-    font-weight: 600;
-    text-align: center;
-    margin-top: 100px;
-    margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  top: 22%;
+  left: 5%;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 1rem 0 0 2rem;
 }
-.venyl-card-container{
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-  
-    display: flex;
-    flex-wrap: wrap;
-    gap:10rem;
-    width: 90%;
-   justify-content: center;
+.vinyl-Banner-Contact-details h1 {
+  margin: 0%;
+  color: #e26739;
+  text-shadow: 0px 10px 20px rgba(247, 146, 30, 0.5);
+  font-size: 80px;
+  font-weight: 600;
+
+  position: relative;
+}
+.vinyl-Banner-Contact-details h2 {
+  margin: 0%;
+  color: #000000;
+  text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  font-size: 35px;
+  font-weight: 600;
+  width: 60%;
+  line-height: 1.6;
+}
+.vinyl-Banner-Contact-details h3 {
+  margin: 0%;
+  font-family: "Smooch", cursive;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 50px;
+  font-weight: 400;
+}
+.vinyl-Btn-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+.vinyl-Btn-row span {
+  width: 10%;
+  height: 57px;
+  background-color: #e26739;
+  color: white;
+  padding: 0.6rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 25px;
+  font-weight: 600;
+}
+.vinyl-Btn-row a {
+  width: 287px;
+  height: 57px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  background-color: #e26739;
+  justify-content: center;
+
+  color: white;
+  border-radius: 10px;
+  font-size: 25px;
+  font-weight: 600;
+}
+.vinyl-Banner-Contact-details-Email {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  margin-top: 12px;
+}
+.vinyl-Home-CariKature {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  bottom: -4%;
+  right: -19%;
+  direction: ltr;
+}
+.vinyl-Home-CariKature img {
+  width: 1200px;
+  height: 820px;
+  position: relative;
+  bottom: 3%;
+  overflow: hidden !important;
+  clip: rect(110px, 160px, 170px, 60px);
+}
+
+.venyl-h1 {
+  font-size: 2.1rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 2rem;
+}
+.venyl-card-container {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 10rem;
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-auto-rows: auto;
+  gap: 3rem;
 }
 .venyl-card{
-    width: 335px;
-    height: 480px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0px 0px 30px rgba(0,0,0,0.2);
+}
 
- 
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-}
-.venyl-card h2{
-    color: #E26739;
-    text-align: center;
-    font-size: 35px;
-    font-family: 600;
-    margin: 20px 0 0 0;
-    
-}
-.venyl-card h3{
-    font-size: 35px;
-    font-weight: 400;
-    text-align: center;
-    margin-top: 10px;
-   
-   
-}
 .venyl-card div{
-    padding: 20px 30px;
-    background: #E26739;
-    position: relative;
-   
-  top:-95%;
-    
-    width: 100px;
-    
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.5rem;
+  background: #e26739;
+  color: #000000;
 }
-.venyl-card img{
-    width: 335px;
-height: 335px;
+.wall-img{
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.venyl-card:hover .wall-img{
+  transform: scale(1.2);
+}
+.vinyl-content {
+  width: 90vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+.vinyl-content h1 {
+  text-align: center;
+  font-size: 2.1rem;
+  margin-top: 2rem;
+}
+.vinyl-content p {
+  text-align: center;
+  font-size: 1.3rem;
+  width: 70%;
+  line-height: 1.5;
 }
 
-
-
-
-  .vinyl-content{
-    width: 90vw;
-    position: relative;
-    left:50%;
-    transform: translateX(-50%);
+@media only screen and (max-width: 768px) {
+  .venyl-card-container {
+    position: inherit;
+    left: 0;
+    transform: translateX(0);
     display: flex;
-    flex-direction: column;
-    gap:1rem;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    padding: 1rem;
   }
-  .vinyl-content h1{
+  .venyl-card {
+    width: calc(100% / 3 - 2rem);
+    margin: 1rem;
+  }
+  .vinyl-content h1 {
     text-align: center;
-    font-size: 50px;
-    margin-top: 5rem;
-    
+    font-size: 2rem;
+    margin-top: 2rem;
   }
-  .vinyl-content p{
+  .vinyl-content p {
+    font-size: 1.2rem;
+    width: 100%;
+  }
+  .venyl-h1 {
+    font-size: 2rem;
+    font-weight: 600;
     text-align: center;
-    font-size: 35px;
-    width: 70%;
-    line-height: 1.5;
+    margin: 1rem;
   }
+}
 
+@media only screen and (max-width: 500px) {
+  .vinyl-content h1 {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+  }
+  .vinyl-content p {
+    font-size: 1rem;
+    width: 100%;
+    text-align: justify;
+  }
+  .venyl-h1 {
+    font-size: 1.6rem;
+  }
+  .venyl-card {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+  .venyl-card h2 {
+    font-size: 1.3rem;
+    margin-top: 0;
+  }
+  .venyl-card h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+}

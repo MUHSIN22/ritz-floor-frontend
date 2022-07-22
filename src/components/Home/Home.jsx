@@ -12,33 +12,46 @@ import MainBanner from "../Banner/MainBanner";
 import HomeTestimonialCarousel from "../HomeTestimonialCarousel/HomeTestimonialCarousel";
 import BannerImage from '../asset/BannerImage.png'
 import BannerImageMobile from '../asset/BannerImageMobile.png'
+import PageDataFetcher from "../../APIServices/PageDataFetcher";
+import config from "../../Constants/config";
 export default function Home() {
+	const [whyChooseUs, setWhyChooseUs] = useState(null)
+
+	useEffect(() => {
+		window.scrollTo(0, 0)
+		PageDataFetcher.getSectionItems('homepage', 2)
+			.then(res => {
+				console.log(res[0]);
+				setWhyChooseUs(res[0])
+			})
+	}, [])
 	return (
 		<div className="Home-Container">
-			<MainBanner background={BannerImage}/>
+			<MainBanner background={BannerImage} />
 			<div className="Products">
 				<ProductCat />
 			</div>
-			<div className="Why-choose-us">
-				<div className="Why-choose-us-content">
-					<h1>Why Choose Us</h1>
-					<h4>
-						When it comes to creating a beautiful space, flooring plays a
-						decisive role. We invite you to have a look at the stunning Span
-						floor installations across the country.
-					</h4>
-					<Link to="/Aboutus" className="Read-more">
-						Read More
-					</Link>
-				</div>
-				<div className="Why-choose-us-Image">
-					<img src={laminate} alt="" />
-				</div>
+			{
+				whyChooseUs &&
+				<div className="Why-choose-us">
+					<div className="Why-choose-us-content">
+						<h1>{whyChooseUs.title}</h1>
+						<h4>
+							{whyChooseUs.content}
+						</h4>
+						<Link to="/whychooseus" className="Read-more">
+							Read More
+						</Link>
+					</div>
+					<div className="Why-choose-us-Image">
+						<img src={config.backendURL+whyChooseUs.img} alt="" />
+					</div>
 
-				{/* <div className="Home-CariKature">
+					{/* <div className="Home-CariKature">
 					<img src={Vector} alt="" />
 				</div> */}
-			</div>
+				</div>
+			}
 			<h1 className="client-text-h1">What Client Says</h1>
 			<div className="Testimonial-Carousel">
 				<HomeTestimonialCarousel />
@@ -75,14 +88,14 @@ const CenterModee = () => {
 	);
 };
 const CustomSlider = () => {
-	
+
 	return <div className="new-card">
 
 	</div>;
 };
 
 const CenterMode = () => {
-	useEffect(() => {}, []);
+	useEffect(() => { }, []);
 	const settings = {
 		className: "center",
 		centerMode: true,

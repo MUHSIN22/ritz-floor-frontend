@@ -137,22 +137,24 @@
     display: none;
   }
   .Testimonial3dCarousel-Slide {
-    width: 100%;
+    width: 90%;
   }
   .Testimonial3dCarousel-Slide {
-    width: 100%;
+    width: 90%;
     padding: 0.5rem;
   }
   .Testimonial-Slide-Content p {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   .Testimonial-Slide-Content h5 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-top: 0;
     font-weight: 400;
+    line-height: normal;
   }
   .Testimonial-Slide-Content h4 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 500;
+    line-height: normal;
   }
 }

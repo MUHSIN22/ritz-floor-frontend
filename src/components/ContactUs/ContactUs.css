@@ -1,173 +1,61 @@
-.ContactUs-Container {
-  width: 100%;
+.ContactUs-Block{
+  width: 85%;
+  margin: auto;
+  background: linear-gradient(180deg, rgba(255, 157, 1, 0.24) -86.64%, rgba(226, 103, 57, 0.8) 119.4%);
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;  
+  padding: 4rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 120px;
+  gap: 2rem;
+  margin-top: 3rem;
 }
-
-.ContactUs-Banner {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 120px;
-}
-.ContactUs-Banner img {
-  width: 100%;
-  height: 100vh;
-}
-.ContactUs-Banner-Contact-details {
-  width: 858px;
-  height: 547px;
-  
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: absolute;
-  top: 20%;
-  left: 5%;
-  gap: 1.5rem;
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  padding:1rem 0 0 2rem;
-}
-.ContactUs-Banner-Contact-details h1 {
-  margin: 0%;
-  color: #e26739;
-  text-shadow: 0px 10px 20px rgba(247, 146, 30, 0.5);
-  font-size: 80px;
-  font-weight: 600;
- 
-  position: relative;
-}
-
-.ContactUs-Banner-Contact-details h2 {
-  margin: 0%;
-  color: #000000;
-  text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-  font-size: 35px;
-  font-weight: 600;
-  width: 60%;
-  line-height: 1.6;
-}
-.ContactUs-Banner-Contact-details h3 {
-  margin: 0%;
-  font-family: 'Smooch', cursive;
-  color: rgba(0, 0, 0, 0.7);
-  font-size: 50px;
-  font-weight: 400;
-}
-.ContactUs-Btn-row {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
-}
-.ContactUs-Btn-row span {
-  width: 10%;
-  height: 57px;
-  background-color: #e26739;
-  color: white;
-  padding: 0.6rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  font-size: 25px;
-  font-weight: 600;
-}
-.ContactUs-Btn-row a {
-  width: 287px;
-  height: 57px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    background-color: #e26739;
-    justify-content: center;
-    
-    color: white;
-    border-radius: 10px;
-    font-size: 25px;
-    font-weight: 600;
-}
-.ContactUs-Banner-Contact-details-Email {
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 1.3rem;
-}
-.ContactUs-Block {
-  width: 90%;
-  display: flex;
-  flex-direction: row;
-  background: #FFFFFF;
-box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
-gap: 4rem;
-padding: 1rem;
-}
-.ContactUs-CariKature {
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  position: absolute;
-  bottom: -4%;
- right: -19%;
-  direction: ltr;
-}
-.ContactUs-CariKature img {
-  width: 1200px;
-  height: 820px;
-  position: relative;
-  bottom: 3%;
-  overflow: hidden !important;
-  clip: rect(110px, 160px, 170px, 60px);
-}
-.Map-Div {
+.contact-content{
   width: 50%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-left: 30px;
+  justify-content: center;
 }
-.Map-row {
-  width: 100%;
+.contact-content p{
+  font-size: 1.2rem;
+}
+.contact-content .contact-list{
+  margin-top: 1rem;
+  list-style: none;
+}
+.contact-content .contact{
+  margin: 2rem 0;
   display: flex;
-  flex-direction: row;
   align-items: center;
+  gap: 1rem;
+  font-size: 1.5rem;
 }
-.Map-row img {
-  width: 100%;
-  border-radius: 10px;
-  aspect-ratio: 3/1;
-  object-fit: cover;
+.contact-content .contact a{
+  font-size: 1.2rem;
+  color: #000;
+  text-decoration: none;
 }
-.Map-row iframe {
-  width: 100%;
-  border: none;
-  aspect-ratio: 3/1;
-  border-radius: 10px;
+.contact-content .social-icons{
+  padding-left: 10%;
+  display: flex;
+  gap: 1rem;
+  font-size: 2rem;
 }
+.contact-content .social-icons a{
+  color: #000;
+}
+
 .ContactUs-Form {
   width: 50%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 50px;
 }
 .ContactUs-Form form {
-  width: 100%;
+  width: 80%;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  margin: auto;
 }
 .Form-col {
   width: 100%;
@@ -178,7 +66,7 @@ padding: 1rem;
 }
 .Form-col input {
   width: 100%;
-  padding: 1rem;
+  padding: 0.5rem;
   border: 2px solid #EAB569;
   border-radius: 8px;
   margin-bottom: 25px;
@@ -189,9 +77,9 @@ padding: 1rem;
   padding: 1rem;
   border: 2px solid #EAB569;
   border-radius: 8px;
-  height: 15rem;
+  resize: none;
 }
-.ContactUs-Form a {
+.ContactUs-Form button {
   padding:1rem 2rem;
   display: flex;
   flex-direction: column;
@@ -201,8 +89,11 @@ padding: 1rem;
   color: white;
   text-decoration: none;
   margin-top: 40px;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-weight: 500;
+  border: none;
+  margin: auto;
+  margin-top: 1rem;
 }
 .ContactUs-header h1{
   font-size: 2.5rem;
@@ -210,7 +101,7 @@ padding: 1rem;
   margin-bottom: 2rem;
 }
 .Form-col label{
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-weight: 500;
   margin-bottom: 10px;
 }
@@ -231,10 +122,28 @@ padding: 1rem;
   }
   .Form-col label {
     margin-bottom: 0;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   .Form-col textarea {
     height: 10rem;
+  }
+  .ContactUs-Block {
+    width: 95%;
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+  .ContactUs-Form form {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+  .contact-content .contact a {
+    font-size: 1rem;
+    color: #000;
+    text-decoration: none;
+  }
+  .contact-content p {
+    font-size: 1rem;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -259,10 +168,10 @@ padding: 1rem;
   .Form-col label {
     font-size: 1.2rem;
   }
-  .ContactUs-Form a {
+  .ContactUs-Form button {
     padding: 1rem 2rem;
     margin-top: 1rem;
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
   .Map-Div {
     width: 100%;
@@ -290,9 +199,33 @@ padding: 1rem;
   .Form-col input {
     font-size: 1rem;
   }
-  .ContactUs-Form a {
+  .ContactUs-Form button {
     width: 100%;
     font-size: 1.2rem;
     padding: 0.5rem;
   }
+  .ContactUs-Block {
+    width: 100%;
+    padding: 1rem;
+    box-shadow: none;
+    margin-top: 0rem;
+    border-radius: 0;
+    flex-direction: column;
+  }
+  .contact-content {
+    width: 100%;
+  } 
+  .contact-content .social-icons{
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+  .ContactUs-Form form {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  .contact-content .contact-list {
+    margin-top: 0;
+  } 
 }

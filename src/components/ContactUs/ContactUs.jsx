@@ -1,54 +1,94 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./ContactUs.css";
 import BannerImage03 from "../asset/BannerImage03.png";
-import { LocalPhone, Scale } from "@mui/icons-material";
-import ContactUsImage from "../asset/ContactUs-image.jpg";
-import { FmdGood } from "@mui/icons-material";
-import { Link } from "react-router-dom";
-import Vector from "../asset/Kerikature.png";
+import {BsTelephoneFill,BsFacebook, BsInstagram, BsTwitter} from 'react-icons/bs'
+import {MdMail,MdLocationOn} from 'react-icons/md'
 import MainBanner from "../Banner/MainBanner";
+import axiosInstance from "../../Axios/axiosInstance";
+import { toast } from "react-toastify";
 export default function ContactUs() {
+	const contactRef = useRef(null);
+	const [formData,setFormData] = useState({
+		name: '',
+		email: '',
+		message: ''
+	})
+	
+
+	useEffect(() => {
+		window.scrollTo(0,0)
+	},[])
+
+	const onFormSubmission = (event) => {
+		event.preventDefault();
+		if(formData.email && formData.name && formData.message){
+			axiosInstance.post('/contact/send-contact-message',formData)
+			.then((res) => {
+				toast.success(res.data.message)
+				contactRef.current.reset()
+			}).catch(err => {
+				toast.error("Something went wrong!")
+			})
+		}
+
+	}
+
+	const inputHandler = (event) => {
+		setFormData({...formData,[event.target.name]:event.target.value})
+	}
+
 	return (
 		<div className="ContactUs-Container">
 			<MainBanner background={BannerImage03}/>
 			<div className="ContactUs-Block">
-				<div className="Map-Div">
-					<div className="Map-row">
-						<img src={ContactUsImage} alt="" />
-					</div>
-					<div className="Map-row">
-						<FmdGood style={{ transform: "scale(1.4)" }} />
-						<p className="map-p">45690 YALE RD, CHILLIWACK, BC V2P 2N3</p>
-					</div>
-					<div className="Map-row">
-						<iframe
-							title="Map"
-							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8047.789390793396!2d-121.96126358415081!3d49.15933855087769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54843f6181ae28cb%3A0xa1c9d8441b03984c!2sRitz%20Floor%20%26%20Decor!5e0!3m2!1sen!2sin!4v1655116671512!5m2!1sen!2sin"
-							allowfullscreen=""
-							loading="lazy"
-							referrerpolicy="no-referrer-when-downgrade"
-						></iframe>
-					</div>
-				</div>
-				<div className="ContactUs-Form">
+				<div className="contact-content">
 					<div className="ContactUs-header">
 						<h1>Get In Touch</h1>
 					</div>
-					<form>
+					<p className="contact-description">Fill the form and our Team will get back to you within 24 hours</p>
+					<ul className="contact-list">
+						<li className="contact">
+							<BsTelephoneFill/>
+							<a href="tel:+1 604 780 5352" target="_blank">+1 604 780 5352</a>
+						</li>
+						<li className="contact">
+							<MdMail/>
+							<a href="mailto:RITZFLOOR@GMAIL.COM" target="_blank">RITZFLOOR@GMAIL.COM</a>
+						</li>
+						<li className="contact .social-icons">
+							<MdLocationOn/>
+							<a href="" target="_blank">45690 YALE RD, CHILLIWACK, BC V2P 2N3</a>
+						</li>
+						<li className="social-icons">
+							<a href="" target="_blank">
+								<BsFacebook />
+							</a>
+							<a href="" target="_blank">
+								<BsTwitter />
+							</a>
+							<a href="" target="_blank">
+								<BsInstagram />
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div className="ContactUs-Form">
+					<form onSubmit={onFormSubmission} ref={contactRef}>
 						<div className="Form-col">
 							<label htmlFor="Name">Name</label>
-							<input type="text" name="Name" />
+							<input type="text" name="name" onChange={inputHandler}/>
 						</div>
 						<div className="Form-col">
 							<label htmlFor="Email">Email</label>
-							<input type="email" name="Name" />
+							<input type="email" name="email" onChange={inputHandler}/>
 						</div>
 						<div className="Form-col">
 							<label htmlFor="Name">Message</label>
-							<textarea name="Message" id="" cols="80" rows="10"></textarea>
+							<textarea name="message" onChange={inputHandler} id="" cols="80" rows="5"></textarea>
 						</div>
+						<button type="submit">Submit</button>
 					</form>
-					<Link to="/">Submit</Link>
+					
 				</div>
 			</div>
 		</div>

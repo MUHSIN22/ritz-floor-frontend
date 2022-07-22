@@ -3,13 +3,30 @@ import {
 	Mail,
 	FmdGood,
 	FacebookRounded,
-	Twitter,
 	Instagram,
 } from "@mui/icons-material";
-import React from "react";
+import loading from '../asset/loading.gif'
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axiosInstance from "../../Axios/axiosInstance";
 import "./Footer.css";
 export default function Footer() {
+	const [newsLetterEmail, setNewsLetterEmail] = useState(null)
+	const [isLoading, setLoading] = useState(false)
+	const handleNewsLetter = (event) => {
+		event.preventDefault();
+		if (newsLetterEmail && newsLetterEmail.length > 2) {
+			setLoading(true)
+			axiosInstance.post('/newsletter/send-news-letter', { email: newsLetterEmail })
+				.then((res) => {
+					console.log(res);
+					setLoading(false)
+				}).catch(err => {
+					console.log(err);
+					setLoading(false)
+				})
+		}
+	}
 	return (
 		<div className="Footer-Container">
 			<div className="Footer-Map">
@@ -24,11 +41,11 @@ export default function Footer() {
 			<div className="Get-in-Touch">
 				<h2 className="footer-title">Get In Touch</h2>
 				<div className="Get-in-touch-row">
-					<LocalPhone className="small-icons"/>
+					<LocalPhone className="small-icons" />
 					<a href="tel:+1 604 780 5352">+1 604 780 5352</a>
 				</div>
 				<div className="Get-in-touch-row">
-					<Mail  />
+					<Mail />
 					<a href="mailto:RITZFLOOR@GMAIL.COM">RITZFLOOR@GMAIL.COM</a>
 				</div>
 				<div className="Get-in-touch-row">
@@ -49,14 +66,48 @@ export default function Footer() {
 					</a>
 				</div>
 			</div>
-			<div className="News-Letter">
+			<div className="quick-links">
+				<h2 className="footer-title">Quick Links</h2>
+				<ul>
+					<li>
+						<Link to="/">Home</Link>
+					</li>
+					<li>
+						<Link to="/whychooseus">Why choose Us</Link>
+					</li>
+					<li>
+						<Link to="/specialOffers">Special Offers</Link>
+					</li>
+					<li>
+						<Link to="/testimonials">Testimonials</Link>
+					</li>
+					<li>
+						<Link to="/ReferalPage">Refer and Earn</Link>
+					</li>
+					<li>
+						<Link to="/ContactUs">Contact Us</Link>
+					</li>
+				</ul>
+			</div>
+			<form className="News-Letter" onSubmit={handleNewsLetter}>
 				<h2 className="footer-title">Newsletter</h2>
 				<h3>Signup to Newsletter</h3>
-				<input name="Email" id="01" placeholder="Email" />
-				<Link to="/">Submit</Link>
-				<Link to=''>Login</Link>
-			</div>
+				<input name="Email" type="email" id="01" onChange={(event) => setNewsLetterEmail(event.target.value)} placeholder="Email" />
+				<div className="news-btn-wrapper">
+					<button type="submit" className={isLoading ? "btn-disabled" : ''}>
+						{
+							isLoading &&
+							<span className="btn-loading">
+								<img src={loading} alt="" />
+							</span>
+						}
+						Submit
+					</button>
+					<Link to=''>Login</Link>
+				</div>
+			</form>
 			<div className="techjain-container">
+				<hr />
 				<p>
 					Design and Developed By{" "}
 					<span>

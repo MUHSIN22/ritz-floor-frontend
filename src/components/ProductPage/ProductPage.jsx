@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./ProductPage.css";
 import BannerImage02 from "../asset/BannerImage02.png";
 import { LocalPhone } from "@mui/icons-material";
@@ -6,6 +6,9 @@ import vinyl01 from "../asset/vinyl01.jpg";
 import vinyl02 from "../asset/vinyl02.jpg";
 import vinyl03 from "../asset/vinyl03.jpg";
 export default function ProductPage() {
+  useEffect(() => {
+    window.scrollTo(0,0)
+  },[])
   return (
     <div className="ProductPage-Container">
       <div className="ProductPage-Banner">

@@ -10,7 +10,7 @@ export default function MainBanner({background}) {
         <div className="main-banner-container" style={{ backgroundImage: `url(${background})` }}>
             <div className="content-section">
                 <div className="banner-content-card">
-                    <h1>Ritz Floor and Decore</h1>
+                    <h1>Ritz Floor and Decor</h1>
                     <h3>Give an exotic look to your home</h3>
                     <h2>45690 YALE RD, Chilliwack, BC, Canada V2P2N3</h2>
                     <div className="Btn-row">

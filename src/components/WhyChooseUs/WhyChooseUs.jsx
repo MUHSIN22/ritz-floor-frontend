@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./WhyChooseUs.css";
 import BannerImage from "../asset/BannerImage041.png";
 import { LocalPhone, CheckCircle } from "@mui/icons-material";
@@ -14,8 +14,20 @@ import work5 from '../asset/our works/w5.png'
 import work6 from '../asset/our works/w6.png'
 import work7 from '../asset/our works/w7.png'
 import work8 from '../asset/our works/w8.png'
+import whychooseus from '../asset/whychooseus.jpeg'
+import PageDataFetcher from "../../APIServices/PageDataFetcher";
+import config from "../../Constants/config";
 
 export default function WhyChooseUs() {
+	const [features, setFeatures] = useState(null)
+
+	useEffect(() => {
+		window.scrollTo(0, 0)
+		PageDataFetcher.getWhyChooseFeatures()
+			.then(res => {
+				setFeatures(res)
+			})
+	}, [])
 	return (
 		<>
 			<div className="WhyChooseUs-Container">
@@ -26,82 +38,102 @@ export default function WhyChooseUs() {
 							<h1 className="my-0">About Us</h1>
 						</div>
 						<p className="my-0">
-							Our Vision
+							<strong>Flooring with a new Skill</strong>
 							<br />
-							Winning over the world One room at a time
+							Select from a wide variety of flooring materials!
+							<br />
+							Outdoor Deck Flooring, Carpet Tiles, Vinyl Flooring (both homogeneous and heterogeneous), Sports Flooring, and Ecofit Flooring are just a few of the many goods available at Ritz Flooring. Whether you're looking for a flooring option for a home or a business, we've got you covered!
+							<br />
+							Contact us if you'd like to make use of our extensive selection of items.
 						</p>
-
 						<div className="AboutUs-Content-row">
-							<CheckCircle /> <p>CREDENTIALS</p>
+							<CheckCircle /> <p>Durability</p>
 						</div>
 						<div className="AboutUs-Content-row">
-							<CheckCircle /> <p>CUSTOMIZATION</p>
+							<CheckCircle /> <p>Cost-Effective</p>
 						</div>
 						<div className="AboutUs-Content-row">
-							<CheckCircle /> <p>EXPERIENCE</p>
+							<CheckCircle /> <p>Easy to Install</p>
 						</div>
 						<div className="AboutUs-Content-row">
-							<CheckCircle /> <p>ACCESSORIES</p>
+							<CheckCircle /> <p>Long Lifespan</p>
 						</div>
 						<div className="AboutUs-Content-row">
-							<CheckCircle /> <p>SPECIALIZATION</p>
+							<CheckCircle /> <p>Low Maintenance</p>
 						</div>
 						<div className="AboutUs-Content-row">
-							<CheckCircle /> <p>MAINTENANCE GUIDANCE</p>
+							<CheckCircle /> <p>Wide Choice</p>
 						</div>
 					</div>
 					<div className="AboutUs-Image">
-						<img src={Laminate} alt="" />
+						<img src={whychooseus} alt="" />
 					</div>
 				</div>
-				<div className="AboutUs-Features-Container">
+				{
+					features &&
+					<div className="AboutUs-Features-Container">
+						<div className="Features-Content">
+							<h1 className="my-0">{features.title}</h1>
+							<p className="my-0 features-p">
+								{features.content}
+							</p>
+						</div>
+						<Cat data={features} />
+					</div>
+				}
+				{/* <div className="AboutUs-Features-Container">
 					<div className="Features-Content">
 						<h1 className="my-0">Features</h1>
 						<p className="my-0 features-p">
-							Introduce that personal touch, a reflection of your distinct taste
-							in every inch of your floor tile renovation. Made with special
-							care, keeping convenience and elegance in mind, Welspun Flooring
-							offers the best flooring solutions with a wide range of floor
-							tiles, that are a perfect fit for every individual space in your
-							home
+							Compared to other forms of flooring, wood has a number of advantages. Even if you're building a new house, a fireplace provides warmth, character, and style. Although the initial investment is more than carpeting or linoleum, it can last a lifetime with proper upkeep and repairs. 
+							<br /><br />
+							Durability | Maintenance & Hygiene | Timeless Style | Great Investment!
 						</p>
 					</div>
 					<Cat />
-				</div>
+				</div> */}
 			</div>
 			<OurWorks />
 		</>
 	);
 }
 const OurWorks = () => {
+	const [works, setWorks] = useState(null)
+	useEffect(() => {
+		PageDataFetcher.getSectionItems('whychooseus', 3)
+			.then(res => {
+				setWorks(res[0])
+			})
+	}, [])
 	return (
-		<div className="work-container">
-			<div className="work-leftside">
-				<h1>Our Works</h1>
-				<p>
-					You can entirely change the look of your house's interior with our
-					home décor ideas and home improvement tips. Make a stylish statement
-					by giving your home's interiors a complete facelift. Look through our
-					gallery for some great inspiration and to learn why flooring is so
-					important in every home.
-				</p>
-			</div>
-			<div className="work-rightside">
-				<div className="rombus-row">
-					<div className="rombus" style={{backgroundImage: `url(${work1})`}}></div>
-					<div className="rombus" style={{backgroundImage: `url(${work2})`}}></div>
-					<div className="rombus" style={{backgroundImage: `url(${work3})`}}></div>
+		<>
+			{
+				works &&
+				<div className="work-container">
+					<div className="work-leftside">
+						<h1>{works.title}</h1>
+						<p>
+							{works.content}
+						</p>
+					</div>
+					<div className="work-rightside">
+						<div className="rombus-row">
+							<div className="rombus" style={{ backgroundImage: `url(${config.backendURL + works.img_1})` }}></div>
+							<div className="rombus" style={{ backgroundImage: `url(${config.backendURL + works.img_2})` }}></div>
+							<div className="rombus" style={{ backgroundImage: `url(${config.backendURL + works.img_3})` }}></div>
+						</div>
+						<div className="rombus-row">
+							<div className="rombus" style={{ backgroundImage: `url(${config.backendURL + works.img_4})` }}></div>
+							<div className="rombus" style={{ backgroundImage: `url(${config.backendURL + works.img_5})` }}></div>
+						</div>
+						<div className="rombus-row">
+							<div className="rombus" style={{ backgroundImage: `url(${config.backendURL + works.img_6})` }}></div>
+							<div className="rombus" style={{ backgroundImage: `url(${config.backendURL + works.img_7})` }}></div>
+							<div className="rombus" style={{ backgroundImage: `url(${config.backendURL + works.img_8})` }}></div>
+						</div>
+					</div>
 				</div>
-				<div className="rombus-row">
-					<div className="rombus" style={{backgroundImage: `url(${work4})`}}></div>
-					<div className="rombus" style={{backgroundImage: `url(${work5})`}}></div>
-				</div>
-				<div className="rombus-row">
-					<div className="rombus" style={{backgroundImage: `url(${work6})`}}></div>
-					<div className="rombus" style={{backgroundImage: `url(${work7})`}}></div>
-					<div className="rombus" style={{backgroundImage: `url(${work8})`}}></div>
-				</div>
-			</div>
-		</div>
+			}
+		</>
 	);
 };
