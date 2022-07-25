@@ -5,7 +5,7 @@
     top: 0;
     left: 0;
     background: rgba(0,0,0,0.5);
-    z-index: 100000;
+    z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,6 +18,15 @@
     align-items: center;
     gap: 2rem;
     border-radius: 3px;
+    position: relative;
+}
+.login-popup-container .close-icon{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: #fff;
+    font-size: 2.5rem;
+    cursor: pointer;
 }
 .login-popup-container h1{
     color: #fff;

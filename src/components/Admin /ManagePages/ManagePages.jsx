@@ -24,34 +24,36 @@ let sectionCount = {
 export default function ManagePages() {
     const location = useLocation();
     const navigate = useNavigate();
-    const [currentLocation,setCurrentLocation] = useState(null);
+    const [currentLocation, setCurrentLocation] = useState({title: 'home'});
 
     useEffect(() => {
         let paths = location.pathname.split('/')
-        if(paths.includes('home')){
+        if (paths.includes('home')) {
             setCurrentLocation(sectionCount.home)
-        }else if(paths.includes('why-choose-us')){
+        } else if (paths.includes('why-choose-us')) {
             setCurrentLocation(sectionCount.whychooseus)
-        }else if(paths.includes('testimonials')){
+        } else if (paths.includes('testimonials')) {
             setCurrentLocation(sectionCount.testimonials)
-        }else if(paths.includes("special-offers")){
+        } else if (paths.includes("special-offers")) {
             setCurrentLocation(sectionCount.specialOffers)
         }
-        
-    },[location])
+    }, [location])
     return (
         <section className="manage-pages">
-            <div className="pages-btns-wrapper">
-                <NavLink to="/admin-panel/manage-pages/home/1" className={({ isActive }) => isActive ? "btn-page btn-page--active" : 'btn-page'}>Home</NavLink>
-                <NavLink to="/admin-panel/manage-pages/why-choose-us/1" className={({ isActive }) => isActive ? "btn-page btn-page--active" : 'btn-page'}>Why Choose Us</NavLink>
-                <NavLink to="/admin-panel/manage-pages/testimonials/1" className={({ isActive }) => isActive ? "btn-page btn-page--active" : 'btn-page'}>Testimonials</NavLink>
-                <NavLink to="/admin-panel/manage-pages/special-offers/1" className={({ isActive }) => isActive ? "btn-page btn-page--active" : 'btn-page'}>Special Offers</NavLink>
-            </div>
+            {
+                currentLocation &&
+                <div className="pages-btns-wrapper">
+                    <NavLink to="/admin-panel/manage-pages/home/1" className={({ isActive }) => isActive || currentLocation.title === "home" ? "btn-page btn-page--active" : 'btn-page'}>Home</NavLink>
+                    <NavLink to="/admin-panel/manage-pages/why-choose-us/1" className={({ isActive }) => isActive || currentLocation.title === "why-choose-us" ? "btn-page btn-page--active" : 'btn-page'}>Why Choose Us</NavLink>
+                    <NavLink to="/admin-panel/manage-pages/testimonials/1" className={({ isActive }) => isActive || currentLocation.title === "testimonials" ? "btn-page btn-page--active" : 'btn-page'}>Testimonials</NavLink>
+                    <NavLink to="/admin-panel/manage-pages/special-offers/1" className={({ isActive }) => isActive || currentLocation.title === "special-offers" ? "btn-page btn-page--active" : 'btn-page'}>Special Offers</NavLink>
+                </div>
+            }
             <div className="section-btns-wrapper">
                 {
                     currentLocation && currentLocation.count > 1 &&
-                    [...Array(currentLocation.count)].map((item,index) => (
-                        <NavLink to={`/admin-panel/manage-pages/${currentLocation.title}/${index+1}`} className={({ isActive }) => isActive ? "btn-section btn-section--active" : 'btn-section'}>Section {index+1}</NavLink>
+                    [...Array(currentLocation.count)].map((item, index) => (
+                        <NavLink to={`/admin-panel/manage-pages/${currentLocation.title}/${index + 1}`} className={({ isActive }) => isActive ? "btn-section btn-section--active" : 'btn-section'}>Section {index + 1}</NavLink>
                     ))
                 }
             </div>

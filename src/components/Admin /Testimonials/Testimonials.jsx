@@ -50,15 +50,30 @@ export default function Testimonials() {
         if(textTestimonials.length > 3){
             let confirm = window.confirm("Are you sure to delete?")
             if(confirm){
-                axiosInstance.delete(`/crousels/delete-content/testimonails/section-2/${id}`)
+                axiosInstance.delete(`/crousels/delete-content/testimonials/section-2/${id}`)
                 .then((res) => {
-                    console.log(res);
+                    if(res.data.success){
+                        toast.success('Deleted successfully')
+                        window.location.reload();
+                    }
                 }).catch(err => {
-                    console.log(err);
+                    toast.error("Something went wrong!")
                 })
             }
         }else{
             toast.error("We need atleast 3 testimonials!")
+        }
+    }
+
+    const deleteVideoTextimonials = (id,index) => {
+        let confirm = window.confirm(`Are you sure to delete?`);
+        if(confirm){
+            axiosInstance.delete(`/crousels/delete-content/testimonials/section-3/${id}`)
+            .then(res => {
+                console.log(res);
+            }).catch(err => {
+                console.log(err);
+            })
         }
     }
 
@@ -110,7 +125,7 @@ export default function Testimonials() {
                                 <button className="btn-submit">Upload</button>
                             </form>
                             <div className="table-wrapper">
-                                <PrimaryTable tableHeader={videoTable} tableBody={textTestimonials} deleteCol={true} deleteRow={deleteTextTestimonials} />
+                                <PrimaryTable tableHeader={videoTable} tableBody={textTestimonials} deleteCol={true} deleteRow={deleteVideoTextimonials} />
                             </div>
                         </>
                         :null

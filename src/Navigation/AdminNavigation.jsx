@@ -15,11 +15,13 @@ import NewsLetter from '../components/Admin /NewsLetter/NewsLetter'
 import ReferAndEarn from '../components/Admin /ReferAndEarn/ReferAndEarn'
 import Testimonials from '../components/Admin /Testimonials/Testimonials'
 import PrimaryTable from '../components/Utils/PrimaryTable/PrimaryTable'
+import { AuthProvider, useAuth } from '../contexts/adminAuth'
 
 let userViewHeaders = ["SiNo", "Email", "Delete User"]
 
 export default function AdminNavigation({ setAdmin }) {
     const [users, setUsers] = useState([])
+
     const location = useLocation()
     useEffect(() => {
         let paths = location.pathname.split('/')
@@ -30,7 +32,7 @@ export default function AdminNavigation({ setAdmin }) {
         }
     }, [location])
 
-    const deleteUser = (id,index) => {
+    const deleteUser = (id, index) => {
         let isConfirmed = window.confirm("Are you sure to delete the user?")
         if (isConfirmed) {
             axiosInstance.delete('/user/delete_user/' + id)
@@ -51,31 +53,32 @@ export default function AdminNavigation({ setAdmin }) {
                 console.log(err);
             })
     }, [])
+
     return (
-        <Routes>
-            <Route path='/admin-panel' element={<AdminLayout />} >
-                <Route path='manage-users' element={<ManageUsers />}>
-                    <Route path='add-user' element={<AddUserForm />} />
-                    <Route path='view-users' element={<>
-                        {
-                            users[0] ?
-                            <PrimaryTable tableHeader={userViewHeaders} tableBody={users} deleteCol={true} deleteRow={deleteUser} />
-                            : "No users found"
-                        }
-                    </>} />
+            <Routes>
+                <Route path='/admin-panel' element={<AdminLayout />}>
+                    <Route path='manage-users' element={<ManageUsers />}>
+                        <Route path='add-user' element={<AddUserForm />} />
+                        <Route path='view-users' element={<>
+                            {
+                                users[0] ?
+                                    <PrimaryTable tableHeader={userViewHeaders} tableBody={users} deleteCol={true} deleteRow={deleteUser} />
+                                    : "No users found"
+                            }
+                        </>} />
+                    </Route>
+                    <Route path='manage-pages' element={<ManagePages />}>
+                        <Route path='home/:section' element={<HomePageManager />} />
+                        <Route path='why-choose-us/:section' element={<WhyChooseUseManager />} />
+                        <Route path='special-offers/:section' element={<SpecialOfferManager />} />
+                        <Route path="testimonials/:section" element={<TestimonialManager />} />
+                    </Route>
+                    <Route path='testimonials' element={<Testimonials />} />
+                    <Route path='testimonials/:section' element={<Testimonials />} />
+                    <Route path="contact-us" element={<ContactUs />} />
+                    <Route path='manage-newsletter' element={<NewsLetter />} />
+                    <Route path="refer-and-earn" element={<ReferAndEarn />} />
                 </Route>
-                <Route path='manage-pages' element={<ManagePages />}>
-                    <Route path='home/:section' element={<HomePageManager />} />
-                    <Route path='why-choose-us/:section' element={<WhyChooseUseManager />} />
-                    <Route path='special-offers/:section' element={<SpecialOfferManager />} />
-                    <Route path="testimonials/:section" element={<TestimonialManager />} />
-                </Route>
-                <Route path='testimonials' element={<Testimonials />} />
-                <Route path='testimonials/:section' element={<Testimonials />} />
-                <Route path="contact-us" element={<ContactUs />} />
-                <Route path='manage-newsletter' element={<NewsLetter />} />
-                <Route path="refer-and-earn" element={<ReferAndEarn />} />
-            </Route>
-        </Routes>
+            </Routes>
     )
 }

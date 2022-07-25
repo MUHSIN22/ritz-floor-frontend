@@ -11,6 +11,10 @@
     border-radius: 8px;
     margin: 0 1rem;
 }
+.manage-users .btn-user--active{
+    background: #FBC88F;
+    color: #000;
+}
 .manage-users .manage-content{
     width: 80%;
     display: flex;

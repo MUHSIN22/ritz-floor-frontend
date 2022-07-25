@@ -22,6 +22,8 @@ export default function WhyChooseUseManager() {
     const [image6,setImage6] = useState(null);
     const [image7,setImage7] = useState(null);
     const [image8,setImage8] = useState(null);
+    const [aboutImage,setAboutImage] = useState(null);
+    const [aboutData,setAboutData] = useState({title:'',content:'',subtitle:'',points: ''})
 
     const handleFeatureFormSubmission = (event) => {
         event.preventDefault();
@@ -102,11 +104,41 @@ export default function WhyChooseUseManager() {
                 toast.error("Something went wrong!")
             })
     }
+
+    const firstSectionSubmission = (event) => {
+        event.preventDefault();
+        AdminPageManager.updateForm('whychooseus',1,{...aboutData,img: aboutImage});
+    }
     return (
         <div className="home-page-manager">
             {
                 section == 1 ?
                     <>
+                        <form className="home-page-wrapper" onSubmit={firstSectionSubmission}>
+                            <div className="two-columns-wrapper">
+                                <div className="input-wrapper">
+                                    <label htmlFor="">Title</label>
+                                    <input type="text" className="home-input" name='title' value={aboutData.title} onChange={(event) => setAboutData({...aboutData,[event.target.name]: event.target.value})}/>
+                                </div>
+                                <div className="input-wrapper">
+                                    <label htmlFor="">Subtitle</label>
+                                    <input type="text" className="home-input" name='subtitle' value={aboutData.subtitle} onChange={(event) => setAboutData({...aboutData,[event.target.name]: event.target.value})}/>
+                                </div>
+                                <div className="input-wrapper">
+                                    <label htmlFor="">Content</label>
+                                    <textarea name="content" className='home-input' id="" cols="30" rows="10" value={aboutData.content} onChange={(event) => setAboutData({...aboutData,[event.target.name]: event.target.value})}></textarea>
+                                </div>
+                                <div className="input-wrapper">
+                                    <label htmlFor="">Points (Separeted by "|")</label>
+                                    <textarea name="points" className='home-input' id="" cols="30" rows="10" value={aboutData.points} onChange={(event) => setAboutData({...aboutData,[event.target.name]: event.target.value})}></textarea>
+                                </div>
+                                <div className="input-wrapper">
+                                    <label htmlFor="">Image</label>
+                                    <ImageUploader name="ABOUT_IMG" passImage={setAboutImage} isFileAvailable={aboutImage? true : false} />
+                                </div>
+                            </div>
+                            <button className="btn-submit">Upload</button>
+                        </form>
 
                     </>
                     : (section == 2) ?

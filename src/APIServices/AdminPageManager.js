@@ -23,6 +23,27 @@ export default {
             })
     },
 
+    updateForm: (page, section, data,isImage) => {
+        let formData = new FormData();
+        Object.keys(data).forEach((key) => {
+            formData.append(key, data[key])
+        })
+        axiosInstance.put(`/crousels/update-content/${page}/section-${section}/1}`, formData)
+            .then(res => {
+                if (res.data.success) {
+                    toast.success("Uploaded successfully")
+                    window.location.reload();
+                    return true;
+                } else {
+                    toast.error("Something went wrong!")
+                    return false
+                }
+            }).catch(err => {
+                toast.error("Something went wrong!")
+                return false;
+            })
+    },
+
     
 
     deleteItem: (page, section, id) => {

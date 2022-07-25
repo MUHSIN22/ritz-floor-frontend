@@ -10,24 +10,32 @@ import AdminNavigation from "./Navigation/AdminNavigation";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import LoginPopup from "./components/LoginPopup/LoginPopup";
+import { Login } from "@mui/icons-material";
+import { AuthProvider } from "./contexts/adminAuth";
 
 function App() {
-	const [isAdmin,setIsAdmin] = useState(false)
+	const [isAdmin, setIsAdmin] = useState(false)
+	const [isLogin, setLogin] = useState(false)
 	return (
-		<div className={"App "+(isAdmin?"App-admin":'')}>
+		<div className={"App " + (isAdmin ? "App-admin" : '')}>
 			<Router>
-				<LoginPopup />
-				{
-					!isAdmin&&
-					<Navbar/>
-				}
-				<MainNavigation/>
-				<AdminNavigation setAdmin={setIsAdmin}/>
-				<ToastContainer />
-				{
-					!isAdmin&&
-					<Footer/>
-				}
+				<AuthProvider>
+					{
+						isLogin &&
+						<LoginPopup setLogin={setLogin} />
+					}
+					{
+						!isAdmin &&
+						<Navbar />
+					}
+					<MainNavigation />
+					<AdminNavigation setAdmin={setIsAdmin} />
+					<ToastContainer />
+					{
+						!isAdmin &&
+						<Footer setLogin={setLogin} />
+					}
+				</AuthProvider>
 			</Router>
 		</div>
 	);

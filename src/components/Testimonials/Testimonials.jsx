@@ -21,6 +21,7 @@ import HomeTestimonialCarousel from "../HomeTestimonialCarousel/HomeTestimonialC
 import TestimonialSlider from "../Utils/TestimonialSlider/TestimonialSlider";
 import axiosInstance from "../../Axios/axiosInstance";
 import { toast } from "react-toastify";
+import PageDataFetcher from "../../APIServices/PageDataFetcher";
 export default function Testimonials() {
 	const [textTestimonials,setTextTestimonials] = useState([])
 	useEffect(() => {
@@ -66,30 +67,29 @@ export default function Testimonials() {
 }
 
 const VideoCrousel = () => {
-	let slides = [
-		<div>
-			<ReactPlayer
-				url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
-				className="react-player"
-			/>
-		</div>,
-		<div>
-			<ReactPlayer
-				url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
-				className="react-player"
-			/>
-		</div>,
-		<div>
-			<ReactPlayer
-				url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
-				className="react-player"
-			/>
-		</div>,
-	];
+	const [videoSlides,setVideoSlides] = useState([])
+	useEffect(() => {
+		PageDataFetcher.getSectionItems('testimonials',3)
+		.then(res => {
+			console.log(res)
+			let slides = [];
+			res.forEach(item => {
+				slides.push(
+					<div>
+						<ReactPlayer
+							url={item.url}
+							className="react-player"
+						/>
+					</div>
+				)
+			})
+			setVideoSlides(slides)
+		})
+	},[])
 	return (
 		<div className="Testimonial3dCarousel-Container">
 			<div className="Testimonial3dCarousel">
-				{typeof window !== "undefined" && <Carousel slides={slides} />}
+				{typeof window !== "undefined" && <Carousel slides={videoSlides} />}
 			</div>
 		</div>
 	);

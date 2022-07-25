@@ -17,9 +17,11 @@ import work8 from '../asset/our works/w8.png'
 import whychooseus from '../asset/whychooseus.jpeg'
 import PageDataFetcher from "../../APIServices/PageDataFetcher";
 import config from "../../Constants/config";
+import AdminPageManager from "../../APIServices/AdminPageManager";
 
 export default function WhyChooseUs() {
 	const [features, setFeatures] = useState(null)
+	const [aboutData, setAboutData] = useState(null)
 
 	useEffect(() => {
 		window.scrollTo(0, 0)
@@ -27,48 +29,60 @@ export default function WhyChooseUs() {
 			.then(res => {
 				setFeatures(res)
 			})
+		AdminPageManager.getSectionItems('whychooseus', 1)
+			.then(res => {
+				let data = res[0]
+				console.log(res[0]);
+				data.points = data.points.split('|');
+				setAboutData(data)
+			})
 	}, [])
 	return (
 		<>
 			<div className="WhyChooseUs-Container">
 				<MainBanner background={BannerImage} />
-				<div className="AboutUs-Row">
-					<div className="AboutUs-Content-Col">
-						<div className="AboutUs-Header">
-							<h1 className="my-0">About Us</h1>
+				{
+					aboutData &&
+					<div className="AboutUs-Row">
+						<div className="AboutUs-Content-Col">
+							<div className="AboutUs-Header">
+								<h1 className="my-0">{aboutData.title}</h1>
+							</div>
+							<p className="my-0">
+								<strong>{aboutData.subtitle}</strong>
+								<br />
+								{
+									aboutData.content
+								}
+							</p>
+							{
+								aboutData.points.map((item,index) => (
+									<div className="AboutUs-Content-row" key={index}>
+										<CheckCircle /> <p>{item}</p>
+									</div>
+								))
+							}
+							{/* <div className="AboutUs-Content-row">
+								<CheckCircle /> <p>Cost-Effective</p>
+							</div>
+							<div className="AboutUs-Content-row">
+								<CheckCircle /> <p>Easy to Install</p>
+							</div>
+							<div className="AboutUs-Content-row">
+								<CheckCircle /> <p>Long Lifespan</p>
+							</div>
+							<div className="AboutUs-Content-row">
+								<CheckCircle /> <p>Low Maintenance</p>
+							</div>
+							<div className="AboutUs-Content-row">
+								<CheckCircle /> <p>Wide Choice</p>
+							</div> */}
 						</div>
-						<p className="my-0">
-							<strong>Flooring with a new Skill</strong>
-							<br />
-							Select from a wide variety of flooring materials!
-							<br />
-							Outdoor Deck Flooring, Carpet Tiles, Vinyl Flooring (both homogeneous and heterogeneous), Sports Flooring, and Ecofit Flooring are just a few of the many goods available at Ritz Flooring. Whether you're looking for a flooring option for a home or a business, we've got you covered!
-							<br />
-							Contact us if you'd like to make use of our extensive selection of items.
-						</p>
-						<div className="AboutUs-Content-row">
-							<CheckCircle /> <p>Durability</p>
-						</div>
-						<div className="AboutUs-Content-row">
-							<CheckCircle /> <p>Cost-Effective</p>
-						</div>
-						<div className="AboutUs-Content-row">
-							<CheckCircle /> <p>Easy to Install</p>
-						</div>
-						<div className="AboutUs-Content-row">
-							<CheckCircle /> <p>Long Lifespan</p>
-						</div>
-						<div className="AboutUs-Content-row">
-							<CheckCircle /> <p>Low Maintenance</p>
-						</div>
-						<div className="AboutUs-Content-row">
-							<CheckCircle /> <p>Wide Choice</p>
+						<div className="AboutUs-Image">
+							<img src={whychooseus} alt="" />
 						</div>
 					</div>
-					<div className="AboutUs-Image">
-						<img src={whychooseus} alt="" />
-					</div>
-				</div>
+				}
 				{
 					features &&
 					<div className="AboutUs-Features-Container">

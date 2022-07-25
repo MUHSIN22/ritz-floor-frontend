@@ -7,12 +7,17 @@ import {
 } from "@mui/icons-material";
 import loading from '../asset/loading.gif'
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axiosInstance from "../../Axios/axiosInstance";
 import "./Footer.css";
-export default function Footer() {
+import { useAuth } from "../../contexts/adminAuth";
+
+export default function Footer({setLogin}) {
 	const [newsLetterEmail, setNewsLetterEmail] = useState(null)
 	const [isLoading, setLoading] = useState(false)
+	const auth = useAuth();
+	const navigate = useNavigate();
+
 	const handleNewsLetter = (event) => {
 		event.preventDefault();
 		if (newsLetterEmail && newsLetterEmail.length > 2) {
@@ -103,7 +108,7 @@ export default function Footer() {
 						}
 						Submit
 					</button>
-					<Link to=''>Login</Link>
+					<button onClick={() => {auth.user ? navigate('/admin-panel') :setLogin(true)}}>{auth.user ? "Admin Panel" : 'Login'}</button>
 				</div>
 			</form>
 			<div className="techjain-container">
