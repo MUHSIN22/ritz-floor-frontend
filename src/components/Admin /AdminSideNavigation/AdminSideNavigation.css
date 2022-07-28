@@ -33,7 +33,9 @@
 .admin-side-navigation .nav-link:hover{
     background: rgba(247, 146, 30, 0.694);
 }
-
+.admin-side-navigation .nav-link--active:hover{
+    background: #FBC88F;
+}
 @media only screen and (max-width: 768px) {
     .admin-panel-logo {
         width: 5rem;

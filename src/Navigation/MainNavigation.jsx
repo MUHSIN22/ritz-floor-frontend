@@ -26,7 +26,7 @@ export default function MainNavigation() {
                 <Route path="/ReferalPage" element={<ReferalPage />} />
                 <Route path="/testimonials" element={<Testimonials />} />
                 <Route path="/cat" element={<Cat />} />
-                <Route path="/products/:product" element={<VenylProducts />} />
+                <Route path="/products/:id" element={<VenylProducts />} />
             </Routes>
         </>
     )

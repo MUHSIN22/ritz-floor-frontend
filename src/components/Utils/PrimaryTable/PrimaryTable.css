@@ -25,6 +25,10 @@
     background: #E88561;
     color: #fff;
 }
+.primary-table tbody tr:hover{
+    cursor: pointer;
+    background: #b4674c63;
+}
 .primary-table .delete-icon{
     font-size: 1.5rem;
     cursor: pointer;

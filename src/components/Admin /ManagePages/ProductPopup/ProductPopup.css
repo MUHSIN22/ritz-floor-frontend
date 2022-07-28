@@ -1,0 +1,69 @@
+.product-popup-container{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.popup-page-form{
+    width: clamp(20rem,80%,1000px);
+    background: #fff;
+    border-radius: 10px;
+    padding: 3rem;
+    max-height: 80vh;
+    overflow-y: scroll;
+    position: relative;
+}
+.popup-page-form .close-icon{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    font-size: 2rem;
+}
+.popup-page-form h1{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+.images-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 1rem;
+}
+.images-wrap{
+    width: 100%;
+    position: relative;
+}
+.images-wrap:hover .images-delete-overlay{
+    display: flex;
+    opacity: 1;
+}
+.images-wrap img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+}
+.images-delete-overlay{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    display: none;
+}
+.images-wrap .delete-icon{
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}

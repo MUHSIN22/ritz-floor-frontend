@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from 'react'
 import { AiFillDelete, AiFillCloseCircle, AiFillCheckCircle } from 'react-icons/ai'
 import './PrimaryTable.css'
 
-export default function PrimaryTable({ tableHeader, tableBody, deleteCol, deleteRow,isAction }) {
+export default function PrimaryTable({ tableHeader, tableBody, deleteCol, deleteRow,isAction, approve, deny, rowAction }) {
     return (
         <>
             {
@@ -20,7 +20,7 @@ export default function PrimaryTable({ tableHeader, tableBody, deleteCol, delete
                         <tbody>
                             {
                                 tableBody.map((item, index) => (
-                                    <tr key={index}>
+                                    <tr key={index} onClick={() => rowAction ? rowAction(item.id) : null}>
                                         {
                                             Object.keys(item).map((key, keyIndex) => (
                                                 <td>{key === 'id' ? index + 1 : item[key]}</td>
@@ -33,8 +33,8 @@ export default function PrimaryTable({ tableHeader, tableBody, deleteCol, delete
                                         {
                                             isAction && 
                                             <td className='action-wrapper'>
-                                                <AiFillCloseCircle className='action-icons'/>
-                                                <AiFillCheckCircle className='action-icons'/>
+                                                <AiFillCloseCircle className='action-icons' onClick={() => deny(item.id)} />
+                                                <AiFillCheckCircle className='action-icons' onClick={() => approve(item.id)} />
                                             </td>
                                         }
                                     </tr>

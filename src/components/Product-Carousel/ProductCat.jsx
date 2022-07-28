@@ -11,7 +11,7 @@ import hardwood from "../asset/products/hardwood.jpg";
 import kitchen from "../asset/products/kitchen.jpg";
 import accent from "../asset/products/accent.jpg";
 import knowledge from "../asset/products/knowledge.jpg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import AdminPageManager from "../../APIServices/AdminPageManager";
 import axiosInstance from "../../Axios/axiosInstance";
 import PageDataFetcher from "../../APIServices/PageDataFetcher";
@@ -27,35 +27,6 @@ export default function ProductCat(props) {
 		})
 	}, [])
 
-	const categoryFinder = (title) => {
-		let category;
-		switch(title){
-			case "Laminate":
-				category = 'laminate';
-				break;
-			case 'Vinyl':
-				category = 'vinyl';
-				break;
-			case 'Carpet':
-				category = 'carpet'
-				break;
-			case 'Tiles and Mossaics':
-				category = 'tiles';
-				break;
-			case 'Engineered Hardwood':
-				category = 'hardwood';
-				break;
-			case 'Kitchen':
-				category = 'kitchen';
-				break;
-			case "Accent Walls":
-				category = 'accent'
-				break;
-			default:
-				break;
-		}	
-		return category;
-	}
 	return (
 		<div className="ProductCat-Container">
 			<div className="Product-Catalogue">
@@ -66,7 +37,7 @@ export default function ProductCat(props) {
 					{
 						products[0] &&
 						products.map((product, index) => (
-							<div className="product-card" key={index} onClick={() => navigate('/products/'+(categoryFinder(product.title)))}>
+							<div className="product-card" key={index} onClick={() => navigate('/products/'+product.id)}>
 								<div className="product-image-wrapper">
 									<img src={config.backendURL+product.img} alt="" className="product-image" />
 								</div>
@@ -74,12 +45,6 @@ export default function ProductCat(props) {
 							</div>
 						))
 					}
-					<div className="product-card" onClick={() => navigate('/products/knowledge')}>
-						<div className="product-image-wrapper">
-							<img src={knowledge} alt="" className="product-image" />
-						</div>
-						<h3 className="product-card-title">Knowledge Series</h3>
-					</div>
 				</div>
 				{/* <div className="Product-Carousel">
 					<Carousel

@@ -3,9 +3,10 @@ import { useEffect } from 'react'
 import imageUploaderIcon from '../../asset/image-uploader.png'
 import './ImageUploader.css'
 
-export default function ImageUploader({ name, passImage, isFileAvailable }) {
+export default function ImageUploader({ name, passImage, isFileAvailable, type }) {
     const [file,setFile] = useState(null)
     const [url,setUrl] = useState(null)
+    const [text,setText] = useState(null)
 
     useEffect(() => {
         if(!isFileAvailable){
@@ -37,22 +38,30 @@ export default function ImageUploader({ name, passImage, isFileAvailable }) {
     const inputChangeHandler = (event) => {
         event.preventDefault()
         event.target.classList.remove("image-uploader-drag")
-        setFile(event.target.files[0])
-        setUrl(URL.createObjectURL(event.target.files[0]))
-        passImage(event.target.files[0])
+        if(type === "multiple"){
+            setFile(event.target.files);
+            passImage(event.target.files)
+            setText(event.target.files.length+ " images added.")
+        }else{
+            setFile(event.target.files[0])
+            setUrl(URL.createObjectURL(event.target.files[0]))
+            passImage(event.target.files[0])
+        }
     }
     return (
         <label htmlFor={name} className="image-uploader" onDragOver={dragOver} onDragLeave={dragLeave} onDrop={dropHandler}>
             {
                 url ? 
                 <img src={url} className="file-preview" alt="" />
+                : text ? 
+                <span>{text}</span>
                 :
                 <>
                     <span>
                         <img src={imageUploaderIcon} className="image-uploader-icon" alt="" />
                         Drag and Drop or Browse File
                     </span>
-                    <input type="file" name={name} id={name} className="image-input" onChange={inputChangeHandler}/>
+                    <input type="file" name={name} id={name} multiple={type === "multiple" ? true : false} className="image-input" onChange={inputChangeHandler}/>
                 </>
             }
         </label>

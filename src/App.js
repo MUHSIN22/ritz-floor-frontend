@@ -12,14 +12,21 @@ import 'react-toastify/dist/ReactToastify.css';
 import LoginPopup from "./components/LoginPopup/LoginPopup";
 import { Login } from "@mui/icons-material";
 import { AuthProvider } from "./contexts/adminAuth";
+import UploadLoader from "./components/Admin /uploadLoader/UploadLoader";
+import { useLoader } from "./contexts/loadingContext";
 
 function App() {
 	const [isAdmin, setIsAdmin] = useState(false)
 	const [isLogin, setLogin] = useState(false)
+	const [loading,setLoading] = useLoader();
 	return (
 		<div className={"App " + (isAdmin ? "App-admin" : '')}>
 			<Router>
 				<AuthProvider>
+					{
+						loading &&
+						<UploadLoader />
+					}
 					{
 						isLogin &&
 						<LoginPopup setLogin={setLogin} />

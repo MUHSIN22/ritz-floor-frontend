@@ -20,6 +20,7 @@ export default function Footer({setLogin}) {
 
 	const handleNewsLetter = (event) => {
 		event.preventDefault();
+		console.log('hreerere');
 		if (newsLetterEmail && newsLetterEmail.length > 2) {
 			setLoading(true)
 			axiosInstance.post('/newsletter/send-news-letter', { email: newsLetterEmail })
@@ -99,7 +100,7 @@ export default function Footer({setLogin}) {
 				<h3>Signup to Newsletter</h3>
 				<input name="Email" type="email" id="01" onChange={(event) => setNewsLetterEmail(event.target.value)} placeholder="Email" />
 				<div className="news-btn-wrapper">
-					<button type="submit" className={isLoading ? "btn-disabled" : ''}>
+					<button type="submit" onClick={handleNewsLetter} className={isLoading ? "btn-disabled" : ''}>
 						{
 							isLoading &&
 							<span className="btn-loading">

@@ -9,6 +9,7 @@ import { toast } from 'react-toastify'
 import { useEffect } from 'react'
 import config from '../../../../Constants/config'
 import AdminPageManager from '../../../../APIServices/AdminPageManager'
+import ProductPopup from '../ProductPopup/ProductPopup'
 
 let tableHeader = ["SiNo", "Title", "Delete Item"]
 
@@ -64,6 +65,8 @@ export default function HomePageManager() {
   const [thirdSection,setThirdSection] = useState({name:'',content:''});
   const [sec3Image,setSec3Image] = useState(null);
   const [thirdSectionData,setThirdSectionData] = useState([])
+  const [isProductPopup, setProductPopup] = useState(false);
+  const [productId,setProductId] = useState(null)
 
 
   useEffect(() => {
@@ -171,8 +174,17 @@ export default function HomePageManager() {
     AdminPageManager.deleteItem('homepage',3,id);
   }
 
+  const handleRowClick = (id) => {
+    setProductPopup(true);
+    setProductId(id);
+  }
+
   return (
     <section className="home-page-manager">
+      {
+        isProductPopup &&
+        <ProductPopup productId={productId} setProductPopup={setProductPopup} />
+      }
       {
         section == 1 ?
           <>
@@ -190,7 +202,7 @@ export default function HomePageManager() {
               <button className="btn-submit">Upload</button>
             </form>
             <div className="table-wrapper">
-              <PrimaryTable tableHeader={tableHeader} tableBody={firstSectionData} deleteCol={true} deleteRow={deleteSection1} />
+              <PrimaryTable tableHeader={tableHeader} tableBody={firstSectionData} deleteCol={true} deleteRow={deleteSection1} rowAction={handleRowClick} />
             </div>
           </>
           : (section == 2) ?

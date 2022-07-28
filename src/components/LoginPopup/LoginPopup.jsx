@@ -17,7 +17,9 @@ export default function LoginPopup({setLogin}) {
         toast.success(res.data.message);
         sessionStorage.setItem("token",res.data.token)
         setLogin(false)
-        navigate('/admin-panel')
+        setTimeout(() => {
+          navigate('/admin-panel')
+        },500)
       }).catch(err => {
         toast.error(err.response.data.message)
       })
