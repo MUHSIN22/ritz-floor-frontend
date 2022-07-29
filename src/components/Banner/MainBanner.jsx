@@ -12,7 +12,7 @@ export default function MainBanner({background}) {
                 <div className="banner-content-card">
                     <h1>Ritz Floor and Decor</h1>
                     <h3>Give an exotic look to your home</h3>
-                    <h2>45690 YALE RD, Chilliwack, BC, Canada V2P2N3</h2>
+                    <h2>16-5725 Vedder Road, Chilliwack BC V2R 3N4</h2>
                     <div className="Btn-row">
                         <span>
                             <LocalPhone />

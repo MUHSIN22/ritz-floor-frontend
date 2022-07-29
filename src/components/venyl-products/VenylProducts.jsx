@@ -3,42 +3,21 @@ import BannerImage from "../asset/BannerImage07.png";
 import { LocalPhone } from "@mui/icons-material";
 import mainImg from "../asset/image 12.svg";
 import "./Venylproducts.css";
-import Vector from "../asset/Kerikature.png";
-import tiles1 from "../asset/TILES/1.jpg";
-import tiles2 from "../asset/TILES/2.jpg";
-import tiles3 from "../asset/TILES/3.jpg";
-import tiles4 from "../asset/TILES/4.jpg";
-//vinyl-images
-import vinyl1 from "../asset/VINYL/1.jpg";
-import vinyl2 from "../asset/VINYL/2.jpg";
-import vinyl3 from "../asset/VINYL/3.jpg";
-import vinyl4 from "../asset/VINYL/4.jpg";
-import vinyl5 from "../asset/VINYL/5.jpg";
-import vinyl6 from "../asset/VINYL/6.jpg";
-import laminated1 from '../asset/laminated/1.jpg'
-import laminated2 from '../asset/laminated/2.jpg'
-import laminated3 from '../asset/laminated/3.png'
-import laminated4 from '../asset/laminated/4.jpg'
-import laminated5 from '../asset/laminated/5.jpg'
-import laminated6 from '../asset/laminated/6.png'
-import knowledge1 from '../asset/knowledge/1.jpg'
-import knowledge2 from '../asset/knowledge/2.jpg'
-import knowledge3 from '../asset/knowledge/3.png'
-import knowledge4 from '../asset/knowledge/4.jpg'
-import knowledge5 from '../asset/knowledge/5.jpg'
-import knowledge6 from '../asset/knowledge/6.png'
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams, ussParams } from "react-router-dom";
 import MainBanner from "../Banner/MainBanner";
 import axiosInstance from "../../Axios/axiosInstance";
 import config from "../../Constants/config";
+import ImagePopup from "../imagePopup/ImagePopup";
 
 export const VenylProducts = () => {
 	const {id} = useParams();
 	const [current, setCurrent] = useState(null);
 	const [data,setData] = useState(null)
 	const [images,setImage] = useState(null)
+	const [isPopup,setPopup] = useState(false)
+	const [selectedImage,setSelectedImage] = useState(null)
 
 	useEffect(() => {
 		fetchData();
@@ -62,6 +41,10 @@ export const VenylProducts = () => {
 			{
 				data &&
 				<div>
+					{
+						isPopup &&
+						<ImagePopup image={selectedImage} closePopup={setPopup} />
+					}
 					<div className="banner-container">
 						<MainBanner background={BannerImage} />
 					</div>
@@ -77,7 +60,10 @@ export const VenylProducts = () => {
 							<div className="venyl-card-container">
 								{
 									images.map((image,index) => (
-										<div className="venyl-card" key={index}>
+										<div className="venyl-card" key={index} onClick={() =>{ 
+											setSelectedImage(config.backendURL+image.img);
+											setPopup(true)
+										}}>
 											<img src={config.backendURL+image.img} className="wall-img" />
 										</div>
 									))

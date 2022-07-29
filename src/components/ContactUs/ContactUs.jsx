@@ -57,7 +57,7 @@ export default function ContactUs() {
 						</li>
 						<li className="contact .social-icons">
 							<MdLocationOn/>
-							<a href="" target="_blank">45690 YALE RD, CHILLIWACK, BC V2P 2N3</a>
+							<a href="" target="_blank">16-5725 Vedder Road,Chilliwack BC V2R 3N4</a>
 						</li>
 						<li className="social-icons">
 							<a href="" target="_blank">

@@ -51,9 +51,9 @@ export default function OffersCarousel() {
               <div className="Offer-Card" key={index}>
                 <img src={config.backendURL + item.img} alt="" />
                 <span>{item.discount}% off</span>
-                <div className="Offer-Card-description">
+                {/* <div className="Offer-Card-description">
                   <h5>{item.title}</h5>
-                </div>
+                </div> */}
               </div>
             ))}
           </Carousel>

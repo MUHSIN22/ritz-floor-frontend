@@ -132,7 +132,7 @@ export default function TestimonialSlider({ slideItems }) {
                                 {item.content}
                             </h2>
                             <h3 className="testimonial-slider-person">{item.name}</h3>
-                            <h4 className="testimonial-slider-designation">{item.role}</h4>
+                            {/* <h4 className="testimonial-slider-designation">{item.role}</h4> */}
                         </div>
                     ))
                 }

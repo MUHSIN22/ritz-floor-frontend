@@ -18,8 +18,10 @@ export default function ProductPopup({ productId, setProductPopup }) {
         formData.append('content_title', form.content_title)
         formData.append('content', form.content)
         formData.append('product_title', form.product_title)
-        for (let i = 0; i < images.length; i++) {
-            formData.append('images', images[i]);
+        if(images && images[0]){
+            for (let i = 0; i < images.length; i++) {
+                formData.append('images', images[i]);
+            }
         }
         axiosInstance.put(`/product-page/${productId}`, formData)
             .then(res => {

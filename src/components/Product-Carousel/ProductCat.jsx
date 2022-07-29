@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./ProductCat.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import woodfloor from "../asset/wood-floor-m-380x254.jpg";
 import tiles from "../asset/products/tiles.jpg";
 import carpet from "../asset/products/carpet.jpg";
 import vinyl from "../asset/products/vinyl.jpg";
