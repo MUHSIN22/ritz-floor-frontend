@@ -81,7 +81,7 @@
 .Footer-Container .News-Letter input::placeholder{
   color: #fff;
 }
-.Footer-Container .News-Letter a,
+.Footer-Container .News-Letter button,
 .Footer-Container .News-Letter button{
   background: #E26739;
   padding: 0.8rem 1.5rem;
@@ -165,15 +165,17 @@
   .Footer-Container .techjain-container p {
     font-size: 0.8rem;
   }
-  .Footer-Container .News-Letter a{
+  .Footer-Container .News-Letter button{
     width: 100%;
     margin-top: 0.5rem;
     text-align: center;
+    justify-content: center;
   }
-  .Footer-Container .News-Letter a:last-child{
+  .Footer-Container .News-Letter button:last-child{
     position: initial;
     height: max-content;
     margin-top: 1rem;
+    text-align: center;
   }
   .Footer-Container .news-btn-wrapper{
     display: flex;

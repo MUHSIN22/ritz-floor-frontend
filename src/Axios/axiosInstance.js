@@ -3,9 +3,9 @@ import config from "../Constants/config";
 
 const token = sessionStorage.getItem("token")
 
+console.log(config.baseURL,"base url ------------------");
 const axiosInstance = axios.create({
     baseURL: config.baseURL,
-    timeout: 10000,
     headers: {"Authorization" : `${token}`}
 })
 

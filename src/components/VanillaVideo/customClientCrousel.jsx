@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./customClientCrousel.css";
-import img1 from "../asset/profile3.svg";
-import img2 from "../asset/profile2.svg";
-import img3 from "../asset/Aks.png";
 
 export const CustomClientCrousel = () => {
 	const crouselContainer = document.querySelector(".crousel-slide");
@@ -12,23 +9,23 @@ export const CustomClientCrousel = () => {
 
 	let counter = 1;
 
-	const list = [
-		{
-			id: 1,
-			name: "Akash",
-			img: img1,
-		},
-		{
-			id: 2,
-			name: "John Doe",
-			img: img2,
-		},
-		{
-			id: 3,
-			name: "Mike Tyson",
-			img: img3,
-		},
-	];
+	// const list = [
+	// 	{
+	// 		id: 1,
+	// 		name: "Akash",
+	// 		img: img1,
+	// 	},
+	// 	{
+	// 		id: 2,
+	// 		name: "John Doe",
+	// 		img: img2,
+	// 	},
+	// 	{
+	// 		id: 3,
+	// 		name: "Mike Tyson",
+	// 		img: img3,
+	// 	},
+	// ];
 	const [current, setCurrent] = useState(1);
 	const [currentMinus, setCurrentMinus] = useState(0);
 	const [currentPlus, setCurrentPlus] = useState(2);
@@ -64,7 +61,7 @@ export const CustomClientCrousel = () => {
 
 	return (
 		<div class="crousel-container">
-			<div class="crousel-slide">
+			{/* <div class="crousel-slide">
 				<div className="circle">
 					<img src={list[currentMinus].img} />
 				</div>
@@ -90,7 +87,7 @@ export const CustomClientCrousel = () => {
 				<div className="circle">
 					<img src={list[currentPlus].img} />
 				</div>
-			</div>
+			</div> */}
 		</div>
 	);
 };

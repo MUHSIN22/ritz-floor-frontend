@@ -109,7 +109,7 @@ const Laminate = () => {
 	return (
 		<div className="laminate-container">
 			{
-				list[0] &&
+				list && list[0] &&
 				<>
 					<div className="laminate-leftside">
 						<h1 ref={titleRef}>{list[current].title}</h1>

@@ -1,5 +1,7 @@
 {
   "name": "ritzfloor",
+  "homepage": "https://ritzfloor.techjainsupport.co.in",
+  "proxy": "https://ritzfloor.techjainsupport.co.in/api/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

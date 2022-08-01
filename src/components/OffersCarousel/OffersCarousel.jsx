@@ -38,7 +38,7 @@ export default function OffersCarousel() {
     <div className="OffersCarousel-Container">
       <div className="Offers">
         {" "}
-        {firstCarousel[0] && (
+        {firstCarousel && firstCarousel[0] && (
           <Carousel
             responsive={responsive}
             showDots={true}

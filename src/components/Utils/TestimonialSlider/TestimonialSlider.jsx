@@ -13,7 +13,7 @@ export default function TestimonialSlider({ slideItems }) {
     let isLastCloned = false, isFirstCloned = false;
 
     useEffect(() => {
-        if (slideItems[0]) {
+        if (slideItems && slideItems[0]) {
             let slides = document.querySelectorAll('.testimonial-slider-card')
             let sliderContainer = document.querySelector('.testimonial-slider-wrapper');
             setGridWidth(sliderRef.current.offsetWidth / 3)
@@ -35,7 +35,7 @@ export default function TestimonialSlider({ slideItems }) {
     }, [slideItems])
 
     useEffect(() => {
-        if (slideItems[0]) {
+        if (slideItems && slideItems[0]) {
             let slides = document.querySelectorAll('.testimonial-slider-card')
             let activeSlide = document.querySelector('.testimonial-slider-card--active')
             if (activeSlide) {
@@ -126,7 +126,7 @@ export default function TestimonialSlider({ slideItems }) {
                 onTouchEnd={dragEnd}
             >
                 {
-                    slideItems.map((item, index) => (
+                    slideItems && slideItems.map((item, index) => (
                         <div className="testimonial-slider-card">
                             <h2 className="testimonial-slider-description">
                                 {item.content}

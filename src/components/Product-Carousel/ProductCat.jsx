@@ -34,7 +34,7 @@ export default function ProductCat(props) {
 				</div>
 				<div className="products-wrapper">
 					{
-						products[0] &&
+						products && products[0] &&
 						products.map((product, index) => (
 							<div className="product-card" key={index} onClick={() => navigate('/products/'+product.id)}>
 								<div className="product-image-wrapper">

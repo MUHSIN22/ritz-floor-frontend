@@ -1,9 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import arrowLeft from '../asset/arrow-left.png'
 import arrowRight from '../asset/arrow-right.png'
-import profile1 from '../asset/Aks.png'
-import profile2 from '../asset/profile2.svg'
-import profile3 from '../asset/profile3.svg'
 import './HomeTestimonialCarousel.css'
 import PageDataFetcher from '../../APIServices/PageDataFetcher'
 import config from '../../Constants/config'
@@ -66,7 +63,7 @@ export default function HomeTestimonialCarousel() {
     return (
         <>
             {
-                testmonialContents[0]&&
+                testmonialContents && testmonialContents[0]&&
                 <div className="testimonial-carousel-container">
                 <img src={config.backendURL+testmonialContents[card1].img} className="static-avatar" alt="" />
                 <div className="testimonial-card" ref={cardRef}>

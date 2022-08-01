@@ -61,7 +61,7 @@ export default function AdminNavigation({ setAdmin }) {
                         <Route path='add-user' element={<AddUserForm />} />
                         <Route path='view-users' element={<>
                             {
-                                users[0] ?
+                                users && users[0] ?
                                     <PrimaryTable tableHeader={userViewHeaders} tableBody={users} deleteCol={true} deleteRow={deleteUser} />
                                     : "No users found"
                             }
