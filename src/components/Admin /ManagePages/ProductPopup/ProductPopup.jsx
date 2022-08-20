@@ -6,14 +6,17 @@ import axiosInstance from '../../../../Axios/axiosInstance';
 import { toast } from 'react-toastify';
 import { useEffect } from 'react';
 import config from '../../../../Constants/config';
+import { useLoader } from '../../../../contexts/loadingContext';
 
 export default function ProductPopup({ productId, setProductPopup }) {
     const [images, setImages] = useState(null);
     const [form, setForm] = useState({ content_title: "", content: "", product_title: '' });;
     const [uploadedImages, setUploadedImages] = useState();
+    const [loading,setLoading] = useLoader();
 
     const productSubmission = (event) => {
         event.preventDefault();
+        setLoading(true)
         let formData = new FormData();
         formData.append('content_title', form.content_title)
         formData.append('content', form.content)
@@ -25,6 +28,7 @@ export default function ProductPopup({ productId, setProductPopup }) {
         }
         axiosInstance.put(`/product-page/${productId}`, formData)
             .then(res => {
+                setLoading(false)
                 if (res.data.success) {
                     toast.success(res.data.message)
                     setProductPopup(false);
@@ -32,19 +36,23 @@ export default function ProductPopup({ productId, setProductPopup }) {
                     toast.error(res.data.message)
                 }
             }).catch(err => {
+                setLoading(false)
                 toast.error("Something went wrong with uploading. Try again!");
             })
     }
 
     const deleteImage = (id) => {
         console.log(id);
+        setLoading(true)
         let confirm = window.confirm("Are you sure to delete?")
         if(confirm){
             axiosInstance.delete('/product-page/image/'+id)
                 .then(res => {
+                    setLoading(false)
                     toast.success(res.data.message)
                     setUploadedImages(prev => prev.filter(item => item.id !== id));
                 }).catch(err => {
+                    setLoading(false)
                     toast.error("Something went wrong. Try again!")
                 })
         }

@@ -26,6 +26,17 @@
 .image-uploader .file-preview{
     height: 7rem;
 }
+.edit-btn{
+    border: none;
+    background: transparent;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-align: right;
+    margin-left: auto;
+    cursor: pointer;
+    color: #F7701D;
+
+}
 @media only screen and (max-width: 768px) {
     .image-uploader .image-uploader-icon {
         width: 3rem;

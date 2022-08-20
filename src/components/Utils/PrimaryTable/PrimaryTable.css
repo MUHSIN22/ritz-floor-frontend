@@ -42,7 +42,12 @@
 .primary-table .action-icons:first-child{
     color: rgb(82, 4, 4);
 }
-
+.primary-table .table-input{
+    border: none;
+    color: #fff;
+    outline: none;
+    font-size: 1rem;
+}
 
 
 @media only screen and (max-width: 500px) {

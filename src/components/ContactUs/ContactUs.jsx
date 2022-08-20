@@ -11,6 +11,7 @@ export default function ContactUs() {
 	const [formData,setFormData] = useState({
 		name: '',
 		email: '',
+		phone: '',
 		message: ''
 	})
 	
@@ -77,6 +78,10 @@ export default function ContactUs() {
 						<div className="Form-col">
 							<label htmlFor="Name">Name</label>
 							<input type="text" name="name" onChange={inputHandler}/>
+						</div>
+						<div className="Form-col">
+							<label htmlFor="Name">Phone</label>
+							<input type="text" name="phone" onChange={inputHandler}/>
 						</div>
 						<div className="Form-col">
 							<label htmlFor="Email">Email</label>

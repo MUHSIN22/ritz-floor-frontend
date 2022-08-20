@@ -183,7 +183,34 @@
   width: 70%;
   line-height: 1.5;
 }
-
+.product-faqs-wrapper{
+  width: 70%;
+  margin: 0 auto;
+}
+.question-and-answer{
+  margin: 1rem 0;
+}
+.question-wrapper,
+.answer-wrapper{
+  padding: 0.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.question-wrapper{
+  border-left: 6px solid #e26739;
+  background: #e2663926;
+  color: #e26739;
+}
+.answer-wrapper{
+  border-left: 6px solid #5b5756;
+  background: #5b575608;
+  color: #5b5756;
+}
+.question-icon,
+.answer-icon{
+  font-size: 3rem;
+}
 @media only screen and (max-width: 768px) {
   .venyl-card-container {
     position: inherit;
@@ -243,5 +270,17 @@
   .venyl-card h3 {
     font-size: 1rem;
     margin-bottom: 1rem;
+  }
+  .product-faqs-wrapper{
+    width: 100%;
+    padding: 1rem;
+  }
+  .question-icon,
+  .answer-icon{
+    font-size: 1.5rem;
+  }
+  .question,
+  .answer{
+    font-size: 0.9rem;
   }
 }

@@ -28,14 +28,20 @@ export default function ReferalPage() {
 						<br /><br />
 						One of the most effective ways to sell a product is through word-of-mouth referrals, and some companies use the referral system to get their products in front of a larger audience.
 					</p>
-					<button className="Refer-btn" onClick={() => setShowPopUp(true)}>
-						Refer
-					</button>
+					<div className="btns-wrapper">
+						<button className="Refer-btn" onClick={() => setShowPopUp("refer")}>
+							Refer and Earn
+						</button>
+						<span className="break-line">OR</span>
+						<button className="Refer-btn" onClick={() => setShowPopUp("discount")}>
+							Get Discount
+						</button>
+					</div>
 				</div>
 			</div>
 			{ShowPopUp && (
 				<div className="Refer-Pop-Up">
-					<ReferAndEarn setShowPopUp={setShowPopUp} setShowSuccess={setShowSuccess}/>
+					<ReferAndEarn setShowPopUp={setShowPopUp} showPopup={ShowPopUp} setShowSuccess={setShowSuccess}/>
 				</div>
 			)}
 			{

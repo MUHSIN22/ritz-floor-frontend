@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { useParams } from 'react-router-dom'
 import AdminPageManager from '../../../../APIServices/AdminPageManager';
+import { useLoader } from '../../../../contexts/loadingContext';
 import ImageUploader from '../../../Utils/ImageUploader/ImageUploader';
 import PrimaryTable from '../../../Utils/PrimaryTable/PrimaryTable';
 
@@ -14,6 +15,7 @@ export default function TestimonialManager() {
   const [thirdSection,setThirdSection] = useState({name:'',content:''});
   const [sec3Image,setSec3Image] = useState(null);
   const [thirdSectionData,setThirdSectionData] = useState([])
+  const [loading,setLoading] = useLoader()
 
   useEffect(() => {
     AdminPageManager.getSectionItems('homepage',3)
@@ -22,13 +24,17 @@ export default function TestimonialManager() {
         })
   },[])
 
-  const handleThirdSection = (event) => {
+  const handleThirdSection = async (event) => {
     event.preventDefault();
-    AdminPageManager.uploadForm('homepage',3,{...thirdSection,img: sec3Image});
+    setLoading(true)
+    await AdminPageManager.uploadForm('homepage',3,{...thirdSection,img: sec3Image});
+    setLoading(false)
   }
 
-  const deleteItems = (id) => {
-    AdminPageManager.deleteItem('homepage',3,id);
+  const deleteItems = async (id) => {
+    setLoading(true)
+    await AdminPageManager.deleteItem('homepage',3,id);
+    setLoading(false)
   }
   return (
     <section className="home-page-manager">

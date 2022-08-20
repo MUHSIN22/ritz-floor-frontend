@@ -2,13 +2,15 @@ import React, { useRef } from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import './TestimonialSlider.css'
+import {BsStar, BsStarFill, BsStarHalf} from 'react-icons/bs'
 
-export default function TestimonialSlider({ slideItems }) {
+export default function TestimonialSlider({ slideItems, navDir, toggler }) {
     const sliderRef = useRef(null);
     const [gridWidth, setGridWidth] = useState(0);
     const [itemCount, setItemCount] = useState(0);
     const [marginCount, setMarginCount] = useState(3);
     const [activeIndex, setActiveIndex] = useState(4)
+    let rating = 5;
     let initialPosition = 0;
     let isLastCloned = false, isFirstCloned = false;
 
@@ -112,6 +114,10 @@ export default function TestimonialSlider({ slideItems }) {
             })
         }
     }
+ 
+    useEffect(() => {
+        shiftSlide(navDir)
+    },[toggler])
 
     return (
         <div className="testimonial-slider" ref={sliderRef}>
@@ -132,6 +138,53 @@ export default function TestimonialSlider({ slideItems }) {
                                 {item.content}
                             </h2>
                             <h3 className="testimonial-slider-person">{item.name}</h3>
+                            <div className="star-rating">
+                                {
+                                    item.rating <= 0 ?
+                                    <BsStar className='star-icon' />
+                                    :(item.rating <1 && item.rating >0) ?
+                                    <BsStarHalf className='star-icon' />
+                                    :(item.rating >= 1) ?
+                                    <BsStarFill className='star-icon' />
+                                    :null
+                                }
+                                {
+                                    item.rating <= 1 ?
+                                    <BsStar className='star-icon' />
+                                    :(item.rating <2 && item.rating >1) ?
+                                    <BsStarHalf className='star-icon' />
+                                    :(item.rating >= 2) ?
+                                    <BsStarFill className='star-icon' />
+                                    :null
+                                }
+                                {
+                                    item.rating <= 2 ?
+                                    <BsStar className='star-icon' />
+                                    :(item.rating <3 && item.rating >2) ?
+                                    <BsStarHalf className='star-icon' />
+                                    :(item.rating >= 3) ?
+                                    <BsStarFill className='star-icon' />
+                                    :null
+                                }
+                                {
+                                    item.rating <= 3 ?
+                                    <BsStar className='star-icon' />
+                                    :(item.rating <4 && item.rating >3) ?
+                                    <BsStarHalf className='star-icon' />
+                                    :(item.rating >= 4) ?
+                                    <BsStarFill className='star-icon' />
+                                    :null
+                                }
+                                {
+                                    item.rating <= 4 ?
+                                    <BsStar className='star-icon' />
+                                    :(item.rating <5 && item.rating >4) ?
+                                    <BsStarHalf className='star-icon' />
+                                    :(item.rating >= 5) ?
+                                    <BsStarFill className='star-icon' />
+                                    :null
+                                }
+                            </div>
                             {/* <h4 className="testimonial-slider-designation">{item.role}</h4> */}
                         </div>
                     ))

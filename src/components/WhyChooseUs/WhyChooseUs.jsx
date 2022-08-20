@@ -18,6 +18,7 @@ import whychooseus from '../asset/whychooseus.jpeg'
 import PageDataFetcher from "../../APIServices/PageDataFetcher";
 import config from "../../Constants/config";
 import AdminPageManager from "../../APIServices/AdminPageManager";
+import setLineBreak from "../Utils/lineBreaker";
 
 export default function WhyChooseUs() {
 	const [features, setFeatures] = useState(null)
@@ -52,7 +53,7 @@ export default function WhyChooseUs() {
 								<strong>{aboutData.subtitle}</strong>
 								<br />
 								{
-									aboutData.content
+									setLineBreak(aboutData.content)
 								}
 							</p>
 							{
@@ -89,7 +90,7 @@ export default function WhyChooseUs() {
 						<div className="Features-Content">
 							<h1 className="my-0">{features.title}</h1>
 							<p className="my-0 features-p">
-								{features.content}
+								{setLineBreak(features.content)}
 							</p>
 						</div>
 						<Cat data={features} />
@@ -127,7 +128,7 @@ const OurWorks = () => {
 					<div className="work-leftside">
 						<h1>{works.title}</h1>
 						<p>
-							{works.content}
+							{setLineBreak(works.content)}
 						</p>
 					</div>
 					<div className="work-rightside">

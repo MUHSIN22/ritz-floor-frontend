@@ -10,6 +10,40 @@
   gap: 1rem;
   
 }
+.social-media-floater .social-media-icon{
+  width: 2rem;
+  cursor: pointer;
+}
+.social-media-floater{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: fixed;
+  top: 50%;
+  right: 0;
+  background: #fff;
+  transform: translateY(-50%);
+  padding: 1rem 0.5rem;
+  border-radius: 8px 0 0 8px;
+  z-index: 10000;
+  box-shadow: -1px -1px 16px rgba(0,0,0,0.2);
+}
+.floating-btn{
+  position: fixed;
+  bottom: 5%;
+  right: 1.5rem;
+  background: #e26739;
+  padding: 0.8rem 1rem;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1000;
+}
+.btn-estimation{
+  display: none;
+}
 .Banner {
   width: 100%;
   height: 100vh;
@@ -224,15 +258,83 @@ font-size: 55px;
 font-weight: 600;
 text-align: center;
 margin:34px 0 100px 0;
+color: #fff;
 }
 .client-text-h1{
   font-size: 2.1rem;
   text-align: center;
   margin-top: 2rem;
+  color: #fff;
 }
-
-
-
+.clients-review-home{
+  display: flex;
+  padding: 1rem 7%;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+.clients-review-home .client-review-card{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  line-height: 1.5;
+  flex: 1;
+  color: #fff;
+}
+.client-profile{
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: purple;
+  margin: 0 auto;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  display: grid;
+  place-items: center;
+}
+.client-profile-img{
+  width: 100%;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.client-review-card .client-name{
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+}
+.more-review-btn-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.btn-more-review{
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border: 3px solid #e26739;
+}
+.btn-more-review strong{
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #e26739;
+}
+.btn-more-review span{
+  font-size: 1rem;
+  color: #fff;
+}
+.google-img{
+  width: 5rem;
+}
+.what-client-say-wrapper{
+  background-color: #5b5756;
+  padding: 3rem 0;
+}
 @media only screen and (max-width: 768px) {
   .Product-Name h2 {
     font-size: 1rem;
@@ -307,6 +409,32 @@ margin:34px 0 100px 0;
 }
 
 @media only screen and (max-width: 500px) {
+  .social-media-floater{
+    top: auto;
+    bottom: 0;
+    flex-direction: row;
+    right: 50%;
+    transform: translate(50%,0);
+    padding: 0.5rem;
+    border-radius: 6px 6px 0 0;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    z-index: 1000;
+  }
+  .btn-estimation{
+    margin-left: auto;
+    background: #e26739;
+    color: #fff;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+  }
+  .floating-btn{
+    display: none;
+  }
   .Why-choose-us-Image{
     display: none;
   }
@@ -366,5 +494,19 @@ margin:34px 0 100px 0;
   .Btn-row span{
     height: max-content;
   }
-  
+  .clients-review-home{
+    flex-direction: column;
+  }
+  .client-review-card .client-review{
+    text-align: justify;
+    font-size: 0.9rem;
+  }
+  .clients-review-home .client-profile{
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.3rem;
+  }
+  .client-profile-img{
+    height: 3rem;
+  }
 }

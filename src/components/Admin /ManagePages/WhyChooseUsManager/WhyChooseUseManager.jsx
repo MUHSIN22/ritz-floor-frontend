@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import AdminPageManager from '../../../../APIServices/AdminPageManager';
 import axiosInstance from '../../../../Axios/axiosInstance';
+import { useLoader } from '../../../../contexts/loadingContext';
 import ImageUploader from '../../../Utils/ImageUploader/ImageUploader'
 
 export default function WhyChooseUseManager() {
@@ -24,9 +25,11 @@ export default function WhyChooseUseManager() {
     const [image8,setImage8] = useState(null);
     const [aboutImage,setAboutImage] = useState(null);
     const [aboutData,setAboutData] = useState({title:'',content:'',subtitle:'',points: ''})
+    const [loading,setLoading] = useLoader();
 
     const handleFeatureFormSubmission = (event) => {
         event.preventDefault();
+        setLoading(true)
         let fd = new FormData();
         let data = {
             ...formData,
@@ -37,13 +40,16 @@ export default function WhyChooseUseManager() {
             img_balcony: balcony,
             img_kitchen: kitchen
         }
+        console.log(data);
         Object.keys(data).forEach((key) => {
-            fd.append(key, data[key])
+            if(data[key] !== null && data[key] !== ""){
+                fd.append(key, data[key])
+            }
         })
         
         axiosInstance.put('/crousels/about-feature',fd)
             .then(res => {
-                console.log(res);
+                setLoading(false)
                 if(res.data.success){
                     toast.success("Uploaded successfully");
                     setFormData({title:'',content:''})
@@ -57,12 +63,14 @@ export default function WhyChooseUseManager() {
                     toast.error("Something went wrong!")
                 }
             }).catch(err =>{
+                setLoading(false)
                 toast.error("Something went wrong!")
             })
     }
 
     const handleWorkSubmission = (event) => {
         event.preventDefault();
+        setLoading(true)
         let fd = new FormData();
         let data = {
             img_1: image1,
@@ -85,7 +93,7 @@ export default function WhyChooseUseManager() {
         
         axiosInstance.put('/crousels/about-works',fd)
             .then(res => {
-                console.log(res);
+                setLoading(false)
                 if(res.data.success){
                     toast.success("Uploaded successfully");
                     setFormData({title:'',content:''})
@@ -101,13 +109,16 @@ export default function WhyChooseUseManager() {
                     toast.error("Something went wrong!")
                 }
             }).catch(err =>{
+                setLoading(false)
                 toast.error("Something went wrong!")
             })
     }
 
-    const firstSectionSubmission = (event) => {
+    const firstSectionSubmission = async (event) => {
         event.preventDefault();
-        AdminPageManager.updateForm('whychooseus',1,{...aboutData,img: aboutImage});
+        setLoading(true)
+        await AdminPageManager.updateForm('whychooseus',1,{...aboutData,img: aboutImage});
+        setLoading(false)
     }
     return (
         <div className="home-page-manager">
@@ -169,14 +180,14 @@ export default function WhyChooseUseManager() {
                                             <ImageUploader name="OFFICE_ROOM" passImage={setOffice} isFileAvailable={office?true:false}/>
                                         </div>
                                         <div className="input-wrapper">
-                                            <label htmlFor="">Dining</label>
+                                            <label htmlFor="">Family Room</label>
                                             <ImageUploader name="DINING" passImage={setDining} isFileAvailable={dining?true:false}/>
                                         </div>
                                     </div>
 
                                     <div className="image-two-columns">
                                         <div className="input-wrapper">
-                                            <label htmlFor="">Balcony</label>
+                                            <label htmlFor="">Washroom</label>
                                             <ImageUploader name="BALCONY" passImage={setBalcony} isFileAvailable={balcony?true:false}/>
                                         </div>
                                         <div className="input-wrapper">

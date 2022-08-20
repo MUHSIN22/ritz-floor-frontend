@@ -165,7 +165,6 @@
   text-align: center;
   margin-top: 62px;
 }
-
 .Testimonials-Carousel02 h1{
   font-size: 2.1rem;
   font-weight: 600;
@@ -233,10 +232,31 @@ margin-top: 2rem;
   width: 30%;
   height: auto;
 }
+.testimonial-second-section{
+  position: relative;
+}
+.slider-navigation-icon{
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  font-size: 2rem;
+  color: #e26739;
+}
+.navigation-slider-right{
+  left: auto;
+  right: 10%;
+}
+
 @media only screen and (max-width: 1500px) {
   .testimonial-second-section{  
     background-color: #5B5756;
     padding: 2rem 7%;
+  }
+  .navigation-slider-right{
+    right: 1rem;
+  }
+  .navigation-slider-left{
+    left: 1rem;
   }
 }
 @media only screen and (max-width: 1300px) {

@@ -19,6 +19,7 @@ export default function LoginPopup({setLogin}) {
         setLogin(false)
         setTimeout(() => {
           navigate('/admin-panel')
+          window.location.reload();
         },500)
       }).catch(err => {
         toast.error(err.response.data.message)

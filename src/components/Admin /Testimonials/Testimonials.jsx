@@ -8,7 +8,7 @@ import ImageUploader from '../../Utils/ImageUploader/ImageUploader'
 import PrimaryTable from '../../Utils/PrimaryTable/PrimaryTable'
 import './Testimonials.css'
 
-let tableHeader = ['SI NO', 'Name', 'Designation', 'Testimonial', 'Delete'];
+let tableHeader = ['SI NO', 'Name', 'Rating', 'Testimonial', 'Delete'];
 let videoTable = ['SI NO',"Link","Delete"]
 
 export default function Testimonials() {
@@ -32,7 +32,7 @@ export default function Testimonials() {
             .then((res) => {
                 if(res.data.success){
                     toast.success("Uploaded successfully")
-                    setFormData({name: '',role:'',content:''})
+                    setFormData({name: '',rating:'',content:''})
                 }else{
                     toast.error("Something went wrong!")
                 }
@@ -99,8 +99,8 @@ export default function Testimonials() {
                                         <input type="text" value={formData.name} required onChange={inputHandler} name='name' className='home-input' />
                                     </div>
                                     <div className="input-wrapper">
-                                        <label htmlFor="">Designation</label>
-                                        <input type="text" value={formData.role} required onChange={inputHandler} name='role' className='home-input' />
+                                        <label htmlFor="">Rating</label>
+                                        <input type="number" max={5} min={5} pattern="[0-5]" value={formData.rating} required onChange={inputHandler} name='rating' className='home-input' />
                                     </div>
                                     <div className="input-wrapper">
                                         <label htmlFor="">Testimonial</label>

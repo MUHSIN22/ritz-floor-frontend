@@ -54,6 +54,13 @@ export default function OffersCarousel() {
                 {/* <div className="Offer-Card-description">
                   <h5>{item.title}</h5>
                 </div> */}
+                <div className="offer-card-info">
+                  <h3 className="offer-card-name">{item.title}</h3>
+                  <div className="price-wrapper">
+                    <s>${item.price}/sqft</s>
+                    <strong>${item.discount_price}/sqft</strong>
+                  </div>
+                </div>
               </div>
             ))}
           </Carousel>

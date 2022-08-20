@@ -5,7 +5,7 @@ import axiosInstance from '../../../Axios/axiosInstance'
 import { useLoader } from '../../../contexts/loadingContext'
 import PrimaryTable from '../../Utils/PrimaryTable/PrimaryTable'
 
-let tableHeader = ["Si.No", "Name", "Email", "Contact","Referal Id","Action"]
+let tableHeader = ["Si.No", "Name", "Referrer Email","Referred Email", "Contact","Referal Id","Action"]
 
 export default function ReferAndEarn() {
     const [referals,setReferals] = useState([])

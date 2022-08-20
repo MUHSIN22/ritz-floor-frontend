@@ -68,10 +68,10 @@ export default function AdminLayout() {
                                         <Link to="/" className='header-logo-wrapper'>
                                             <img src={adminLogo} className="header-logo" alt="" />
                                         </Link>
-                                        <div className="profile-wrapper">
+                                        {/* <div className="profile-wrapper">
                                             <img src={profileAvatar} alt="" className="profile-avatar" />
                                             <p className="profile-name">Akash Singh</p>
-                                        </div>
+                                        </div> */}
                                     </header>
                                 </div>
 

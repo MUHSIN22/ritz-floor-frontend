@@ -153,6 +153,12 @@
   line-height: 1.7;
  
 }
+.ReferalPage-Container .btns-wrapper{
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  align-items: center;
+}
 .Refer-btn {
   font-size: 1.3rem;
   font-weight: 500;
@@ -165,7 +171,6 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin-top: 40px;
   padding: 1rem 4rem;
 }
 .Refer-Pop-Up {
@@ -178,6 +183,7 @@
   position: fixed;
   top: 0%;
   background-color: rgba(0, 0, 0, 0.432);
+  z-index: 10000;
 }
 
 
@@ -189,6 +195,18 @@
   .Refer-Content-col p {
     font-size: 1.3rem;
   }
+  .ReferalPage-Container .btns-wrapper{
+    flex-direction: column;
+    width: 100%;
+  }
+  .Refer-btn {
+    font-size: 1.1rem;
+    font-weight: 500;
+    width: 100%;
+    cursor: pointer;
+    padding: 0.8rem;
+  }
+
 }
 @media only screen and (max-width: 768px) {
   .RefralPage-row {

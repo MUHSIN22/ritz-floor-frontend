@@ -11,6 +11,9 @@
   width: 100%;
 
 }
+.Offers .react-multi-carousel-track {
+  padding-bottom: 1rem;
+}
 
 .Offer-Card {
   width: 70%;
@@ -19,6 +22,7 @@
   align-items: center;
   border-radius: 10px;
   position: relative;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
 }
 
 .Offer-Card span {
@@ -70,6 +74,19 @@
 }
 .Offers .react-multi-carousel-track {
   padding-top: 5rem;
+}
+.offer-card-info{
+  width: 100%;
+  padding: 0.5rem;
+}
+.offer-card-info h3{
+  text-align: left;
+  width: 100%;
+}
+.offer-card-info .price-wrapper{
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
 }
 
 @media only screen and (max-width: 768px) {

@@ -15,10 +15,10 @@ export const Cat = ({data}) => {
 				Office Room
 			</div>
 			<div className="cat-card card4" style={{backgroundImage: `url(${config.backendURL+ data.img_dining})`}}>
-				Dining
+				Family Room
 			</div>
 			<div className="cat-card card5" style={{backgroundImage: `url(${config.backendURL+ data.img_balcony})`}}>
-				Balcoy
+				Washroom
 			</div>
 			<div className="cat-card card6" style={{backgroundImage: `url(${config.backendURL+ data.img_kitchen})`}}>
 				Kitchen

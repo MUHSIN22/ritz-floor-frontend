@@ -10,22 +10,23 @@ import MainBanner from "../Banner/MainBanner";
 import axiosInstance from "../../Axios/axiosInstance";
 import config from "../../Constants/config";
 import ImagePopup from "../imagePopup/ImagePopup";
+import FAQsKnowledgeCenter from "../../JSON DB/FAQsKnowledgeCenter";
 
 export const VenylProducts = () => {
-	const {id} = useParams();
+	const { id } = useParams();
 	const [current, setCurrent] = useState(null);
-	const [data,setData] = useState(null)
-	const [images,setImage] = useState(null)
-	const [isPopup,setPopup] = useState(false)
-	const [selectedImage,setSelectedImage] = useState(null)
+	const [data, setData] = useState(null)
+	const [images, setImage] = useState(null)
+	const [isPopup, setPopup] = useState(false)
+	const [selectedImage, setSelectedImage] = useState(null)
 
 	useEffect(() => {
 		fetchData();
 		window.scrollTo(0, 0)
-	}, []);
+	}, [window.location]);
 
 	const fetchData = async () => {
-		if(id){
+		if (id) {
 			let response = await axiosInstance.get(`/product-page/${id}`)
 				.then(res => {
 					console.log(res);
@@ -34,7 +35,16 @@ export const VenylProducts = () => {
 				}).catch(err => {
 					console.log(err);
 				})
- 		}
+		} else {
+			let response = await axiosInstance.get(`/knowledge-series`)
+				.then(res => {
+					console.log(res);
+					setData(res.data.productDetails)
+					setImage(res.data.images)
+				}).catch(err => {
+					console.log(err);
+				})
+		}
 	}
 	return (
 		<>
@@ -59,17 +69,49 @@ export const VenylProducts = () => {
 							<h1 className="venyl-h1">{data.product_title}</h1>
 							<div className="venyl-card-container">
 								{
-									images.map((image,index) => (
-										<div className="venyl-card" key={index} onClick={() =>{ 
-											setSelectedImage(config.backendURL+image.img);
+									images.map((image, index) => (
+										<div className="venyl-card" key={index} onClick={() => {
+											setSelectedImage(config.backendURL + image.img);
 											setPopup(true)
 										}}>
-											<img src={config.backendURL+image.img} className="wall-img" />
+											<img src={config.backendURL + image.img} className="wall-img" />
 										</div>
 									))
 								}
 							</div>
 						</>
+					}
+					{
+						window.location.pathname.split('/').includes('knowledge-series') &&
+						<div className="product-faqs-wrapper">
+							<h1 className="venyl-h1">FAQs</h1>
+							{
+								FAQsKnowledgeCenter.map((item, index) => (
+									<div className="question-and-answer" key={index}>
+										<div className="question-wrapper">
+											<span className="question-icon">Q.</span>
+											<p className="question">
+												{item.question}
+											</p>
+										</div>
+										<div className="answer-wrapper">
+											<span className="answer-icon">A.</span>
+											<p className="answer">
+												{item.answer}
+											</p>
+											<ul className="answer">
+												{
+													item.points &&
+													item.points.map((point, i) => (
+														<li key={i}>{point}</li>
+													))
+												}
+											</ul>
+										</div>
+									</div>
+								))
+							}
+						</div>
 					}
 				</div>
 			}

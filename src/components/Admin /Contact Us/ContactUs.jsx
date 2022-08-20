@@ -4,7 +4,7 @@ import axiosInstance from '../../../Axios/axiosInstance'
 import PrimaryTable from '../../Utils/PrimaryTable/PrimaryTable'
 import './ContactUs.css'
 
-let tableHeader = ["SiNo", "Name", "Email", "Query"]
+let tableHeader = ["SiNo", "Name", "Email","Phone", "Query"]
 let tableBody = [
     {
         siNo: 1,

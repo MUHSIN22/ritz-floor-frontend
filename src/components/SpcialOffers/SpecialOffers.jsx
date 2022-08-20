@@ -24,15 +24,15 @@ export default function SpecialOffers() {
 		<div className="SpecialOffers-Container">
 			{" "}
 			<MainBanner background={BannerImage} />
-			<Laminate />
+			{/* <Laminate /> */}
 			<h1 className="offer-h1">Offers</h1>
 			<div className="SpecialOffer-Carousel">
 				<OffersCarousel />
 			</div>
-			<h1 className="upcomming-offer-h1">Upcoming Offers</h1>
+			{/* <h1 className="upcomming-offer-h1">Upcoming Offers</h1>
 			<div className="UC-Carousel">
 				<UpComingCarousel />
-			</div>
+			</div> */}
 		</div>
 	);
 }

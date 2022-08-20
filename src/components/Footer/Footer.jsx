@@ -6,7 +6,7 @@ import {
 	Instagram,
 } from "@mui/icons-material";
 import loading from '../asset/loading.gif'
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axiosInstance from "../../Axios/axiosInstance";
 import "./Footer.css";
@@ -15,24 +15,31 @@ import { useAuth } from "../../contexts/adminAuth";
 export default function Footer({setLogin}) {
 	const [newsLetterEmail, setNewsLetterEmail] = useState(null)
 	const [isLoading, setLoading] = useState(false)
+	const [workingHours, setWorkingHours] = useState([])
 	const auth = useAuth();
 	const navigate = useNavigate();
 
-	const handleNewsLetter = (event) => {
-		event.preventDefault();
-		console.log('hreerere');
-		if (newsLetterEmail && newsLetterEmail.length > 2) {
-			setLoading(true)
-			axiosInstance.post('/newsletter/send-news-letter', { email: newsLetterEmail })
-				.then((res) => {
-					console.log(res);
-					setLoading(false)
-				}).catch(err => {
-					console.log(err);
-					setLoading(false)
-				})
-		}
-	}
+	useEffect(() => {
+		axiosInstance.get('/working-time')
+            .then(res => {
+                setWorkingHours(res.data.data)
+            })
+	},[])
+	// const handleNewsLetter = (event) => {
+	// 	event.preventDefault();
+	// 	console.log('hreerere');
+	// 	if (newsLetterEmail && newsLetterEmail.length > 2) {
+	// 		setLoading(true)
+	// 		axiosInstance.post('/newsletter/send-news-letter', { email: newsLetterEmail })
+	// 			.then((res) => {
+	// 				console.log(res);
+	// 				setLoading(false)
+	// 			}).catch(err => {
+	// 				console.log(err);
+	// 				setLoading(false)
+	// 			})
+	// 	}
+	// }
 	return (
 		<div className="Footer-Container">
 			<div className="Footer-Map">
@@ -95,7 +102,23 @@ export default function Footer({setLogin}) {
 					</li>
 				</ul>
 			</div>
-			<form className="News-Letter" onSubmit={handleNewsLetter}>
+
+			<div className="working-days">
+				<h2 className="footer-title">Working Hours</h2>
+				<ul>
+					{
+						(workingHours && workingHours[0]) &&
+						workingHours.map((item,index) => (
+							<li key={index}>
+								<span>{item.day}</span>
+								<span className={"working-time "+ ((item.from === 'closed') ? "working-time-leave" : "")}>{item.from} {item.to !== "closed" ? "- " + item.to : ''}</span>
+							</li>
+						))
+					}
+				</ul>
+				<button onClick={() => setLogin(true)}>Login</button>
+			</div>
+			{/* <form className="News-Letter" onSubmit={handleNewsLetter}>
 				<h2 className="footer-title">Newsletter</h2>
 				<h3>Signup to Newsletter</h3>
 				<input name="Email" type="email" id="01" onChange={(event) => setNewsLetterEmail(event.target.value)} placeholder="Email" />
@@ -111,7 +134,7 @@ export default function Footer({setLogin}) {
 					</button>
 					<button onClick={() => {auth.user ? navigate('/admin-panel') :setLogin(true)}}>{auth.user ? "Admin Panel" : 'Login'}</button>
 				</div>
-			</form>
+			</form> */}
 			<div className="techjain-container">
 				<hr />
 				<p>

@@ -10,8 +10,9 @@ import { useEffect } from 'react'
 import config from '../../../../Constants/config'
 import AdminPageManager from '../../../../APIServices/AdminPageManager'
 import ProductPopup from '../ProductPopup/ProductPopup'
+import { useLoader } from '../../../../contexts/loadingContext'
 
-let tableHeader = ["SiNo", "Title", "Delete Item"]
+let tableHeader = ["SiNo", "Title","Add Content","Delete Item"]
 
 const testimonials = {
   tableHeader: ['SiNo', 'Name', 'Testimonial', 'Delete'],
@@ -67,6 +68,8 @@ export default function HomePageManager() {
   const [thirdSectionData,setThirdSectionData] = useState([])
   const [isProductPopup, setProductPopup] = useState(false);
   const [productId,setProductId] = useState(null)
+  const [isEditMode,setEditMode] = useState(false)
+  const [loading,setLoading] = useLoader();
 
 
   useEffect(() => {
@@ -82,8 +85,38 @@ export default function HomePageManager() {
     }
   }, [section])
 
+  useEffect(() => {
+    if(isEditMode){
+      AdminPageManager.getSingleItem('homepage',1,productId)
+        .then(res => {
+          console.log(res );
+          setFirstSection({title: res.title})
+          setSec1Image(config.backendURL+res.img)
+        })
+    }
+  },[isEditMode,productId])
+
   const handleFirstSectionSubmission = (event) => {
     event.preventDefault()
+    setLoading(true);
+    let data = {};
+    if(isEditMode){
+      console.log(firstSection.title, typeof sec1Image);
+      if(typeof sec1Image === "object"){
+        console.log("image file");
+        data.img = sec1Image
+      }
+      if(firstSection.title && firstSection.title !== ""){
+        data.title = firstSection.title
+      }
+      console.log(productId,"this is productid");
+      AdminPageManager.updateForm('homepage',1,data,productId)
+        .then(res => {
+          console.log(res);
+          setLoading(false);
+        })
+      return
+    }
     if (firstSection.title && sec1Image) {
       let formData = new FormData();
       formData.append('title', firstSection.title);
@@ -91,6 +124,7 @@ export default function HomePageManager() {
       axiosInstance.post('/crousels/homepage/section-1', formData)
         .then(res => {
           console.log(res);
+          setLoading(false)
           if (res.data.success) {
             toast.success("Uploaded successfully")
             setSec1Image(null)
@@ -99,6 +133,7 @@ export default function HomePageManager() {
             toast.error("Something went wrong!")
           }
         }).catch(err => {
+          setLoading(false)
           toast.error("Something went wrong!")
         })
       }
@@ -115,9 +150,11 @@ export default function HomePageManager() {
 
   const deleteSection1 = (id, index) => {
     let isConfirmed = window.confirm("Are you sure to delete?");
+    setLoading(true)
     if (isConfirmed) {
       axiosInstance.delete('/crousels/delete-content/homepage/section-1/' + id)
         .then(res => {
+          setLoading(false)
           if (res.data.success) {
             toast.success("Item deleted successfully")
             window.location.reload()
@@ -125,6 +162,7 @@ export default function HomePageManager() {
             toast.error("Something went wrong")
           }
         }).catch(err => {
+          setLoading(false)
           toast.error("Something went wrong")
         })
     }
@@ -137,8 +175,10 @@ export default function HomePageManager() {
     formData.append('content', secondSection.content)
     formData.append('img', sec2Image);
     if (sec2Image) {
+      setLoading(true)
       axiosInstance.put(`/crousels/update-content/homepage/section-2/1`, formData)
         .then(res => {
+          setLoading(false)
           if (res.data.success) {
             toast.success("Updated successfully!");
             setSecondSection({ title: '', content: '' })
@@ -148,6 +188,7 @@ export default function HomePageManager() {
             toast.error("Something went wrong!");
           }
         }).catch(err => {
+          setLoading(false)
           toast.error("Something went wrong!")
         })
     } else {
@@ -165,16 +206,34 @@ export default function HomePageManager() {
       })
   }
 
-  const handleThirdSection = (event) => {
+  const handleThirdSection = async(event) => {
     event.preventDefault();
-    AdminPageManager.uploadForm('homepage',3,{...thirdSection,img: sec3Image});
+    if(thirdSectionData.length >= 3){
+      toast.error("You can't upload more than 3 Reviews!")
+    }else{
+      setLoading(true);
+      await AdminPageManager.uploadForm('homepage',3,{...thirdSection,img: sec3Image});
+      setLoading(false)
+    }
   }
 
-  const deleteItems = (id) => {
-    AdminPageManager.deleteItem('homepage',3,id);
+  const deleteItems =async(id) => {
+    if(thirdSectionData.length <= 2){
+      toast.error("Minimum 2 reviews required!")
+    }else{
+      setLoading(true)
+      await AdminPageManager.deleteItem('homepage',3,id);
+      setLoading(false) 
+    }
   }
 
   const handleRowClick = (id) => {
+    console.log(id);
+    setEditMode(true)
+    setProductId(id)
+  }
+
+  const addProductContent = (id) => {
     setProductPopup(true);
     setProductId(id);
   }
@@ -196,13 +255,13 @@ export default function HomePageManager() {
                 </div>
                 <div className="input-wrapper">
                   <label htmlFor="">Image</label>
-                  <ImageUploader name="HOME_IMAGE_1" passImage={setSec1Image} isFileAvailable={sec1Image ? true : false} />
+                  <ImageUploader name="HOME_IMAGE_1" passImage={setSec1Image} value={sec1Image} isFileAvailable={sec1Image ? true : false} />
                 </div>
               </div>
               <button className="btn-submit">Upload</button>
             </form>
             <div className="table-wrapper">
-              <PrimaryTable tableHeader={tableHeader} tableBody={firstSectionData} deleteCol={true} deleteRow={deleteSection1} rowAction={handleRowClick} />
+              <PrimaryTable tableHeader={tableHeader} tableBody={firstSectionData} deleteCol={true} deleteRow={deleteSection1} rowAction={handleRowClick} addContent={addProductContent} />
             </div>
           </>
           : (section == 2) ?

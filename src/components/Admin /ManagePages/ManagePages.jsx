@@ -9,7 +9,7 @@ let sectionCount = {
     },
     whychooseus: {
         title: 'why-choose-us',
-        count: 3
+        count: 2
     },
     testimonials: {
         title: 'testimonials',
@@ -17,7 +17,7 @@ let sectionCount = {
     },
     specialOffers: {
         title: 'special-offers',
-        count: 3
+        count: 1
     }
 }
 
@@ -45,7 +45,7 @@ export default function ManagePages() {
                 <div className="pages-btns-wrapper">
                     <NavLink to="/admin-panel/manage-pages/home/1" className={({ isActive }) => isActive || currentLocation.title === "home" ? "btn-page btn-page--active" : 'btn-page'}>Home</NavLink>
                     <NavLink to="/admin-panel/manage-pages/why-choose-us/1" className={({ isActive }) => isActive || currentLocation.title === "why-choose-us" ? "btn-page btn-page--active" : 'btn-page'}>Why Choose Us</NavLink>
-                    <NavLink to="/admin-panel/manage-pages/testimonials/1" className={({ isActive }) => isActive || currentLocation.title === "testimonials" ? "btn-page btn-page--active" : 'btn-page'}>Testimonials</NavLink>
+                    {/* <NavLink to="/admin-panel/manage-pages/testimonials/1" className={({ isActive }) => isActive || currentLocation.title === "testimonials" ? "btn-page btn-page--active" : 'btn-page'}>Testimonials</NavLink> */}
                     <NavLink to="/admin-panel/manage-pages/special-offers/1" className={({ isActive }) => isActive || currentLocation.title === "special-offers" ? "btn-page btn-page--active" : 'btn-page'}>Special Offers</NavLink>
                 </div>
             }

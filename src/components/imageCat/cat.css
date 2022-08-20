@@ -1,16 +1,13 @@
 .catalog-images-container{
-   
     display: flex;
     flex-wrap: wrap;
     gap:2rem;
     width: 47vw;
     margin-left: 10rem;
-   
     color: white;
     text-align: center;
     vertical-align: center;
     margin-top: auto;
-   
 }
 .cat-card{
     width:calc(100vw / 8);
@@ -21,7 +18,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 1.2rem;
     font-weight: 500;
     cursor: pointer;
 }
@@ -117,11 +114,11 @@
 }
 @media only screen and (max-width: 500px) {
     .catalog-images-container {
-        gap: 0;
+        gap: 1rem;
     }
     .cat-card {
-        width: calc(50% - 1rem);
-        margin: 0.5rem;
+        width: calc(50% - 0.5rem);
+        margin: 0;
         font-size: 1.3rem;
         box-shadow: inset 1000px 0px 10px rgba(0,0,0,0.4);
     }

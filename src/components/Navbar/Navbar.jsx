@@ -28,6 +28,7 @@ export default function Navbar() {
         <Link to="/whychooseus" onClick={optionClickHandler}>Why Choose Us</Link>
         <Link to="/specialOffers" onClick={optionClickHandler}>Special Offers</Link>
         <Link to="/testimonials" onClick={optionClickHandler}>Testimonials</Link>
+        <Link to="/knowledge-series" onClick={optionClickHandler}>Knowledge Centre</Link>
         <Link to="/ReferalPage" onClick={optionClickHandler}>Refer and Earn</Link>
         <Link to="/ContactUs" onClick={optionClickHandler}>Contact Us</Link>
       </div>

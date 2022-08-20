@@ -22,8 +22,12 @@ import TestimonialSlider from "../Utils/TestimonialSlider/TestimonialSlider";
 import axiosInstance from "../../Axios/axiosInstance";
 import { toast } from "react-toastify";
 import PageDataFetcher from "../../APIServices/PageDataFetcher";
+import {AiOutlineCaretLeft, AiOutlineCaretRight} from 'react-icons/ai'
+
 export default function Testimonials() {
 	const [textTestimonials,setTextTestimonials] = useState([])
+	const [nav,setNav] = useState(null)
+	const [toggler,setToggler] = useState(false)
 	useEffect(() => {
 		window.scrollTo(0,0);
 		axiosInstance.get('/crousels/get-content/testimonials/section-2')
@@ -36,17 +40,19 @@ export default function Testimonials() {
 	return (
 		<div className="Testimonials-Container">
 			<MainBanner background={BannerImage}/>
-			<div className="Spring3d">
+			{/* <div className="Spring3d">
 				<div className="Spring3d-He">
 					<h1>What Client Says</h1>
 				</div>
 				<HomeTestimonialCarousel />
-			</div>
+			</div> */}
 
 			<div className="testimonial-second-section">
+				<AiOutlineCaretLeft  onClick={() => {setNav(-1); setToggler(!toggler)}} className="slider-navigation-icon navigation-slider-left" />
+				<AiOutlineCaretRight onClick={() => {setNav(1); setToggler(!toggler)}} className="slider-navigation-icon navigation-slider-right"  />
 				<h1>Testimonial</h1>
 				<div className="testimonial-slider-holder">
-					<TestimonialSlider slideItems={textTestimonials}/>
+					<TestimonialSlider slideItems={textTestimonials} navDir={nav} toggler={toggler}/>
 				</div>
 			</div>
 

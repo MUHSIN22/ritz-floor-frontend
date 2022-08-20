@@ -1,8 +1,9 @@
 import React, { Fragment, useEffect } from 'react'
-import { AiFillDelete, AiFillCloseCircle, AiFillCheckCircle } from 'react-icons/ai'
+import { AiFillDelete, AiFillCloseCircle, AiFillCheckCircle, AiOutlineFileAdd } from 'react-icons/ai'
+import {FiEdit} from 'react-icons/fi'
 import './PrimaryTable.css'
 
-export default function PrimaryTable({ tableHeader, tableBody, deleteCol, deleteRow,isAction, approve, deny, rowAction }) {
+export default function PrimaryTable({ tableHeader, tableBody, setTableBody, deleteCol, deleteRow,isAction, approve, deny, rowAction, addContent, editContent }) {
     return (
         <>
             {
@@ -23,8 +24,16 @@ export default function PrimaryTable({ tableHeader, tableBody, deleteCol, delete
                                     <tr key={index} onClick={() => rowAction ? rowAction(item.id) : null}>
                                         {
                                             Object.keys(item).map((key, keyIndex) => (
-                                                <td>{key === 'id' ? index + 1 : item[key]}</td>
+                                                <td>{key === 'id' ? index + 1 : item[key]}</td>                   
                                             ))
+                                        }
+                                        {
+                                            addContent &&
+                                            <td className='delete-icon' onClick={() => addContent(item.id, index)}><AiOutlineFileAdd /></td>
+                                        }
+                                        {
+                                            editContent &&
+                                            <td className='delete-icon' onClick={() => editContent(item.id, index)}><FiEdit /></td>
                                         }
                                         {
                                             deleteCol &&

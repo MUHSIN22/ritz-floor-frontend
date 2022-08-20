@@ -4,6 +4,8 @@ import { toast } from 'react-toastify'
 import axiosInstance from '../Axios/axiosInstance'
 import AdminLayout from '../components/Admin /AdminLayout/AdminLayout'
 import ContactUs from '../components/Admin /Contact Us/ContactUs'
+import EstimationForm from '../components/Admin /FreeEstimation/EstimationForm'
+import KnowledgeSeries from '../components/Admin /KnowledgeSeries/KnowledgeSeries'
 import AddUserForm from '../components/Admin /Manage Users/add user/AddUserForm'
 import ManageUsers from '../components/Admin /Manage Users/ManageUsers'
 import HomePageManager from '../components/Admin /ManagePages/HomaPageManager/HomePageManager'
@@ -14,6 +16,7 @@ import WhyChooseUseManager from '../components/Admin /ManagePages/WhyChooseUsMan
 import NewsLetter from '../components/Admin /NewsLetter/NewsLetter'
 import ReferAndEarn from '../components/Admin /ReferAndEarn/ReferAndEarn'
 import Testimonials from '../components/Admin /Testimonials/Testimonials'
+import WorkingTimes from '../components/Admin /WorkingTimes/WorkingTimes'
 import PrimaryTable from '../components/Utils/PrimaryTable/PrimaryTable'
 import { AuthProvider, useAuth } from '../contexts/adminAuth'
 
@@ -73,10 +76,13 @@ export default function AdminNavigation({ setAdmin }) {
                         <Route path='special-offers/:section' element={<SpecialOfferManager />} />
                         <Route path="testimonials/:section" element={<TestimonialManager />} />
                     </Route>
+                    <Route path='knowledge-series' element={<KnowledgeSeries/>} />
+                    <Route path='working-times' element={<WorkingTimes />} />
                     <Route path='testimonials' element={<Testimonials />} />
                     <Route path='testimonials/:section' element={<Testimonials />} />
                     <Route path="contact-us" element={<ContactUs />} />
-                    <Route path='manage-newsletter' element={<NewsLetter />} />
+                    <Route path="estimation-form" element={<EstimationForm />} />
+                    {/* <Route path='manage-newsletter' element={<NewsLetter />} /> */}
                     <Route path="refer-and-earn" element={<ReferAndEarn />} />
                 </Route>
             </Routes>

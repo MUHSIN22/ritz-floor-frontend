@@ -23,12 +23,12 @@ export default {
             })
     },
 
-    updateForm: (page, section, data,isImage) => {
+    updateForm: (page, section, data,id = 1,isImage) => {
         let formData = new FormData();
         Object.keys(data).forEach((key) => {
             formData.append(key, data[key])
         })
-        axiosInstance.put(`/crousels/update-content/${page}/section-${section}/1}`, formData)
+        axiosInstance.put(`/crousels/update-content/${page}/section-${section}/${id}`, formData)
             .then(res => {
                 if (res.data.success) {
                     toast.success("Uploaded successfully")
@@ -66,6 +66,18 @@ export default {
     getSectionItems: (page, section) => {
         return new Promise((resolve, reject) => {
             axiosInstance.get(`/crousels/get-content/${page}/section-${section}`)
+                .then(res => {
+                    console.log(res.data.item);
+                    resolve(res.data.items)
+                }).catch(err => {
+                    toast.error("Something went wrong with fetching!")
+                })
+        })
+    },
+
+    getSingleItem: (page, section,id) => {
+        return new Promise((resolve, reject) => {
+            axiosInstance.get(`/crousels/get-single-item/${page}/section-${section}/${id}`)
                 .then(res => {
                     console.log(res.data.item);
                     resolve(res.data.items)

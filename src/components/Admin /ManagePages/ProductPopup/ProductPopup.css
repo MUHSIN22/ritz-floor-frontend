@@ -25,7 +25,8 @@
     cursor: pointer;
     font-size: 2rem;
 }
-.popup-page-form h1{
+.popup-page-form h1,
+.knowledge-series-wrapper h1{
     font-size: 2rem;
     margin-bottom: 2rem;
 }

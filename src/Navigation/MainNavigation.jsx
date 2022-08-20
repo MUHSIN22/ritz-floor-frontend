@@ -27,6 +27,7 @@ export default function MainNavigation() {
                 <Route path="/testimonials" element={<Testimonials />} />
                 <Route path="/cat" element={<Cat />} />
                 <Route path="/products/:id" element={<VenylProducts />} />
+                <Route path="/knowledge-series" element={<VenylProducts />} />
             </Routes>
         </>
     )
