@@ -10,7 +10,7 @@ import { Component } from "react";
 import Slider from "react-slick";
 import MainBanner from "../Banner/MainBanner";
 import HomeTestimonialCarousel from "../HomeTestimonialCarousel/HomeTestimonialCarousel";
-import BannerImage from '../asset/BannerImage.png'
+import BannerImage from '../asset/BannerImage.webp'
 import BannerImageMobile from '../asset/BannerImageMobile.png'
 import PageDataFetcher from "../../APIServices/PageDataFetcher";
 import config from "../../Constants/config";
@@ -46,19 +46,6 @@ export default function Home() {
 				isEstimationModal&&
 				<EstimationModal setEstimationModal={setEstimationModal} />
 			}
-			<div className="social-media-floater">
-				<a href="https://www.facebook.com/RitzFloorDecor/" target="_blank" className="social-media-icon-wrapper">
-					<img src={facebook} className="social-media-icon" alt="" />
-				</a>
-				<a href="https://www.instagram.com/ritzfloor/" target="_blank" className="social-media-icon-wrapper">
-					<img src={instagram} className="social-media-icon" alt="" />
-				</a>
-				<a href="tel:+16047805352" target="_blank" className="social-media-icon-wrapper">
-					<img src={call} className="social-media-icon" alt="" />
-				</a>
-				<button className="btn-estimation" onClick={() => setEstimationModal(true)}>Free Estimation</button>
-			</div>
-			<button className="floating-btn" onClick={() => setEstimationModal(true)}>Free Estimation</button>
 			<MainBanner background={BannerImage} />
 			<div className="Products">
 				<ProductCat />
@@ -92,13 +79,13 @@ export default function Home() {
 						clientReviews.map((item, index) => (
 							<Fragment key={index}>
 								<div className="client-review-card">
-									<span className="client-profile">
+									{/* <span className="client-profile">
 										{
 											item.img ?
 											<img src={config.backendURL + item.img} className="client-profile-img" alt="" />
 											: item.name[0]
 										}
-									</span>
+									</span> */}
 									<strong className="client-name">{item.name}</strong>
 									<p className="client-review">
 										{item.content}

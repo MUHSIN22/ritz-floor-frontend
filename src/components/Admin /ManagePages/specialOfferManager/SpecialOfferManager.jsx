@@ -72,7 +72,7 @@ export default function SpecialOfferManager() {
 
     const deleteTableRow = async(id) => {
         setLoading(true)
-        await AdminPageManager.deleteItem('specialoffers',section,id)
+        await AdminPageManager.deleteItem('specialoffers',2,id)
         setLoading(false)
     }
 

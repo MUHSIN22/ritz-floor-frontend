@@ -7,6 +7,7 @@
   grid-template-areas: 'map touch quicklinks newsletter''copy copy copy copy';
   margin-top: 3rem;
   position: relative;
+  z-index: 1000;
 }
 .Footer-Container .footer-title{
   font-size: 2rem;
@@ -23,6 +24,11 @@
 }
 .Footer-Container .Get-in-Touch{
   grid-area: touch;
+}
+.Footer-Container .touch-links-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 .Footer-Container .Get-in-touch-row{
   display: flex;

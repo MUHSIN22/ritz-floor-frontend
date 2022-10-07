@@ -14,14 +14,42 @@ import { Login } from "@mui/icons-material";
 import { AuthProvider } from "./contexts/adminAuth";
 import UploadLoader from "./components/Admin /uploadLoader/UploadLoader";
 import { useLoader } from "./contexts/loadingContext";
+import call from './components/asset/icons/call.png'
+import facebook from './components/asset/icons/facebook.png'
+import instagram from './components/asset/icons/instagram.png'
+import google from './components/asset/icons/google.png'
+import EstimationModal from "./components/EstimationModal/EstimationModal";
 
 function App() {
 	const [isAdmin, setIsAdmin] = useState(false)
 	const [isLogin, setLogin] = useState(false)
-	const [loading,setLoading] = useLoader();
+	const [isEstimationModal, setEstimationModal] = useState(false)
+	const [loading, setLoading] = useLoader();
 	return (
 		<div className={"App " + (isAdmin ? "App-admin" : '')}>
 			<Router>
+				{
+					isEstimationModal &&
+					<EstimationModal setEstimationModal={setEstimationModal} />
+				}
+				{
+					!isAdmin &&
+					<>
+						<div className="social-media-floater">
+							<a href="https://www.facebook.com/RitzFloorDecor/" target="_blank" className="social-media-icon-wrapper">
+								<img src={facebook} className="social-media-icon" alt="" />
+							</a>
+							<a href="https://www.instagram.com/ritzfloor/" target="_blank" className="social-media-icon-wrapper">
+								<img src={instagram} className="social-media-icon" alt="" />
+							</a>
+							<a href="tel:+16047022233" target="_blank" className="social-media-icon-wrapper">
+								<img src={call} className="social-media-icon" alt="" />
+							</a>
+							<button className="btn-estimation" onClick={() => setEstimationModal(true)}>Get a Free Estimate</button>
+						</div>
+						<button className="floating-btn" onClick={() => setEstimationModal(true)}>Get a Free Estimate</button>
+					</>
+				}
 				<AuthProvider>
 					{
 						loading &&

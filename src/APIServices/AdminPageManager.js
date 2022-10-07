@@ -53,7 +53,7 @@ export default {
                 .then(res => {
                     if (res.data.success) {
                         toast.success("Item deleted successfully")
-                        window.location.reload()
+                        // window.location.reload()
                     } else {
                         toast.error("Something went wrong")
                     }

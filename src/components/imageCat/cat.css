@@ -17,52 +17,26 @@
     background: green;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     font-size: 1.2rem;
     font-weight: 500;
     cursor: pointer;
-}
-.card1{
-    background: url('../asset/livingroom.jpg');
     background-size: cover;
-    background-position: fixed;
-    background-repeat: no-repeat;
-}
-.card2{
-    background: url('../asset/bedroom.jpg');
-    background-size: cover;
-    background-position: fixed;
-    background-repeat: no-repeat;
-}
-.card3{
-    background: url('../asset/dineroom.jpg');
-    background-size: cover;
-    background-position: fixed;
-    background-repeat: no-repeat;
-}
-.card4{
-    background: url('../asset/officeroom.jpg');
-    background-size: cover;
-    background-position: fixed;
-    background-repeat: no-repeat;
-}
-.card5{
-    background: url('../asset/balcony.jpg');
-    background-size: cover;
-    background-position: fixed;
-    background-repeat: no-repeat;
-}
-.card6{
-    background: url('../asset/laminate-m-380x254.jpg');
-    background-position: fixed;
-    background-repeat: no-repeat;
+    background-position: center;
 }
 
+.cat-card:hover .cat-card-title{
+    background: #000;
+}
   .cat-card:hover{
-    box-shadow: inset 10000px 0 10px rgba(0,0,0,0.5);
     transform: scale(1.1);
     transition: 0.1s ease-in-out;
    
+  }
+  .cat-card-title{
+    width: 100%;
+    padding: 0.5rem;
+    background: linear-gradient(0deg, rgba(81, 81, 81, 1) 0%, rgba(217, 217, 217, 0) 124.66%);
   }
  
 @media only screen and (max-width: 1200px) {

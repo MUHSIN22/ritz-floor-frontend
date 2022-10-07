@@ -1,7 +1,7 @@
 {
   "name": "ritzfloor",
-  "homepage": "https://ritzfloor.techjainsupport.co.in",
-  "proxy": "https://ritzfloor.techjainsupport.co.in/api/",
+  "homepage": "https://ritzfloor.ca",
+  "proxy": "https://server.ritzfloor.ca/api/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -22,6 +22,7 @@
     "react-3-carousel": "^1.0.6",
     "react-dom": "^18.1.0",
     "react-feather": "^2.0.10",
+    "react-html-parser": "^2.0.2",
     "react-icons": "^4.4.0",
     "react-multi-carousel": "^2.8.0",
     "react-player": "^2.10.1",

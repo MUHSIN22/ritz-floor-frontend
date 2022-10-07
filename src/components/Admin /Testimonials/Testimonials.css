@@ -16,3 +16,7 @@
     border-radius: 7px;
     cursor: pointer;
 }
+.btn-testimonial--active{
+    background: #FBC88F;
+    color: #000;
+}

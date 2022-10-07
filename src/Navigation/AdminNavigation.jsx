@@ -49,12 +49,15 @@ export default function AdminNavigation({ setAdmin }) {
     }
 
     useEffect(() => {
-        axiosInstance.get('/user/get-all-users')
+        let token = sessionStorage.getItem('token');
+        if(token){
+            axiosInstance.get('/user/get-all-users')
             .then(res => {
                 setUsers(res.data.users)
             }).catch(err => {
                 console.log(err);
             })
+        }
     }, [])
 
     return (
@@ -84,6 +87,7 @@ export default function AdminNavigation({ setAdmin }) {
                     <Route path="estimation-form" element={<EstimationForm />} />
                     {/* <Route path='manage-newsletter' element={<NewsLetter />} /> */}
                     <Route path="refer-and-earn" element={<ReferAndEarn />} />
+                    <Route path="refer-and-earn/:type" element={<ReferAndEarn />} />
                 </Route>
             </Routes>
     )

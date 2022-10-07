@@ -9,7 +9,7 @@ let sectionCount = {
     },
     whychooseus: {
         title: 'why-choose-us',
-        count: 2
+        count: 3
     },
     testimonials: {
         title: 'testimonials',

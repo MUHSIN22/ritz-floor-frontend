@@ -6,22 +6,34 @@ export const Cat = ({data}) => {
 	return (
 		<div className="catalog-images-container">
 			<div className="cat-card card1" style={{backgroundImage: `url(${config.backendURL+ data.img_living})`}}>
-				Living Room
+				<div className="cat-card-title">
+					Living Room
+				</div>
 			</div>
 			<div className="cat-card card2" style={{backgroundImage: `url(${config.backendURL+ data.img_bed})`}}>
-				Bed Room
+				<div className="cat-card-title">
+					Bed Room
+				</div>
 			</div>
 			<div className="cat-card card3" style={{backgroundImage: `url(${config.backendURL+ data.img_office})`}}>
-				Office Room
+				<div className="cat-card-title">
+					Office Room
+				</div>
 			</div>
 			<div className="cat-card card4" style={{backgroundImage: `url(${config.backendURL+ data.img_dining})`}}>
-				Family Room
+				<div className="cat-card-title">
+					Family Room
+				</div>
 			</div>
 			<div className="cat-card card5" style={{backgroundImage: `url(${config.backendURL+ data.img_balcony})`}}>
-				Washroom
+				<div className="cat-card-title">
+					Washroom
+				</div>
 			</div>
 			<div className="cat-card card6" style={{backgroundImage: `url(${config.backendURL+ data.img_kitchen})`}}>
-				Kitchen
+				<div className="cat-card-title">
+					Kitchen
+				</div>
 			</div>
 		</div>
 	);

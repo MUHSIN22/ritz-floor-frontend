@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./SpecialOffers.css";
-import BannerImage from "../asset/BannerImage05.png";
+import BannerImage from "../asset/BannerImage05.webp";
 import { LocalPhone } from "@mui/icons-material";
 import Vector from "../asset/Kerikature.png";
 import OffersCarousel from "../OffersCarousel/OffersCarousel";

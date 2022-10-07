@@ -100,7 +100,7 @@ export default function Testimonials() {
                                     </div>
                                     <div className="input-wrapper">
                                         <label htmlFor="">Rating</label>
-                                        <input type="number" max={5} min={5} pattern="[0-5]" value={formData.rating} required onChange={inputHandler} name='rating' className='home-input' />
+                                        <input type="number" max={5} min={0} pattern="[0-5]" value={formData.rating} required onChange={inputHandler} name='rating' className='home-input' />
                                     </div>
                                     <div className="input-wrapper">
                                         <label htmlFor="">Testimonial</label>

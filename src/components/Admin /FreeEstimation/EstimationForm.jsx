@@ -11,6 +11,7 @@ let purchase = [
     "Over 6 months"
 ]
 const product = [
+    "Laminate",
     "Vinyl",
     "Carpet",
     "Floor Tiles & Backsplash",

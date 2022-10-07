@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import BannerImage from "../asset/BannerImage08.png";
+import BannerImage from "../asset/BannerImage08.webp";
 import { LocalPhone } from "@mui/icons-material";
 import Vector from "../asset/Kerikature.png";
 import SpringCarousel from "../SpringCarousel/SpringCarousel";

@@ -43,29 +43,38 @@ export default function Footer({setLogin}) {
 	return (
 		<div className="Footer-Container">
 			<div className="Footer-Map">
-				<iframe
+				<iframe 
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d65335355.274361484!2d70.7037088754753!3d1.84335314770302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54843f6181ae28cb%3A0xa1c9d8441b03984c!2sRitz%20Floor%20%26%20Decor!5e0!3m2!1sen!2sin!4v1661342309972!5m2!1sen!2sin" 
+					title="Footer-Map"
+					loading="lazy" 
+					referrerPolicy="no-referrer-when-downgrade"
+				></iframe>
+				{/* <iframe
 					title="Footer-Map"
 					src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d65324392.06077993!2d72.87105593771504!3d2.1211566083918143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d21.234071999999998!2d81.6802046!4m5!1s0x54843f638f55b411%3A0xbc91eae6b2352e0e!2s45690%20Yale%20Rd%2C%20Chilliwack%2C%20BC%20V2P%202N3%2C%20Canada!3m2!1d49.157502!2d-121.9584125!5e0!3m2!1sen!2sin!4v1655111045722!5m2!1sen!2sin"
 					allowfullscreen=""
 					loading="lazy"
 					referrerpolicy="no-referrer-when-downgrade"
-				></iframe>
+				></iframe> */}
 			</div>
 			<div className="Get-in-Touch">
 				<h2 className="footer-title">Get In Touch</h2>
 				<div className="Get-in-touch-row">
 					<LocalPhone className="small-icons" />
-					<a href="tel:+1 604 780 5352">+1 604 780 5352</a>
+					<span className="touch-links-wrapper">
+						<a href="tel:+1 604-702-2233">+1 604 702 2233</a>
+						<a href="tel:+1 604 780 5352">+1 604 780 5352</a>
+					</span>
 				</div>
 				<div className="Get-in-touch-row">
 					<Mail />
-					<a href="mailto:RITZFLOOR@GMAIL.COM">RITZFLOOR@GMAIL.COM</a>
+					<a href="mailto:ritzfloor@gmail.com">ritzfloor@gmail.com</a>
 				</div>
 				<div className="Get-in-touch-row">
 					<FmdGood />
 					<div>
-						<p>45690 YALE RD,</p>
-						<p>CHILLIWACK, BC V2P 2N3</p>
+						<p>16-5725 Vedder Road,</p>
+						<p>Chilliwack BC V2R 3N4</p>
 					</div>
 				</div>
 

@@ -1,6 +1,9 @@
 export default {
-    baseURL: 'https://ritzfloor.techjainsupport.co.in/api',
-    backendURL: 'https://ritzfloor.techjainsupport.co.in/'
+    baseURL: 'https://server.ritzfloor.ca/api',
+    backendURL: 'https://server.ritzfloor.ca/'
 }
 
+
+
+// https://server.ritzfloor.ca
 // https://ritzfloor.techjainsupport.co.in

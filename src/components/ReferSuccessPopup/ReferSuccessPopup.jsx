@@ -9,7 +9,7 @@ export default function ReferSuccessPopup() {
             <div className="success-popup">
                 <img src={referSuccess} className="success-image" alt="" />
                 <p className="success-text">
-                    Congratulations!! you have earned a coupoun,
+                    Congratulations!! you have earned a coupon,
                     which can be reedemed during your visit
                     at ourstore, please check your mail
                 </p>

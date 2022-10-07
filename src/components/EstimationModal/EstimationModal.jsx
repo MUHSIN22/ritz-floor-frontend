@@ -25,7 +25,7 @@ export default function EstimationModal({setEstimationModal}) {
     return (
         <div className="estimation-modal-wrapper">
             <form className="estimation-modal" onSubmit={handleFormSubmit}>
-                <h1 className="estimation-title">Get a free Estimation</h1>
+                <h1 className="estimation-title">Get a Free Estimate</h1>
                 <AiOutlineClose className="close-icon" onClick={() => setEstimationModal(false)}/>
                 <div className="two-col-wrapper">
                     <div className="input-wrapper">
@@ -68,13 +68,13 @@ export default function EstimationModal({setEstimationModal}) {
                             <option value="1">Vinyl</option>
                             <option value="2">Carpet</option>
                             <option value="3">Floor Tiles & Backsplash</option>
-                            <option value="3">Engineered Hardwood</option>
-                            <option value="3">Kitchen Cabinets & Countertops</option>
+                            <option value="4">Engineered Hardwood</option>
+                            <option value="5">Kitchen Cabinets & Countertops</option>
                         </select>
                     </div>
                 </div>
 
-                <label htmlFor="" className='estimation-label'>What type of product are you interested in?</label>
+                <label htmlFor="" className='estimation-label'>Are You Interested in Installation Service</label>
                 <div className="checkbox-wrapper">
                     <label htmlFor="yes">
                         <input type="radio" checked name="installation" value={1} id="yes" required onChange={handleChange} />
